@@ -1,0 +1,1153 @@
+{
+    "run_name": "test_run",
+    "model_name": "squeezenet_1.1",
+    "pass_name": "ngraph::pass::CommonOptimizations",
+    "index": "10139",
+    "type": "created",
+    "edges": {
+        "54:Convolution": ["101:Add"],
+        "101:Add": ["102:Relu"],
+        "103:MaxPool": ["105:Convolution"],
+        "105:Convolution": ["152:Add"],
+        "152:Add": ["153:Relu"],
+        "154:Convolution": ["201:Add"],
+        "201:Add": ["202:Relu"],
+        "203:Convolution": ["250:Add"],
+        "250:Add": ["251:Relu"],
+        "251:Relu": ["252:Concat"],
+        "252:Concat": ["253:Convolution"],
+        "253:Convolution": ["300:Add"],
+        "300:Add": ["301:Relu"],
+        "302:Convolution": ["349:Add"],
+        "349:Add": ["350:Relu"],
+        "351:Convolution": ["398:Add"],
+        "398:Add": ["399:Relu"],
+        "399:Relu": ["400:Concat"],
+        "403:Convolution": ["450:Add"],
+        "450:Add": ["451:Relu"],
+        "452:Convolution": ["499:Add"],
+        "499:Add": ["500:Relu"],
+        "501:Convolution": ["548:Add"],
+        "548:Add": ["549:Relu"],
+        "549:Relu": ["550:Concat"],
+        "550:Concat": ["551:Convolution"],
+        "551:Convolution": ["598:Add"],
+        "598:Add": ["599:Relu"],
+        "600:Convolution": ["647:Add"],
+        "647:Add": ["648:Relu"],
+        "649:Convolution": ["696:Add"],
+        "696:Add": ["697:Relu"],
+        "697:Relu": ["698:Concat"],
+        "701:Convolution": ["748:Add"],
+        "748:Add": ["749:Relu"],
+        "750:Convolution": ["797:Add"],
+        "797:Add": ["798:Relu"],
+        "799:Convolution": ["846:Add"],
+        "846:Add": ["847:Relu"],
+        "847:Relu": ["848:Concat"],
+        "848:Concat": ["849:Convolution"],
+        "849:Convolution": ["896:Add"],
+        "896:Add": ["897:Relu"],
+        "898:Convolution": ["945:Add"],
+        "945:Add": ["946:Relu"],
+        "947:Convolution": ["994:Add"],
+        "994:Add": ["995:Relu"],
+        "995:Relu": ["996:Concat"],
+        "996:Concat": ["997:Convolution"],
+        "997:Convolution": ["1044:Add"],
+        "1044:Add": ["1045:Relu"],
+        "1046:Convolution": ["1093:Add"],
+        "1093:Add": ["1094:Relu"],
+        "1095:Convolution": ["1142:Add"],
+        "1142:Add": ["1143:Relu"],
+        "1143:Relu": ["1144:Concat"],
+        "1144:Concat": ["1145:Convolution"],
+        "1145:Convolution": ["1192:Add"],
+        "1192:Add": ["1193:Relu"],
+        "1194:Convolution": ["1241:Add"],
+        "1241:Add": ["1242:Relu"],
+        "1243:Convolution": ["1290:Add"],
+        "1290:Add": ["1291:Relu"],
+        "1291:Relu": ["1292:Concat"],
+        "1292:Concat": ["1293:Convolution"],
+        "1293:Convolution": ["1340:Add"],
+        "1340:Add": ["1341:Relu"],
+        "5275:Constant": ["101:Add"],
+        "5281:Constant": ["152:Add"],
+        "5287:Constant": ["201:Add"],
+        "5293:Constant": ["250:Add"],
+        "5299:Constant": ["300:Add"],
+        "5305:Constant": ["349:Add"],
+        "5311:Constant": ["398:Add"],
+        "5317:Constant": ["450:Add"],
+        "5323:Constant": ["499:Add"],
+        "5329:Constant": ["548:Add"],
+        "5335:Constant": ["598:Add"],
+        "5341:Constant": ["647:Add"],
+        "5347:Constant": ["696:Add"],
+        "5353:Constant": ["748:Add"],
+        "5359:Constant": ["797:Add"],
+        "5365:Constant": ["846:Add"],
+        "5371:Constant": ["896:Add"],
+        "5377:Constant": ["945:Add"],
+        "5383:Constant": ["994:Add"],
+        "5389:Constant": ["1044:Add"],
+        "5395:Constant": ["1093:Add"],
+        "5401:Constant": ["1142:Add"],
+        "5407:Constant": ["1192:Add"],
+        "5413:Constant": ["1241:Add"],
+        "5419:Constant": ["1290:Add"],
+        "5425:Constant": ["1340:Add"]
+    },
+    "nodes": {
+        "54:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_54",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "2, 2"
+            },
+            "dot_attrs": {}
+        },
+        "101:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "squeezenet0_conv0_fwd",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "102:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "squeezenet0_relu0_fwd"
+            },
+            "dot_attrs": {}
+        },
+        "103:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "squeezenet0_pool0_fwd",
+                "auto_pad": "explicit",
+                "kernel": "3, 3",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "rounding_type": "floor",
+                "strides": "2, 2"
+            },
+            "dot_attrs": {}
+        },
+        "105:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_105",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "152:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "squeezenet0_conv1_fwd",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "153:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "squeezenet0_relu1_fwd"
+            },
+            "dot_attrs": {}
+        },
+        "154:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_154",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "201:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "squeezenet0_conv2_fwd",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "202:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "squeezenet0_relu2_fwd"
+            },
+            "dot_attrs": {}
+        },
+        "203:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_203",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "250:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "squeezenet0_conv3_fwd",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "251:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "squeezenet0_relu3_fwd"
+            },
+            "dot_attrs": {}
+        },
+        "252:Concat": {
+            "attrs": {
+                "type": "Concat",
+                "name": "squeezenet0_concat0",
+                "axis": "1"
+            },
+            "dot_attrs": {}
+        },
+        "253:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_253",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "300:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "squeezenet0_conv4_fwd",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "301:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "squeezenet0_relu4_fwd"
+            },
+            "dot_attrs": {}
+        },
+        "302:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_302",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "349:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "squeezenet0_conv5_fwd",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "350:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "squeezenet0_relu5_fwd"
+            },
+            "dot_attrs": {}
+        },
+        "351:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_351",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "398:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "squeezenet0_conv6_fwd",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "399:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "squeezenet0_relu6_fwd"
+            },
+            "dot_attrs": {}
+        },
+        "403:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_403",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "450:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "squeezenet0_conv7_fwd",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "451:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "squeezenet0_relu7_fwd"
+            },
+            "dot_attrs": {}
+        },
+        "452:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_452",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "499:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "squeezenet0_conv8_fwd",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "500:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "squeezenet0_relu8_fwd"
+            },
+            "dot_attrs": {}
+        },
+        "501:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_501",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "548:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "squeezenet0_conv9_fwd",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "549:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "squeezenet0_relu9_fwd"
+            },
+            "dot_attrs": {}
+        },
+        "550:Concat": {
+            "attrs": {
+                "type": "Concat",
+                "name": "squeezenet0_concat2",
+                "axis": "1"
+            },
+            "dot_attrs": {}
+        },
+        "551:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_551",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "598:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "squeezenet0_conv10_fwd",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "599:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "squeezenet0_relu10_fwd"
+            },
+            "dot_attrs": {}
+        },
+        "600:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_600",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "647:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "squeezenet0_conv11_fwd",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "648:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "squeezenet0_relu11_fwd"
+            },
+            "dot_attrs": {}
+        },
+        "649:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_649",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "696:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "squeezenet0_conv12_fwd",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "697:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "squeezenet0_relu12_fwd"
+            },
+            "dot_attrs": {}
+        },
+        "701:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_701",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "748:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "squeezenet0_conv13_fwd",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "749:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "squeezenet0_relu13_fwd"
+            },
+            "dot_attrs": {}
+        },
+        "750:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_750",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "797:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "squeezenet0_conv14_fwd",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "798:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "squeezenet0_relu14_fwd"
+            },
+            "dot_attrs": {}
+        },
+        "799:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_799",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "846:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "squeezenet0_conv15_fwd",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "847:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "squeezenet0_relu15_fwd"
+            },
+            "dot_attrs": {}
+        },
+        "848:Concat": {
+            "attrs": {
+                "type": "Concat",
+                "name": "squeezenet0_concat4",
+                "axis": "1"
+            },
+            "dot_attrs": {}
+        },
+        "849:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_849",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "896:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "squeezenet0_conv16_fwd",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "897:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "squeezenet0_relu16_fwd"
+            },
+            "dot_attrs": {}
+        },
+        "898:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_898",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "945:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "squeezenet0_conv17_fwd",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "946:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "squeezenet0_relu17_fwd"
+            },
+            "dot_attrs": {}
+        },
+        "947:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_947",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "994:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "squeezenet0_conv18_fwd",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "995:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "squeezenet0_relu18_fwd"
+            },
+            "dot_attrs": {}
+        },
+        "996:Concat": {
+            "attrs": {
+                "type": "Concat",
+                "name": "squeezenet0_concat5",
+                "axis": "1"
+            },
+            "dot_attrs": {}
+        },
+        "997:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_997",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "1044:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "squeezenet0_conv19_fwd",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "1045:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "squeezenet0_relu19_fwd"
+            },
+            "dot_attrs": {}
+        },
+        "1046:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_1046",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "1093:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "squeezenet0_conv20_fwd",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "1094:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "squeezenet0_relu20_fwd"
+            },
+            "dot_attrs": {}
+        },
+        "1095:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_1095",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "1142:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "squeezenet0_conv21_fwd",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "1143:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "squeezenet0_relu21_fwd"
+            },
+            "dot_attrs": {}
+        },
+        "1144:Concat": {
+            "attrs": {
+                "type": "Concat",
+                "name": "squeezenet0_concat6",
+                "axis": "1"
+            },
+            "dot_attrs": {}
+        },
+        "1145:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_1145",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "1192:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "squeezenet0_conv22_fwd",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "1193:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "squeezenet0_relu22_fwd"
+            },
+            "dot_attrs": {}
+        },
+        "1194:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_1194",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "1241:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "squeezenet0_conv23_fwd",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "1242:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "squeezenet0_relu23_fwd"
+            },
+            "dot_attrs": {}
+        },
+        "1243:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_1243",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "1290:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "squeezenet0_conv24_fwd",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "1291:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "squeezenet0_relu24_fwd"
+            },
+            "dot_attrs": {}
+        },
+        "1292:Concat": {
+            "attrs": {
+                "type": "Concat",
+                "name": "squeezenet0_dropout0_fwd",
+                "axis": "1"
+            },
+            "dot_attrs": {}
+        },
+        "1293:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_1293",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "1340:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "squeezenet0_conv25_fwd",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "1341:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "squeezenet0_relu25_fwd"
+            },
+            "dot_attrs": {}
+        },
+        "5275:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_74",
+                "element_type": "f32",
+                "shape": "1, 64, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "5281:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_125",
+                "element_type": "f32",
+                "shape": "1, 16, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "5287:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_174",
+                "element_type": "f32",
+                "shape": "1, 64, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "5293:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_223",
+                "element_type": "f32",
+                "shape": "1, 64, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "5299:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_273",
+                "element_type": "f32",
+                "shape": "1, 16, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "5305:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_322",
+                "element_type": "f32",
+                "shape": "1, 64, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "5311:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_371",
+                "element_type": "f32",
+                "shape": "1, 64, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "5317:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_423",
+                "element_type": "f32",
+                "shape": "1, 32, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "5323:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_472",
+                "element_type": "f32",
+                "shape": "1, 128, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "5329:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_521",
+                "element_type": "f32",
+                "shape": "1, 128, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "5335:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_571",
+                "element_type": "f32",
+                "shape": "1, 32, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "5341:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_620",
+                "element_type": "f32",
+                "shape": "1, 128, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "5347:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_669",
+                "element_type": "f32",
+                "shape": "1, 128, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "5353:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_721",
+                "element_type": "f32",
+                "shape": "1, 48, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "5359:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_770",
+                "element_type": "f32",
+                "shape": "1, 192, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "5365:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_819",
+                "element_type": "f32",
+                "shape": "1, 192, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "5371:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_869",
+                "element_type": "f32",
+                "shape": "1, 48, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "5377:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_918",
+                "element_type": "f32",
+                "shape": "1, 192, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "5383:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_967",
+                "element_type": "f32",
+                "shape": "1, 192, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "5389:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_1017",
+                "element_type": "f32",
+                "shape": "1, 64, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "5395:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_1066",
+                "element_type": "f32",
+                "shape": "1, 256, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "5401:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_1115",
+                "element_type": "f32",
+                "shape": "1, 256, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "5407:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_1165",
+                "element_type": "f32",
+                "shape": "1, 64, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "5413:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_1214",
+                "element_type": "f32",
+                "shape": "1, 256, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "5419:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_1263",
+                "element_type": "f32",
+                "shape": "1, 256, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "5425:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_1313",
+                "element_type": "f32",
+                "shape": "1, 1000, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+.ComparePass {
+    background-color:rgb(129, 129, 129);
+    display: grid;
+    /* grid-template-columns: 200px 500px auto; */
+}
+
+.VizHandler {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.Navigation {
+    display: grid;
+    grid-template-rows: 40px 40px 40px 40px auto;
+}
+
+.Selector {
+    margin: 5px;
+}
+
+.CompareButton {
+    margin: 6px;
+    width: auto;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.NavigationBarCmp {
+    display: grid;
+    height: 84.5vh;
+    grid-template-rows: 40px 40px 40px 40px auto;
+}
+
+.MenuBarCmp {
+    height: calc(84.5vh - 170px);
+}
+
+.MenuItems {
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
+    height: inherit;
+}

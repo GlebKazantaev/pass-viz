@@ -1,0 +1,70 @@
+.Viz {
+    background-color:white;
+    margin: 5px;
+    margin-left: 0px;
+    height: inherit;
+}
+
+.VizMain {
+    display: grid;
+    grid-template-columns: 22px auto;
+    align-items: center;
+    height: calc(84.5vh - 10px);
+}
+
+.ResizeViz {
+    user-select: none;
+}
+
+.Graph {
+    width: 100%;
+    height: inherit;
+}
+
+.GraphVizHandler {
+    display: grid;
+    grid-template-rows: 10px auto;
+    align-items: center;
+    width: 100%;
+    height: inherit; 
+}
+
+.GraphVizHeader {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: auto 20px;
+}
+
+.GraphVizTitle {
+    font-size: small;
+}
+
+.GraphVizView {
+    display: flex;
+    width: 100%;
+    height: inherit; 
+    margin-top: 15px;
+    position: relative;
+}
+
+.GraphVizMenu {
+    background-color: rgb(228, 228, 228);
+    margin-top: -25px;
+    position: absolute;
+    width:  0px;
+    height: calc(84.5vh - 10px);
+    right: 0px;    
+
+    display: grid;
+    grid-template-rows: 15px 100px auto;
+}
+
+.MenuAttributes {
+    font-size: smaller;
+}
+
+.MenuExitIcon {
+    /* position: absolute; */
+    /* display: grid;
+    grid-template-rows: 20px 100px auto; */
+}

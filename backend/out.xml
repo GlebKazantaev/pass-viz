@@ -1,0 +1,3183 @@
+<?xml version="1.0"?>
+<net name="main" version="11">
+	<layers>
+		<layer id="0" name="data" type="Parameter" version="opset1">
+			<data shape="1,3,224,224" element_type="f32" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="data" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="data">
+					<dim>1</dim>
+					<dim>3</dim>
+					<dim>224</dim>
+					<dim>224</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="1" name="squeezenet0_conv0_weight" type="Const" version="opset1">
+			<data element_type="f32" shape="64, 3, 3, 3" offset="0" size="6912" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_conv0_weight" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="squeezenet0_conv0_weight">
+					<dim>64</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="2" name="Convolution_54" type="Convolution" version="opset1">
+			<data strides="2, 2" dilations="1, 1" pads_begin="0, 0" pads_end="0, 0" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Convolution_54" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>3</dim>
+					<dim>224</dim>
+					<dim>224</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>64</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>111</dim>
+					<dim>111</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="3" name="Reshape_74" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 64, 1, 1" offset="6912" size="256" />
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="4" name="squeezenet0_conv0_fwd" type="Add" version="opset1">
+			<data auto_broadcast="numpy" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Concat_73, Reshape_74, squeezenet0_conv0_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>111</dim>
+					<dim>111</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_conv0_fwd">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>111</dim>
+					<dim>111</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="5" name="squeezenet0_relu0_fwd" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_relu0_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>111</dim>
+					<dim>111</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_relu0_fwd">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>111</dim>
+					<dim>111</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="6" name="squeezenet0_pool0_fwd" type="MaxPool" version="opset1">
+			<data strides="2, 2" pads_begin="0, 0" pads_end="0, 0" kernel="3, 3" rounding_type="floor" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_pool0_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>111</dim>
+					<dim>111</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_pool0_fwd">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="7" name="squeezenet0_conv1_weight" type="Const" version="opset1">
+			<data element_type="f32" shape="16, 64, 1, 1" offset="7168" size="4096" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_conv1_weight" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="squeezenet0_conv1_weight">
+					<dim>16</dim>
+					<dim>64</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="8" name="Convolution_105" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="0, 0" pads_end="0, 0" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Convolution_105" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>16</dim>
+					<dim>64</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>16</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="9" name="Reshape_125" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 16, 1, 1" offset="11264" size="64" />
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>16</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="10" name="squeezenet0_conv1_fwd" type="Add" version="opset1">
+			<data auto_broadcast="numpy" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Concat_124, Reshape_125, squeezenet0_conv1_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>16</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>16</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_conv1_fwd">
+					<dim>1</dim>
+					<dim>16</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="11" name="squeezenet0_relu1_fwd" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_relu1_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>16</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_relu1_fwd">
+					<dim>1</dim>
+					<dim>16</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="12" name="squeezenet0_conv2_weight" type="Const" version="opset1">
+			<data element_type="f32" shape="64, 16, 1, 1" offset="11328" size="4096" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_conv2_weight" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="squeezenet0_conv2_weight">
+					<dim>64</dim>
+					<dim>16</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="13" name="Convolution_154" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="0, 0" pads_end="0, 0" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Convolution_154" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>16</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>64</dim>
+					<dim>16</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="14" name="Reshape_174" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 64, 1, 1" offset="15424" size="256" />
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="15" name="squeezenet0_conv2_fwd" type="Add" version="opset1">
+			<data auto_broadcast="numpy" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Concat_173, Reshape_174, squeezenet0_conv2_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_conv2_fwd">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="16" name="squeezenet0_relu2_fwd" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_relu2_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_relu2_fwd">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="17" name="squeezenet0_conv3_weight" type="Const" version="opset1">
+			<data element_type="f32" shape="64, 16, 3, 3" offset="15680" size="36864" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_conv3_weight" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="squeezenet0_conv3_weight">
+					<dim>64</dim>
+					<dim>16</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="18" name="Convolution_203" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="1, 1" pads_end="1, 1" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Convolution_203" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>16</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>64</dim>
+					<dim>16</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="19" name="Reshape_223" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 64, 1, 1" offset="52544" size="256" />
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="20" name="squeezenet0_conv3_fwd" type="Add" version="opset1">
+			<data auto_broadcast="numpy" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Concat_222, Reshape_223, squeezenet0_conv3_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_conv3_fwd">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="21" name="squeezenet0_relu3_fwd" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_relu3_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_relu3_fwd">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="22" name="squeezenet0_concat0" type="Concat" version="opset1">
+			<data axis="1" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_concat0" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_concat0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="23" name="squeezenet0_conv4_weight" type="Const" version="opset1">
+			<data element_type="f32" shape="16, 128, 1, 1" offset="52800" size="8192" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_conv4_weight" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="squeezenet0_conv4_weight">
+					<dim>16</dim>
+					<dim>128</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="24" name="Convolution_253" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="0, 0" pads_end="0, 0" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Convolution_253" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>16</dim>
+					<dim>128</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>16</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="25" name="Reshape_273" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 16, 1, 1" offset="60992" size="64" />
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>16</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="26" name="squeezenet0_conv4_fwd" type="Add" version="opset1">
+			<data auto_broadcast="numpy" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Concat_272, Reshape_273, squeezenet0_conv4_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>16</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>16</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_conv4_fwd">
+					<dim>1</dim>
+					<dim>16</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="27" name="squeezenet0_relu4_fwd" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_relu4_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>16</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_relu4_fwd">
+					<dim>1</dim>
+					<dim>16</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="28" name="squeezenet0_conv5_weight" type="Const" version="opset1">
+			<data element_type="f32" shape="64, 16, 1, 1" offset="61056" size="4096" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_conv5_weight" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="squeezenet0_conv5_weight">
+					<dim>64</dim>
+					<dim>16</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="29" name="Convolution_302" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="0, 0" pads_end="0, 0" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Convolution_302" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>16</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>64</dim>
+					<dim>16</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="30" name="Reshape_322" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 64, 1, 1" offset="65152" size="256" />
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="31" name="squeezenet0_conv5_fwd" type="Add" version="opset1">
+			<data auto_broadcast="numpy" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Concat_321, Reshape_322, squeezenet0_conv5_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_conv5_fwd">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="32" name="squeezenet0_relu5_fwd" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_relu5_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_relu5_fwd">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="33" name="squeezenet0_conv6_weight" type="Const" version="opset1">
+			<data element_type="f32" shape="64, 16, 3, 3" offset="65408" size="36864" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_conv6_weight" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="squeezenet0_conv6_weight">
+					<dim>64</dim>
+					<dim>16</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="34" name="Convolution_351" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="1, 1" pads_end="1, 1" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Convolution_351" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>16</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>64</dim>
+					<dim>16</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="35" name="Reshape_371" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 64, 1, 1" offset="102272" size="256" />
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="36" name="squeezenet0_conv6_fwd" type="Add" version="opset1">
+			<data auto_broadcast="numpy" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Concat_370, Reshape_371, squeezenet0_conv6_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_conv6_fwd">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="37" name="squeezenet0_relu6_fwd" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_relu6_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_relu6_fwd">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="38" name="squeezenet0_concat1" type="Concat" version="opset1">
+			<data axis="1" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_concat1" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_concat1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="39" name="squeezenet0_pool1_fwd" type="MaxPool" version="opset1">
+			<data strides="2, 2" pads_begin="0, 0" pads_end="0, 0" kernel="3, 3" rounding_type="floor" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_pool1_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>55</dim>
+					<dim>55</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_pool1_fwd">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="40" name="squeezenet0_conv7_weight" type="Const" version="opset1">
+			<data element_type="f32" shape="32, 128, 1, 1" offset="102528" size="16384" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_conv7_weight" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="squeezenet0_conv7_weight">
+					<dim>32</dim>
+					<dim>128</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="41" name="Convolution_403" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="0, 0" pads_end="0, 0" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Convolution_403" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>32</dim>
+					<dim>128</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>32</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="42" name="Reshape_423" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 32, 1, 1" offset="118912" size="128" />
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>32</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="43" name="squeezenet0_conv7_fwd" type="Add" version="opset1">
+			<data auto_broadcast="numpy" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Concat_422, Reshape_423, squeezenet0_conv7_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>32</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>32</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_conv7_fwd">
+					<dim>1</dim>
+					<dim>32</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="44" name="squeezenet0_relu7_fwd" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_relu7_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>32</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_relu7_fwd">
+					<dim>1</dim>
+					<dim>32</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="45" name="squeezenet0_conv8_weight" type="Const" version="opset1">
+			<data element_type="f32" shape="128, 32, 1, 1" offset="119040" size="16384" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_conv8_weight" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="squeezenet0_conv8_weight">
+					<dim>128</dim>
+					<dim>32</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="46" name="Convolution_452" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="0, 0" pads_end="0, 0" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Convolution_452" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>32</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>128</dim>
+					<dim>32</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="47" name="Reshape_472" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 128, 1, 1" offset="135424" size="512" />
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="48" name="squeezenet0_conv8_fwd" type="Add" version="opset1">
+			<data auto_broadcast="numpy" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Concat_471, Reshape_472, squeezenet0_conv8_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_conv8_fwd">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="49" name="squeezenet0_relu8_fwd" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_relu8_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_relu8_fwd">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="50" name="squeezenet0_conv9_weight" type="Const" version="opset1">
+			<data element_type="f32" shape="128, 32, 3, 3" offset="135936" size="147456" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_conv9_weight" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="squeezenet0_conv9_weight">
+					<dim>128</dim>
+					<dim>32</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="51" name="Convolution_501" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="1, 1" pads_end="1, 1" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Convolution_501" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>32</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>128</dim>
+					<dim>32</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="52" name="Reshape_521" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 128, 1, 1" offset="283392" size="512" />
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="53" name="squeezenet0_conv9_fwd" type="Add" version="opset1">
+			<data auto_broadcast="numpy" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Concat_520, Reshape_521, squeezenet0_conv9_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_conv9_fwd">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="54" name="squeezenet0_relu9_fwd" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_relu9_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_relu9_fwd">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="55" name="squeezenet0_concat2" type="Concat" version="opset1">
+			<data axis="1" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_concat2" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_concat2">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="56" name="squeezenet0_conv10_weight" type="Const" version="opset1">
+			<data element_type="f32" shape="32, 256, 1, 1" offset="283904" size="32768" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_conv10_weight" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="squeezenet0_conv10_weight">
+					<dim>32</dim>
+					<dim>256</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="57" name="Convolution_551" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="0, 0" pads_end="0, 0" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Convolution_551" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>32</dim>
+					<dim>256</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>32</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="58" name="Reshape_571" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 32, 1, 1" offset="316672" size="128" />
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>32</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="59" name="squeezenet0_conv10_fwd" type="Add" version="opset1">
+			<data auto_broadcast="numpy" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Concat_570, Reshape_571, squeezenet0_conv10_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>32</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>32</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_conv10_fwd">
+					<dim>1</dim>
+					<dim>32</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="60" name="squeezenet0_relu10_fwd" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_relu10_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>32</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_relu10_fwd">
+					<dim>1</dim>
+					<dim>32</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="61" name="squeezenet0_conv11_weight" type="Const" version="opset1">
+			<data element_type="f32" shape="128, 32, 1, 1" offset="316800" size="16384" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_conv11_weight" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="squeezenet0_conv11_weight">
+					<dim>128</dim>
+					<dim>32</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="62" name="Convolution_600" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="0, 0" pads_end="0, 0" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Convolution_600" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>32</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>128</dim>
+					<dim>32</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="63" name="Reshape_620" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 128, 1, 1" offset="333184" size="512" />
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="64" name="squeezenet0_conv11_fwd" type="Add" version="opset1">
+			<data auto_broadcast="numpy" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Concat_619, Reshape_620, squeezenet0_conv11_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_conv11_fwd">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="65" name="squeezenet0_relu11_fwd" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_relu11_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_relu11_fwd">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="66" name="squeezenet0_conv12_weight" type="Const" version="opset1">
+			<data element_type="f32" shape="128, 32, 3, 3" offset="333696" size="147456" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_conv12_weight" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="squeezenet0_conv12_weight">
+					<dim>128</dim>
+					<dim>32</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="67" name="Convolution_649" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="1, 1" pads_end="1, 1" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Convolution_649" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>32</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>128</dim>
+					<dim>32</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="68" name="Reshape_669" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 128, 1, 1" offset="481152" size="512" />
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="69" name="squeezenet0_conv12_fwd" type="Add" version="opset1">
+			<data auto_broadcast="numpy" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Concat_668, Reshape_669, squeezenet0_conv12_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_conv12_fwd">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="70" name="squeezenet0_relu12_fwd" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_relu12_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_relu12_fwd">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="71" name="squeezenet0_concat3" type="Concat" version="opset1">
+			<data axis="1" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_concat3" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_concat3">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="72" name="squeezenet0_pool2_fwd" type="MaxPool" version="opset1">
+			<data strides="2, 2" pads_begin="0, 0" pads_end="0, 0" kernel="3, 3" rounding_type="floor" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_pool2_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>27</dim>
+					<dim>27</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_pool2_fwd">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="73" name="squeezenet0_conv13_weight" type="Const" version="opset1">
+			<data element_type="f32" shape="48, 256, 1, 1" offset="481664" size="49152" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_conv13_weight" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="squeezenet0_conv13_weight">
+					<dim>48</dim>
+					<dim>256</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="74" name="Convolution_701" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="0, 0" pads_end="0, 0" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Convolution_701" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>48</dim>
+					<dim>256</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>48</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="75" name="Reshape_721" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 48, 1, 1" offset="530816" size="192" />
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>48</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="76" name="squeezenet0_conv13_fwd" type="Add" version="opset1">
+			<data auto_broadcast="numpy" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Concat_720, Reshape_721, squeezenet0_conv13_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>48</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>48</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_conv13_fwd">
+					<dim>1</dim>
+					<dim>48</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="77" name="squeezenet0_relu13_fwd" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_relu13_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>48</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_relu13_fwd">
+					<dim>1</dim>
+					<dim>48</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="78" name="squeezenet0_conv14_weight" type="Const" version="opset1">
+			<data element_type="f32" shape="192, 48, 1, 1" offset="531008" size="36864" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_conv14_weight" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="squeezenet0_conv14_weight">
+					<dim>192</dim>
+					<dim>48</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="79" name="Convolution_750" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="0, 0" pads_end="0, 0" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Convolution_750" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>48</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>192</dim>
+					<dim>48</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="80" name="Reshape_770" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 192, 1, 1" offset="567872" size="768" />
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="81" name="squeezenet0_conv14_fwd" type="Add" version="opset1">
+			<data auto_broadcast="numpy" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Concat_769, Reshape_770, squeezenet0_conv14_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_conv14_fwd">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="82" name="squeezenet0_relu14_fwd" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_relu14_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_relu14_fwd">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="83" name="squeezenet0_conv15_weight" type="Const" version="opset1">
+			<data element_type="f32" shape="192, 48, 3, 3" offset="568640" size="331776" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_conv15_weight" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="squeezenet0_conv15_weight">
+					<dim>192</dim>
+					<dim>48</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="84" name="Convolution_799" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="1, 1" pads_end="1, 1" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Convolution_799" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>48</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>192</dim>
+					<dim>48</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="85" name="Reshape_819" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 192, 1, 1" offset="900416" size="768" />
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="86" name="squeezenet0_conv15_fwd" type="Add" version="opset1">
+			<data auto_broadcast="numpy" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Concat_818, Reshape_819, squeezenet0_conv15_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_conv15_fwd">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="87" name="squeezenet0_relu15_fwd" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_relu15_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_relu15_fwd">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="88" name="squeezenet0_concat4" type="Concat" version="opset1">
+			<data axis="1" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_concat4" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_concat4">
+					<dim>1</dim>
+					<dim>384</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="89" name="squeezenet0_conv16_weight" type="Const" version="opset1">
+			<data element_type="f32" shape="48, 384, 1, 1" offset="901184" size="73728" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_conv16_weight" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="squeezenet0_conv16_weight">
+					<dim>48</dim>
+					<dim>384</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="90" name="Convolution_849" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="0, 0" pads_end="0, 0" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Convolution_849" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>384</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>48</dim>
+					<dim>384</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>48</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="91" name="Reshape_869" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 48, 1, 1" offset="974912" size="192" />
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>48</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="92" name="squeezenet0_conv16_fwd" type="Add" version="opset1">
+			<data auto_broadcast="numpy" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Concat_868, Reshape_869, squeezenet0_conv16_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>48</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>48</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_conv16_fwd">
+					<dim>1</dim>
+					<dim>48</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="93" name="squeezenet0_relu16_fwd" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_relu16_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>48</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_relu16_fwd">
+					<dim>1</dim>
+					<dim>48</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="94" name="squeezenet0_conv17_weight" type="Const" version="opset1">
+			<data element_type="f32" shape="192, 48, 1, 1" offset="975104" size="36864" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_conv17_weight" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="squeezenet0_conv17_weight">
+					<dim>192</dim>
+					<dim>48</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="95" name="Convolution_898" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="0, 0" pads_end="0, 0" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Convolution_898" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>48</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>192</dim>
+					<dim>48</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="96" name="Reshape_918" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 192, 1, 1" offset="1011968" size="768" />
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="97" name="squeezenet0_conv17_fwd" type="Add" version="opset1">
+			<data auto_broadcast="numpy" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Concat_917, Reshape_918, squeezenet0_conv17_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_conv17_fwd">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="98" name="squeezenet0_relu17_fwd" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_relu17_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_relu17_fwd">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="99" name="squeezenet0_conv18_weight" type="Const" version="opset1">
+			<data element_type="f32" shape="192, 48, 3, 3" offset="1012736" size="331776" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_conv18_weight" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="squeezenet0_conv18_weight">
+					<dim>192</dim>
+					<dim>48</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="100" name="Convolution_947" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="1, 1" pads_end="1, 1" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Convolution_947" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>48</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>192</dim>
+					<dim>48</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="101" name="Reshape_967" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 192, 1, 1" offset="1344512" size="768" />
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="102" name="squeezenet0_conv18_fwd" type="Add" version="opset1">
+			<data auto_broadcast="numpy" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Concat_966, Reshape_967, squeezenet0_conv18_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_conv18_fwd">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="103" name="squeezenet0_relu18_fwd" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_relu18_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_relu18_fwd">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="104" name="squeezenet0_concat5" type="Concat" version="opset1">
+			<data axis="1" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_concat5" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>192</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_concat5">
+					<dim>1</dim>
+					<dim>384</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="105" name="squeezenet0_conv19_weight" type="Const" version="opset1">
+			<data element_type="f32" shape="64, 384, 1, 1" offset="1345280" size="98304" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_conv19_weight" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="squeezenet0_conv19_weight">
+					<dim>64</dim>
+					<dim>384</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="106" name="Convolution_997" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="0, 0" pads_end="0, 0" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Convolution_997" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>384</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>64</dim>
+					<dim>384</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="107" name="Reshape_1017" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 64, 1, 1" offset="1443584" size="256" />
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="108" name="squeezenet0_conv19_fwd" type="Add" version="opset1">
+			<data auto_broadcast="numpy" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Concat_1016, Reshape_1017, squeezenet0_conv19_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_conv19_fwd">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="109" name="squeezenet0_relu19_fwd" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_relu19_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_relu19_fwd">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="110" name="squeezenet0_conv20_weight" type="Const" version="opset1">
+			<data element_type="f32" shape="256, 64, 1, 1" offset="1443840" size="65536" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_conv20_weight" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="squeezenet0_conv20_weight">
+					<dim>256</dim>
+					<dim>64</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="111" name="Convolution_1046" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="0, 0" pads_end="0, 0" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Convolution_1046" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>256</dim>
+					<dim>64</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="112" name="Reshape_1066" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 256, 1, 1" offset="1509376" size="1024" />
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="113" name="squeezenet0_conv20_fwd" type="Add" version="opset1">
+			<data auto_broadcast="numpy" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Concat_1065, Reshape_1066, squeezenet0_conv20_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_conv20_fwd">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="114" name="squeezenet0_relu20_fwd" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_relu20_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_relu20_fwd">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="115" name="squeezenet0_conv21_weight" type="Const" version="opset1">
+			<data element_type="f32" shape="256, 64, 3, 3" offset="1510400" size="589824" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_conv21_weight" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="squeezenet0_conv21_weight">
+					<dim>256</dim>
+					<dim>64</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="116" name="Convolution_1095" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="1, 1" pads_end="1, 1" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Convolution_1095" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>256</dim>
+					<dim>64</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="117" name="Reshape_1115" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 256, 1, 1" offset="2100224" size="1024" />
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="118" name="squeezenet0_conv21_fwd" type="Add" version="opset1">
+			<data auto_broadcast="numpy" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Concat_1114, Reshape_1115, squeezenet0_conv21_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_conv21_fwd">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="119" name="squeezenet0_relu21_fwd" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_relu21_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_relu21_fwd">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="120" name="squeezenet0_concat6" type="Concat" version="opset1">
+			<data axis="1" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_concat6" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_concat6">
+					<dim>1</dim>
+					<dim>512</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="121" name="squeezenet0_conv22_weight" type="Const" version="opset1">
+			<data element_type="f32" shape="64, 512, 1, 1" offset="2101248" size="131072" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_conv22_weight" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="squeezenet0_conv22_weight">
+					<dim>64</dim>
+					<dim>512</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="122" name="Convolution_1145" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="0, 0" pads_end="0, 0" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Convolution_1145" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>512</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>64</dim>
+					<dim>512</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="123" name="Reshape_1165" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 64, 1, 1" offset="2232320" size="256" />
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="124" name="squeezenet0_conv22_fwd" type="Add" version="opset1">
+			<data auto_broadcast="numpy" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Concat_1164, Reshape_1165, squeezenet0_conv22_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_conv22_fwd">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="125" name="squeezenet0_relu22_fwd" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_relu22_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_relu22_fwd">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="126" name="squeezenet0_conv23_weight" type="Const" version="opset1">
+			<data element_type="f32" shape="256, 64, 1, 1" offset="2232576" size="65536" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_conv23_weight" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="squeezenet0_conv23_weight">
+					<dim>256</dim>
+					<dim>64</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="127" name="Convolution_1194" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="0, 0" pads_end="0, 0" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Convolution_1194" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>256</dim>
+					<dim>64</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="128" name="Reshape_1214" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 256, 1, 1" offset="2298112" size="1024" />
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="129" name="squeezenet0_conv23_fwd" type="Add" version="opset1">
+			<data auto_broadcast="numpy" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Concat_1213, Reshape_1214, squeezenet0_conv23_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_conv23_fwd">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="130" name="squeezenet0_relu23_fwd" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_relu23_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_relu23_fwd">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="131" name="squeezenet0_conv24_weight" type="Const" version="opset1">
+			<data element_type="f32" shape="256, 64, 3, 3" offset="2299136" size="589824" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_conv24_weight" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="squeezenet0_conv24_weight">
+					<dim>256</dim>
+					<dim>64</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="132" name="Convolution_1243" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="1, 1" pads_end="1, 1" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Convolution_1243" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>256</dim>
+					<dim>64</dim>
+					<dim>3</dim>
+					<dim>3</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="133" name="Reshape_1263" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 256, 1, 1" offset="2888960" size="1024" />
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="134" name="squeezenet0_conv24_fwd" type="Add" version="opset1">
+			<data auto_broadcast="numpy" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Concat_1262, Reshape_1263, squeezenet0_conv24_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_conv24_fwd">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="135" name="squeezenet0_relu24_fwd" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_relu24_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_relu24_fwd">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="136" name="squeezenet0_dropout0_fwd" type="Concat" version="opset1">
+			<data axis="1" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_dropout0_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_dropout0_fwd">
+					<dim>1</dim>
+					<dim>512</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="137" name="squeezenet0_conv25_weight" type="Const" version="opset1">
+			<data element_type="f32" shape="1000, 512, 1, 1" offset="2889984" size="2048000" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_conv25_weight" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="squeezenet0_conv25_weight">
+					<dim>1000</dim>
+					<dim>512</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="138" name="Convolution_1293" type="Convolution" version="opset1">
+			<data strides="1, 1" dilations="1, 1" pads_begin="0, 0" pads_end="0, 0" auto_pad="explicit" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Convolution_1293" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>512</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1000</dim>
+					<dim>512</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32">
+					<dim>1</dim>
+					<dim>1000</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="139" name="Reshape_1313" type="Const" version="opset1">
+			<data element_type="f32" shape="1, 1000, 1, 1" offset="4937984" size="4000" />
+			<output>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>1000</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="140" name="squeezenet0_conv25_fwd" type="Add" version="opset1">
+			<data auto_broadcast="numpy" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="Concat_1312, Reshape_1313, squeezenet0_conv25_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>1000</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>1</dim>
+					<dim>1000</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_conv25_fwd">
+					<dim>1</dim>
+					<dim>1000</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="141" name="squeezenet0_relu25_fwd" type="ReLU" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_relu25_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>1000</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_relu25_fwd">
+					<dim>1</dim>
+					<dim>1000</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="142" name="squeezenet0_pool3_fwd" type="AvgPool" version="opset1">
+			<data kernel="13, 13" strides="13, 13" pads_begin="0, 0" pads_end="0, 0" exclude-pad="true" auto_pad="explicit" rounding_type="floor" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_pool3_fwd" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>1000</dim>
+					<dim>13</dim>
+					<dim>13</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32" names="squeezenet0_pool3_fwd">
+					<dim>1</dim>
+					<dim>1000</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="143" name="reshape_attr_tensor118" type="Const" version="opset1">
+			<data element_type="i64" shape="2" offset="4941984" size="16" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="reshape_attr_tensor118" />
+			</rt_info>
+			<output>
+				<port id="0" precision="I64" names="reshape_attr_tensor118">
+					<dim>2</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="144" name="squeezenet0_flatten0_reshape0" type="Reshape" version="opset1">
+			<data special_zero="true" />
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_flatten0_reshape0" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>1000</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+				<port id="1" precision="I64">
+					<dim>2</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="squeezenet0_flatten0_reshape0">
+					<dim>1</dim>
+					<dim>1000</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="145" name="squeezenet0_flatten0_reshape0/sink_port_0" type="Result" version="opset1">
+			<rt_info>
+				<attribute name="fused_names" version="0" value="squeezenet0_flatten0_reshape0/sink_port_0" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>1000</dim>
+				</port>
+			</input>
+		</layer>
+	</layers>
+	<edges>
+		<edge from-layer="0" from-port="0" to-layer="2" to-port="0" />
+		<edge from-layer="1" from-port="0" to-layer="2" to-port="1" />
+		<edge from-layer="2" from-port="2" to-layer="4" to-port="0" />
+		<edge from-layer="3" from-port="0" to-layer="4" to-port="1" />
+		<edge from-layer="4" from-port="2" to-layer="5" to-port="0" />
+		<edge from-layer="5" from-port="1" to-layer="6" to-port="0" />
+		<edge from-layer="6" from-port="1" to-layer="8" to-port="0" />
+		<edge from-layer="7" from-port="0" to-layer="8" to-port="1" />
+		<edge from-layer="8" from-port="2" to-layer="10" to-port="0" />
+		<edge from-layer="9" from-port="0" to-layer="10" to-port="1" />
+		<edge from-layer="10" from-port="2" to-layer="11" to-port="0" />
+		<edge from-layer="11" from-port="1" to-layer="13" to-port="0" />
+		<edge from-layer="11" from-port="1" to-layer="18" to-port="0" />
+		<edge from-layer="12" from-port="0" to-layer="13" to-port="1" />
+		<edge from-layer="13" from-port="2" to-layer="15" to-port="0" />
+		<edge from-layer="14" from-port="0" to-layer="15" to-port="1" />
+		<edge from-layer="15" from-port="2" to-layer="16" to-port="0" />
+		<edge from-layer="16" from-port="1" to-layer="22" to-port="0" />
+		<edge from-layer="17" from-port="0" to-layer="18" to-port="1" />
+		<edge from-layer="18" from-port="2" to-layer="20" to-port="0" />
+		<edge from-layer="19" from-port="0" to-layer="20" to-port="1" />
+		<edge from-layer="20" from-port="2" to-layer="21" to-port="0" />
+		<edge from-layer="21" from-port="1" to-layer="22" to-port="1" />
+		<edge from-layer="22" from-port="2" to-layer="24" to-port="0" />
+		<edge from-layer="23" from-port="0" to-layer="24" to-port="1" />
+		<edge from-layer="24" from-port="2" to-layer="26" to-port="0" />
+		<edge from-layer="25" from-port="0" to-layer="26" to-port="1" />
+		<edge from-layer="26" from-port="2" to-layer="27" to-port="0" />
+		<edge from-layer="27" from-port="1" to-layer="29" to-port="0" />
+		<edge from-layer="27" from-port="1" to-layer="34" to-port="0" />
+		<edge from-layer="28" from-port="0" to-layer="29" to-port="1" />
+		<edge from-layer="29" from-port="2" to-layer="31" to-port="0" />
+		<edge from-layer="30" from-port="0" to-layer="31" to-port="1" />
+		<edge from-layer="31" from-port="2" to-layer="32" to-port="0" />
+		<edge from-layer="32" from-port="1" to-layer="38" to-port="0" />
+		<edge from-layer="33" from-port="0" to-layer="34" to-port="1" />
+		<edge from-layer="34" from-port="2" to-layer="36" to-port="0" />
+		<edge from-layer="35" from-port="0" to-layer="36" to-port="1" />
+		<edge from-layer="36" from-port="2" to-layer="37" to-port="0" />
+		<edge from-layer="37" from-port="1" to-layer="38" to-port="1" />
+		<edge from-layer="38" from-port="2" to-layer="39" to-port="0" />
+		<edge from-layer="39" from-port="1" to-layer="41" to-port="0" />
+		<edge from-layer="40" from-port="0" to-layer="41" to-port="1" />
+		<edge from-layer="41" from-port="2" to-layer="43" to-port="0" />
+		<edge from-layer="42" from-port="0" to-layer="43" to-port="1" />
+		<edge from-layer="43" from-port="2" to-layer="44" to-port="0" />
+		<edge from-layer="44" from-port="1" to-layer="46" to-port="0" />
+		<edge from-layer="44" from-port="1" to-layer="51" to-port="0" />
+		<edge from-layer="45" from-port="0" to-layer="46" to-port="1" />
+		<edge from-layer="46" from-port="2" to-layer="48" to-port="0" />
+		<edge from-layer="47" from-port="0" to-layer="48" to-port="1" />
+		<edge from-layer="48" from-port="2" to-layer="49" to-port="0" />
+		<edge from-layer="49" from-port="1" to-layer="55" to-port="0" />
+		<edge from-layer="50" from-port="0" to-layer="51" to-port="1" />
+		<edge from-layer="51" from-port="2" to-layer="53" to-port="0" />
+		<edge from-layer="52" from-port="0" to-layer="53" to-port="1" />
+		<edge from-layer="53" from-port="2" to-layer="54" to-port="0" />
+		<edge from-layer="54" from-port="1" to-layer="55" to-port="1" />
+		<edge from-layer="55" from-port="2" to-layer="57" to-port="0" />
+		<edge from-layer="56" from-port="0" to-layer="57" to-port="1" />
+		<edge from-layer="57" from-port="2" to-layer="59" to-port="0" />
+		<edge from-layer="58" from-port="0" to-layer="59" to-port="1" />
+		<edge from-layer="59" from-port="2" to-layer="60" to-port="0" />
+		<edge from-layer="60" from-port="1" to-layer="62" to-port="0" />
+		<edge from-layer="60" from-port="1" to-layer="67" to-port="0" />
+		<edge from-layer="61" from-port="0" to-layer="62" to-port="1" />
+		<edge from-layer="62" from-port="2" to-layer="64" to-port="0" />
+		<edge from-layer="63" from-port="0" to-layer="64" to-port="1" />
+		<edge from-layer="64" from-port="2" to-layer="65" to-port="0" />
+		<edge from-layer="65" from-port="1" to-layer="71" to-port="0" />
+		<edge from-layer="66" from-port="0" to-layer="67" to-port="1" />
+		<edge from-layer="67" from-port="2" to-layer="69" to-port="0" />
+		<edge from-layer="68" from-port="0" to-layer="69" to-port="1" />
+		<edge from-layer="69" from-port="2" to-layer="70" to-port="0" />
+		<edge from-layer="70" from-port="1" to-layer="71" to-port="1" />
+		<edge from-layer="71" from-port="2" to-layer="72" to-port="0" />
+		<edge from-layer="72" from-port="1" to-layer="74" to-port="0" />
+		<edge from-layer="73" from-port="0" to-layer="74" to-port="1" />
+		<edge from-layer="74" from-port="2" to-layer="76" to-port="0" />
+		<edge from-layer="75" from-port="0" to-layer="76" to-port="1" />
+		<edge from-layer="76" from-port="2" to-layer="77" to-port="0" />
+		<edge from-layer="77" from-port="1" to-layer="79" to-port="0" />
+		<edge from-layer="77" from-port="1" to-layer="84" to-port="0" />
+		<edge from-layer="78" from-port="0" to-layer="79" to-port="1" />
+		<edge from-layer="79" from-port="2" to-layer="81" to-port="0" />
+		<edge from-layer="80" from-port="0" to-layer="81" to-port="1" />
+		<edge from-layer="81" from-port="2" to-layer="82" to-port="0" />
+		<edge from-layer="82" from-port="1" to-layer="88" to-port="0" />
+		<edge from-layer="83" from-port="0" to-layer="84" to-port="1" />
+		<edge from-layer="84" from-port="2" to-layer="86" to-port="0" />
+		<edge from-layer="85" from-port="0" to-layer="86" to-port="1" />
+		<edge from-layer="86" from-port="2" to-layer="87" to-port="0" />
+		<edge from-layer="87" from-port="1" to-layer="88" to-port="1" />
+		<edge from-layer="88" from-port="2" to-layer="90" to-port="0" />
+		<edge from-layer="89" from-port="0" to-layer="90" to-port="1" />
+		<edge from-layer="90" from-port="2" to-layer="92" to-port="0" />
+		<edge from-layer="91" from-port="0" to-layer="92" to-port="1" />
+		<edge from-layer="92" from-port="2" to-layer="93" to-port="0" />
+		<edge from-layer="93" from-port="1" to-layer="95" to-port="0" />
+		<edge from-layer="93" from-port="1" to-layer="100" to-port="0" />
+		<edge from-layer="94" from-port="0" to-layer="95" to-port="1" />
+		<edge from-layer="95" from-port="2" to-layer="97" to-port="0" />
+		<edge from-layer="96" from-port="0" to-layer="97" to-port="1" />
+		<edge from-layer="97" from-port="2" to-layer="98" to-port="0" />
+		<edge from-layer="98" from-port="1" to-layer="104" to-port="0" />
+		<edge from-layer="99" from-port="0" to-layer="100" to-port="1" />
+		<edge from-layer="100" from-port="2" to-layer="102" to-port="0" />
+		<edge from-layer="101" from-port="0" to-layer="102" to-port="1" />
+		<edge from-layer="102" from-port="2" to-layer="103" to-port="0" />
+		<edge from-layer="103" from-port="1" to-layer="104" to-port="1" />
+		<edge from-layer="104" from-port="2" to-layer="106" to-port="0" />
+		<edge from-layer="105" from-port="0" to-layer="106" to-port="1" />
+		<edge from-layer="106" from-port="2" to-layer="108" to-port="0" />
+		<edge from-layer="107" from-port="0" to-layer="108" to-port="1" />
+		<edge from-layer="108" from-port="2" to-layer="109" to-port="0" />
+		<edge from-layer="109" from-port="1" to-layer="111" to-port="0" />
+		<edge from-layer="109" from-port="1" to-layer="116" to-port="0" />
+		<edge from-layer="110" from-port="0" to-layer="111" to-port="1" />
+		<edge from-layer="111" from-port="2" to-layer="113" to-port="0" />
+		<edge from-layer="112" from-port="0" to-layer="113" to-port="1" />
+		<edge from-layer="113" from-port="2" to-layer="114" to-port="0" />
+		<edge from-layer="114" from-port="1" to-layer="120" to-port="0" />
+		<edge from-layer="115" from-port="0" to-layer="116" to-port="1" />
+		<edge from-layer="116" from-port="2" to-layer="118" to-port="0" />
+		<edge from-layer="117" from-port="0" to-layer="118" to-port="1" />
+		<edge from-layer="118" from-port="2" to-layer="119" to-port="0" />
+		<edge from-layer="119" from-port="1" to-layer="120" to-port="1" />
+		<edge from-layer="120" from-port="2" to-layer="122" to-port="0" />
+		<edge from-layer="121" from-port="0" to-layer="122" to-port="1" />
+		<edge from-layer="122" from-port="2" to-layer="124" to-port="0" />
+		<edge from-layer="123" from-port="0" to-layer="124" to-port="1" />
+		<edge from-layer="124" from-port="2" to-layer="125" to-port="0" />
+		<edge from-layer="125" from-port="1" to-layer="127" to-port="0" />
+		<edge from-layer="125" from-port="1" to-layer="132" to-port="0" />
+		<edge from-layer="126" from-port="0" to-layer="127" to-port="1" />
+		<edge from-layer="127" from-port="2" to-layer="129" to-port="0" />
+		<edge from-layer="128" from-port="0" to-layer="129" to-port="1" />
+		<edge from-layer="129" from-port="2" to-layer="130" to-port="0" />
+		<edge from-layer="130" from-port="1" to-layer="136" to-port="0" />
+		<edge from-layer="131" from-port="0" to-layer="132" to-port="1" />
+		<edge from-layer="132" from-port="2" to-layer="134" to-port="0" />
+		<edge from-layer="133" from-port="0" to-layer="134" to-port="1" />
+		<edge from-layer="134" from-port="2" to-layer="135" to-port="0" />
+		<edge from-layer="135" from-port="1" to-layer="136" to-port="1" />
+		<edge from-layer="136" from-port="2" to-layer="138" to-port="0" />
+		<edge from-layer="137" from-port="0" to-layer="138" to-port="1" />
+		<edge from-layer="138" from-port="2" to-layer="140" to-port="0" />
+		<edge from-layer="139" from-port="0" to-layer="140" to-port="1" />
+		<edge from-layer="140" from-port="2" to-layer="141" to-port="0" />
+		<edge from-layer="141" from-port="1" to-layer="142" to-port="0" />
+		<edge from-layer="142" from-port="1" to-layer="144" to-port="0" />
+		<edge from-layer="143" from-port="0" to-layer="144" to-port="1" />
+		<edge from-layer="144" from-port="2" to-layer="145" to-port="0" />
+	</edges>
+</net>

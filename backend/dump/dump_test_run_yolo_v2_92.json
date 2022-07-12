@@ -1,0 +1,92 @@
+{
+    "run_name": "test_run",
+    "model_name": "yolo_v2",
+    "pass_name": "ConvolutionMultiplyFusion",
+    "index": "4021",
+    "type": "eliminated",
+    "edges": {
+        "44:Parameter": ["5746:Convolution"],
+        "2449:Constant": ["4153:Multiply"],
+        "4153:Multiply": ["4253:Add"],
+        "4252:Constant": ["4253:Add"],
+        "4253:Add": ["51:PRelu"],
+        "5745:Constant": ["5746:Convolution"],
+        "5746:Convolution": ["4153:Multiply"]
+    },
+    "nodes": {
+        "44:Parameter": {
+            "attrs": {
+                "type": "Parameter",
+                "name": "image",
+                "element_type": "f32"
+            },
+            "dot_attrs": {}
+        },
+        "51:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "leakyrelu_1_output"
+            },
+            "dot_attrs": {}
+        },
+        "2449:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_2449",
+                "element_type": "f32",
+                "shape": "1, 16, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "4153:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_4153",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "4252:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_4252",
+                "element_type": "f32",
+                "shape": "1, 16, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "4253:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "batchnormalization_1_output",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "5745:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_5745",
+                "element_type": "f32",
+                "shape": "16, 3, 3, 3"
+            },
+            "dot_attrs": {}
+        },
+        "5746:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "convolution2d_1_output",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        }
+    }
+}

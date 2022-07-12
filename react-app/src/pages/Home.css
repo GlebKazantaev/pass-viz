@@ -1,0 +1,65 @@
+.Home {
+    background-color:rgb(129, 129, 129);
+    /* background-color:rgb(203, 201, 199); */
+    display: grid;
+    grid-template-rows: 33% 10% 10% 10% auto;
+}
+
+.HomeRow2 {
+    display: grid;
+    grid-template-columns: 20% auto 20%;
+}
+
+.HomeRow3 {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+.HomeRow4 {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+.column-item {
+    box-shadow: hwb(0 0% 100% / 0.396) 0px 1px 4px;
+    background-color:rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.Button1 {
+    margin-right: 3px;
+}
+
+.Button3 {
+    background-color: rgb(190, 190, 190);
+    margin-left: 3px;
+    border-style: dashed;
+}
+
+.Button4 {
+    background-color: rgb(190, 190, 190);
+    margin-top: 3px;
+    margin-right: 3px;
+    border-style: dashed;
+}
+
+.Button5 {
+    background-color: rgb(190, 190, 190);
+    margin-top: 3px;
+    border-style: dashed;
+}
+
+.Button6 {
+    background-color: rgb(190, 190, 190);
+    margin-top: 3px;
+    margin-left: 3px;
+    border-style: dashed;
+}
+
+.ButtonData {
+    margin-bottom: 3px;
+}

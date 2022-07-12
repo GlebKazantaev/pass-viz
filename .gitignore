@@ -1,3 +1,4 @@
 react-app/node_modules
 .idea
 .DS_Store
+backend/__pycache__/

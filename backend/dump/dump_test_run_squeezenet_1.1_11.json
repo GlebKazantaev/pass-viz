@@ -1,0 +1,66 @@
+{
+    "run_name": "test_run",
+    "model_name": "squeezenet_1.1",
+    "pass_name": "ngraph::pass::ConvertPrecision",
+    "index": "10146",
+    "type": "combined",
+    "edges": {
+        "52:Constant": ["1343:Reshape"],
+        "1342:AvgPool": ["1343:Reshape"],
+        "1343:Reshape": ["1349:Result"],
+        "6118:Constant": ["1343:Reshape"]
+    },
+    "nodes": {
+        "52:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "reshape_attr_tensor118",
+                "element_type": "i64",
+                "shape": "2"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "1342:AvgPool": {
+            "attrs": {
+                "type": "AvgPool",
+                "name": "squeezenet0_pool3_fwd",
+                "auto_pad": "explicit",
+                "exclude-pad": "1",
+                "kernel": "13, 13",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "rounding_type": "floor",
+                "strides": "13, 13"
+            },
+            "dot_attrs": {}
+        },
+        "1343:Reshape": {
+            "attrs": {
+                "type": "Reshape",
+                "name": "squeezenet0_flatten0_reshape0",
+                "special_zero": "1"
+            },
+            "dot_attrs": {}
+        },
+        "1349:Result": {
+            "attrs": {
+                "type": "Result",
+                "name": "squeezenet0_flatten0_reshape0/sink_port_0"
+            },
+            "dot_attrs": {}
+        },
+        "6118:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "reshape_attr_tensor118",
+                "element_type": "i32",
+                "shape": "2"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

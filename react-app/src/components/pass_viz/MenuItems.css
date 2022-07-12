@@ -1,0 +1,22 @@
+.MenuItems {
+    margin: 5px;
+    /* margin-top: 7px; */
+}
+
+.pass-item {
+    text-align: left;
+    display: grid;
+    grid-template-columns: auto 50px;
+    user-select: none;
+    /* width: 100%;
+    height: 100%; */
+}
+
+.PassInfo {
+    font-size: x-small;
+}
+
+.GraphIndexInfo {
+    font-size: small;
+    margin-top: 2px;
+}

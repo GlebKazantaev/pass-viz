@@ -1,0 +1,52 @@
+{
+    "run_name": "test_run",
+    "model_name": "yolo_v2",
+    "pass_name": "ov::pass::ConstantFolding",
+    "index": "2",
+    "type": "created",
+    "edges": {
+        "93:Convolution": ["140:Add"],
+        "140:Add": ["141:Result"],
+        "434:Constant": ["140:Add"]
+    },
+    "nodes": {
+        "93:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_93",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "140:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "grid",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "141:Result": {
+            "attrs": {
+                "type": "Result",
+                "name": "grid/sink_port_0"
+            },
+            "dot_attrs": {}
+        },
+        "434:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_113",
+                "element_type": "f32",
+                "shape": "1, 125, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

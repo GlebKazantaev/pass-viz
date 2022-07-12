@@ -1,0 +1,91 @@
+{
+    "run_name": "test_run",
+    "model_name": "yolo_v2",
+    "pass_name": "ConvertToLeakyRelu",
+    "index": "5570",
+    "type": "eliminated",
+    "edges": {
+        "80:Constant": ["81:PRelu"],
+        "81:PRelu": ["7390:MaxPool"],
+        "5167:Constant": ["5168:Add"],
+        "5168:Add": ["81:PRelu"],
+        "6361:Convolution": ["5168:Add"],
+        "7390:MaxPool": ["6488:Convolution"]
+    },
+    "nodes": {
+        "80:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_80",
+                "element_type": "f32",
+                "shape": "1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "81:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "leakyrelu_6_output"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "5167:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_5167",
+                "element_type": "f32",
+                "shape": "1, 512, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "5168:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "batchnormalization_6_output",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "6361:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Multiply_5078",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "6488:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Multiply_5251",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "7390:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "maxpooling2d_6_output",
+                "auto_pad": "same_upper",
+                "kernel": "2, 2",
+                "pads_begin": "0, 0",
+                "pads_end": "1, 1",
+                "rounding_type": "floor",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        }
+    }
+}

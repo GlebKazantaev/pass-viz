@@ -1,0 +1,32 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  /* grid-template-rows: 90px 5px auto 50px; */
+  grid-template-rows: 10vh 0.5vh 84.5vh 5vh;
+  font-family: Gill Sans Extrabold, monospace;
+}
+
+.Header {
+  /* background-color: #fcc742; */
+  font-family: Gill Sans Extrabold, fantasy;
+  font-size: larger;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('/Users/gleb_dmitrievich/Work/repos/pass-viz/react-app/header.png');
+  background-size: cover;
+  background-size: 380px 100%;
+  background-repeat:no-repeat;
+  background-color: #000000;
+}
+
+.Footer {
+  color: aliceblue;
+  background-color: black;
+  font-family: Gill Sans Extrabold, fantasy;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

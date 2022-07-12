@@ -1,0 +1,165 @@
+{
+    "run_name": "test_run",
+    "model_name": "yolo_v2",
+    "pass_name": "ov::pass::ConstantFolding",
+    "index": "2",
+    "type": "combined",
+    "edges": {
+        "43:Constant": ["111:ShapeOf", "113:Reshape"],
+        "93:Convolution": ["140:Add", "94:ShapeOf"],
+        "94:ShapeOf": ["95:ShapeOf"],
+        "95:ShapeOf": ["98:Subtract"],
+        "96:Constant": ["112:Concat", "99:Broadcast"],
+        "97:Constant": ["98:Subtract"],
+        "98:Subtract": ["99:Broadcast"],
+        "99:Broadcast": ["112:Concat"],
+        "111:ShapeOf": ["112:Concat"],
+        "112:Concat": ["113:Reshape"],
+        "113:Reshape": ["140:Add"],
+        "140:Add": ["141:Result"],
+        "434:Constant": ["140:Add"]
+    },
+    "nodes": {
+        "43:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "convolution8_B",
+                "element_type": "f32",
+                "shape": "125"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "93:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_93",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "94:ShapeOf": {
+            "attrs": {
+                "type": "ShapeOf",
+                "name": "ShapeOf_94",
+                "output_type": "i64"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "95:ShapeOf": {
+            "attrs": {
+                "type": "ShapeOf",
+                "name": "ShapeOf_95",
+                "output_type": "i64"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "96:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_96",
+                "element_type": "i64",
+                "shape": "1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "97:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_97",
+                "element_type": "i64",
+                "shape": "1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "98:Subtract": {
+            "attrs": {
+                "type": "Subtract",
+                "name": "Subtract_98",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "99:Broadcast": {
+            "attrs": {
+                "type": "Broadcast",
+                "name": "Broadcast_99",
+                "mode": "numpy"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "111:ShapeOf": {
+            "attrs": {
+                "type": "ShapeOf",
+                "name": "ShapeOf_111",
+                "output_type": "i64"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "112:Concat": {
+            "attrs": {
+                "type": "Concat",
+                "name": "Concat_112",
+                "axis": "0"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "113:Reshape": {
+            "attrs": {
+                "type": "Reshape",
+                "name": "Reshape_113",
+                "special_zero": "0"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "140:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "grid",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "141:Result": {
+            "attrs": {
+                "type": "Result",
+                "name": "grid/sink_port_0"
+            },
+            "dot_attrs": {}
+        },
+        "434:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_113",
+                "element_type": "f32",
+                "shape": "1, 125, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

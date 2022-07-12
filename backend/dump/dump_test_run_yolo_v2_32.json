@@ -1,0 +1,131 @@
+{
+    "run_name": "test_run",
+    "model_name": "yolo_v2",
+    "pass_name": "BatchNormDecomposition",
+    "index": "3940",
+    "type": "eliminated",
+    "edges": {
+        "37:Constant": ["89:Convolution"],
+        "38:Constant": ["90:BatchNormInference"],
+        "39:Constant": ["90:BatchNormInference"],
+        "40:Constant": ["90:BatchNormInference"],
+        "41:Constant": ["90:BatchNormInference"],
+        "87:PRelu": ["89:Convolution"],
+        "89:Convolution": ["90:BatchNormInference"],
+        "90:BatchNormInference": ["92:PRelu"],
+        "91:Constant": ["92:PRelu"],
+        "92:PRelu": ["93:Convolution"]
+    },
+    "nodes": {
+        "37:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "convolution7_W",
+                "element_type": "f32",
+                "shape": "1024, 1024, 3, 3"
+            },
+            "dot_attrs": {}
+        },
+        "38:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "BatchNormalization_scale7",
+                "element_type": "f32",
+                "shape": "1024"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "39:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "BatchNormalization_B7",
+                "element_type": "f32",
+                "shape": "1024"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "40:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "BatchNormalization_mean7",
+                "element_type": "f32",
+                "shape": "1024"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "41:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "BatchNormalization_variance7",
+                "element_type": "f32",
+                "shape": "1024"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "87:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "leakyrelu_7_output"
+            },
+            "dot_attrs": {}
+        },
+        "89:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "convolution2d_8_output",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "90:BatchNormInference": {
+            "attrs": {
+                "type": "BatchNormInference",
+                "name": "batchnormalization_8_output",
+                "epsilon": "0.000010"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "91:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_91",
+                "element_type": "f32",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "92:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "leakyrelu_8_output"
+            },
+            "dot_attrs": {}
+        },
+        "93:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_93",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        }
+    }
+}
