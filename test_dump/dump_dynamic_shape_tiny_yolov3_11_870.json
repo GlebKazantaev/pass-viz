@@ -1,0 +1,195 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "ConvertDivide",
+    "index": "142251",
+    "type": "created",
+    "edges": {
+        "40883:Parameter": ["44125:Reshape"],
+        "41183:Multiply": ["41184:Convert"],
+        "41184:Convert": ["41192:Subtract", "41195:Divide", "41197:Divide", "45420:Multiply"],
+        "41188:Constant": ["41189:ReduceMin"],
+        "41189:ReduceMin": ["41190:Multiply"],
+        "41191:Round": ["41192:Subtract", "41197:Divide"],
+        "41477:Convert": ["41478:Divide"],
+        "44124:Constant": ["44125:Reshape"],
+        "44125:Reshape": ["41190:Multiply", "41252:Concat", "41478:Divide", "41481:Multiply", "41543:Concat", "45419:Power"],
+        "45418:Constant": ["45419:Power"],
+        "45419:Power": ["45420:Multiply"],
+        "45420:Multiply": ["41189:ReduceMin"]
+    },
+    "nodes": {
+        "40883:Parameter": {
+            "attrs": {
+                "type": "Parameter",
+                "name": "image_shape",
+                "element_type": "f32"
+            },
+            "dot_attrs": {}
+        },
+        "41183:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "TFNodes/yolo_evaluation_layer_1/mul",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "41184:Convert": {
+            "attrs": {
+                "type": "Convert",
+                "name": "TFNodes/yolo_evaluation_layer_1/Cast_3",
+                "destination_type": "f32"
+            },
+            "dot_attrs": {}
+        },
+        "41188:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_34899",
+                "element_type": "i64",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "41189:ReduceMin": {
+            "attrs": {
+                "type": "ReduceMin",
+                "name": "TFNodes/yolo_evaluation_layer_1/Min",
+                "keep_dims": "0"
+            },
+            "dot_attrs": {}
+        },
+        "41190:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "TFNodes/yolo_evaluation_layer_1/mul_2",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "41191:Round": {
+            "attrs": {
+                "type": "Round",
+                "name": "TFNodes/yolo_evaluation_layer_1/Round",
+                "mode": "half_to_even"
+            },
+            "dot_attrs": {}
+        },
+        "41192:Subtract": {
+            "attrs": {
+                "type": "Subtract",
+                "name": "TFNodes/yolo_evaluation_layer_1/sub",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "41195:Divide": {
+            "attrs": {
+                "type": "Divide",
+                "name": "TFNodes/yolo_evaluation_layer_1/truediv_4",
+                "auto_broadcast": "numpy",
+                "m_pythondiv": "1"
+            },
+            "dot_attrs": {}
+        },
+        "41197:Divide": {
+            "attrs": {
+                "type": "Divide",
+                "name": "TFNodes/yolo_evaluation_layer_1/truediv_5",
+                "auto_broadcast": "numpy",
+                "m_pythondiv": "1"
+            },
+            "dot_attrs": {}
+        },
+        "41252:Concat": {
+            "attrs": {
+                "type": "Concat",
+                "name": "TFNodes/yolo_evaluation_layer_1/concat_2",
+                "axis": "0"
+            },
+            "dot_attrs": {}
+        },
+        "41477:Convert": {
+            "attrs": {
+                "type": "Convert",
+                "name": "TFNodes/yolo_evaluation_layer_1/Cast_7",
+                "destination_type": "f32"
+            },
+            "dot_attrs": {}
+        },
+        "41478:Divide": {
+            "attrs": {
+                "type": "Divide",
+                "name": "TFNodes/yolo_evaluation_layer_1/truediv_10",
+                "auto_broadcast": "numpy",
+                "m_pythondiv": "1"
+            },
+            "dot_attrs": {}
+        },
+        "41481:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "TFNodes/yolo_evaluation_layer_1/mul_8",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "41543:Concat": {
+            "attrs": {
+                "type": "Concat",
+                "name": "TFNodes/yolo_evaluation_layer_1/concat_5",
+                "axis": "0"
+            },
+            "dot_attrs": {}
+        },
+        "44124:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_44124",
+                "element_type": "i64",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "44125:Reshape": {
+            "attrs": {
+                "type": "Reshape",
+                "name": "TFNodes/yolo_evaluation_layer_1/Squeeze",
+                "special_zero": "0"
+            },
+            "dot_attrs": {}
+        },
+        "45418:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_45418",
+                "element_type": "f32",
+                "shape": {}
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "45419:Power": {
+            "attrs": {
+                "type": "Power",
+                "name": "Power_45419",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "45420:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "TFNodes/yolo_evaluation_layer_1/truediv_2",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

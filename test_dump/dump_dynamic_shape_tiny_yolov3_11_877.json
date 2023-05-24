@@ -1,0 +1,102 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "ConvertDivide",
+    "index": "142364",
+    "type": "eliminated",
+    "edges": {
+        "41168:Slice": ["41196:Subtract"],
+        "41183:Multiply": ["41184:Convert"],
+        "41184:Convert": ["41195:Divide", "45420:Multiply", "45426:Add"],
+        "41195:Divide": ["41196:Subtract"],
+        "41196:Subtract": ["41198:Multiply"],
+        "44823:Multiply": ["41195:Divide"],
+        "45392:Constant": ["44823:Multiply"],
+        "45426:Add": ["44823:Multiply"]
+    },
+    "nodes": {
+        "41168:Slice": {
+            "attrs": {
+                "type": "Slice",
+                "name": "TFNodes/yolo_evaluation_layer_1/strided_slice_14"
+            },
+            "dot_attrs": {}
+        },
+        "41183:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "TFNodes/yolo_evaluation_layer_1/mul",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "41184:Convert": {
+            "attrs": {
+                "type": "Convert",
+                "name": "TFNodes/yolo_evaluation_layer_1/Cast_3",
+                "destination_type": "f32"
+            },
+            "dot_attrs": {}
+        },
+        "41195:Divide": {
+            "attrs": {
+                "type": "Divide",
+                "name": "TFNodes/yolo_evaluation_layer_1/truediv_4",
+                "auto_broadcast": "numpy",
+                "m_pythondiv": "1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "41196:Subtract": {
+            "attrs": {
+                "type": "Subtract",
+                "name": "TFNodes/yolo_evaluation_layer_1/sub_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "41198:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "TFNodes/yolo_evaluation_layer_1/mul_3",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "44823:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_44823",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "45392:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_45392",
+                "element_type": "f32",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "45420:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_45420",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "45426:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_45426",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        }
+    }
+}

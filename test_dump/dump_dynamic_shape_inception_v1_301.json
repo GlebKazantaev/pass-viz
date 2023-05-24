@@ -1,0 +1,2558 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "inception_v1",
+    "pass_name": "ov::pass::ConstantFolding",
+    "index": "48433",
+    "type": "created",
+    "edges": {
+        "16225:Convolution": ["16240:Add"],
+        "16240:Add": ["16241:Relu"],
+        "16246:Convolution": ["16261:Add"],
+        "16261:Add": ["16262:Relu"],
+        "16264:Convolution": ["16279:Add"],
+        "16279:Add": ["16280:Relu"],
+        "16283:MaxPool": ["16303:Convolution", "16339:Convolution"],
+        "16285:Convolution": ["16300:Add"],
+        "16300:Add": ["16301:Relu"],
+        "16303:Convolution": ["16318:Add"],
+        "16318:Add": ["16319:Relu"],
+        "16321:Convolution": ["16336:Add"],
+        "16336:Add": ["16337:Relu"],
+        "16337:Relu": ["16393:Concat"],
+        "16339:Convolution": ["16354:Add"],
+        "16354:Add": ["16355:Relu"],
+        "16357:Convolution": ["16372:Add"],
+        "16372:Add": ["16373:Relu"],
+        "16373:Relu": ["16393:Concat"],
+        "16376:Convolution": ["16391:Add"],
+        "16391:Add": ["16392:Relu"],
+        "16392:Relu": ["16393:Concat"],
+        "16393:Concat": ["16395:Convolution", "16413:Convolution", "16449:Convolution"],
+        "16395:Convolution": ["16410:Add"],
+        "16410:Add": ["16411:Relu"],
+        "16413:Convolution": ["16428:Add"],
+        "16428:Add": ["16429:Relu"],
+        "16431:Convolution": ["16446:Add"],
+        "16446:Add": ["16447:Relu"],
+        "16449:Convolution": ["16464:Add"],
+        "16464:Add": ["16465:Relu"],
+        "16467:Convolution": ["16482:Add"],
+        "16482:Add": ["16483:Relu"],
+        "16486:Convolution": ["16501:Add"],
+        "16501:Add": ["16502:Relu"],
+        "16504:MaxPool": ["16524:Convolution", "16560:Convolution"],
+        "16506:Convolution": ["16521:Add"],
+        "16521:Add": ["16522:Relu"],
+        "16524:Convolution": ["16539:Add"],
+        "16539:Add": ["16540:Relu"],
+        "16542:Convolution": ["16557:Add"],
+        "16557:Add": ["16558:Relu"],
+        "16558:Relu": ["16614:Concat"],
+        "16560:Convolution": ["16575:Add"],
+        "16575:Add": ["16576:Relu"],
+        "16578:Convolution": ["16593:Add"],
+        "16593:Add": ["16594:Relu"],
+        "16594:Relu": ["16614:Concat"],
+        "16597:Convolution": ["16612:Add"],
+        "16612:Add": ["16613:Relu"],
+        "16613:Relu": ["16614:Concat"],
+        "16614:Concat": ["16616:Convolution", "16634:Convolution", "16670:Convolution"],
+        "16616:Convolution": ["16631:Add"],
+        "16631:Add": ["16632:Relu"],
+        "16634:Convolution": ["16649:Add"],
+        "16649:Add": ["16650:Relu"],
+        "16652:Convolution": ["16667:Add"],
+        "16667:Add": ["16668:Relu"],
+        "16668:Relu": ["16724:Concat"],
+        "16670:Convolution": ["16685:Add"],
+        "16685:Add": ["16686:Relu"],
+        "16688:Convolution": ["16703:Add"],
+        "16703:Add": ["16704:Relu"],
+        "16704:Relu": ["16724:Concat"],
+        "16707:Convolution": ["16722:Add"],
+        "16722:Add": ["16723:Relu"],
+        "16723:Relu": ["16724:Concat"],
+        "16724:Concat": ["16726:Convolution", "16744:Convolution", "16780:Convolution"],
+        "16726:Convolution": ["16741:Add"],
+        "16741:Add": ["16742:Relu"],
+        "16744:Convolution": ["16759:Add"],
+        "16759:Add": ["16760:Relu"],
+        "16762:Convolution": ["16777:Add"],
+        "16777:Add": ["16778:Relu"],
+        "16778:Relu": ["16834:Concat"],
+        "16780:Convolution": ["16795:Add"],
+        "16795:Add": ["16796:Relu"],
+        "16798:Convolution": ["16813:Add"],
+        "16813:Add": ["16814:Relu"],
+        "16814:Relu": ["16834:Concat"],
+        "16817:Convolution": ["16832:Add"],
+        "16832:Add": ["16833:Relu"],
+        "16833:Relu": ["16834:Concat"],
+        "16834:Concat": ["16836:Convolution", "16854:Convolution", "16890:Convolution"],
+        "16836:Convolution": ["16851:Add"],
+        "16851:Add": ["16852:Relu"],
+        "16854:Convolution": ["16869:Add"],
+        "16869:Add": ["16870:Relu"],
+        "16872:Convolution": ["16887:Add"],
+        "16887:Add": ["16888:Relu"],
+        "16888:Relu": ["16944:Concat"],
+        "16890:Convolution": ["16905:Add"],
+        "16905:Add": ["16906:Relu"],
+        "16908:Convolution": ["16923:Add"],
+        "16923:Add": ["16924:Relu"],
+        "16924:Relu": ["16944:Concat"],
+        "16927:Convolution": ["16942:Add"],
+        "16942:Add": ["16943:Relu"],
+        "16943:Relu": ["16944:Concat"],
+        "16944:Concat": ["16946:Convolution", "16964:Convolution", "17000:Convolution"],
+        "16946:Convolution": ["16961:Add"],
+        "16961:Add": ["16962:Relu"],
+        "16964:Convolution": ["16979:Add"],
+        "16979:Add": ["16980:Relu"],
+        "16982:Convolution": ["16997:Add"],
+        "16997:Add": ["16998:Relu"],
+        "17000:Convolution": ["17015:Add"],
+        "17015:Add": ["17016:Relu"],
+        "17018:Convolution": ["17033:Add"],
+        "17033:Add": ["17034:Relu"],
+        "17037:Convolution": ["17052:Add"],
+        "17052:Add": ["17053:Relu"],
+        "17055:MaxPool": ["17075:Convolution", "17111:Convolution"],
+        "17057:Convolution": ["17072:Add"],
+        "17072:Add": ["17073:Relu"],
+        "17075:Convolution": ["17090:Add"],
+        "17090:Add": ["17091:Relu"],
+        "17093:Convolution": ["17108:Add"],
+        "17108:Add": ["17109:Relu"],
+        "17109:Relu": ["17165:Concat"],
+        "17111:Convolution": ["17126:Add"],
+        "17126:Add": ["17127:Relu"],
+        "17129:Convolution": ["17144:Add"],
+        "17144:Add": ["17145:Relu"],
+        "17145:Relu": ["17165:Concat"],
+        "17148:Convolution": ["17163:Add"],
+        "17163:Add": ["17164:Relu"],
+        "17164:Relu": ["17165:Concat"],
+        "17165:Concat": ["17167:Convolution", "17185:Convolution", "17221:Convolution"],
+        "17167:Convolution": ["17182:Add"],
+        "17182:Add": ["17183:Relu"],
+        "17185:Convolution": ["17200:Add"],
+        "17200:Add": ["17201:Relu"],
+        "17203:Convolution": ["17218:Add"],
+        "17218:Add": ["17219:Relu"],
+        "17221:Convolution": ["17236:Add"],
+        "17236:Add": ["17237:Relu"],
+        "17239:Convolution": ["17254:Add"],
+        "17254:Add": ["17255:Relu"],
+        "17258:Convolution": ["17273:Add"],
+        "17273:Add": ["17274:Relu"],
+        "17278:Reshape": ["17286:MatMul"],
+        "17286:MatMul": ["17288:Multiply"],
+        "17297:Softmax": ["17299:Reshape"],
+        "17299:Reshape": ["17302:Result"],
+        "20047:Constant": ["17299:Reshape"],
+        "20110:Constant": ["16240:Add"],
+        "20113:Constant": ["16261:Add"],
+        "20116:Constant": ["16279:Add"],
+        "20119:Constant": ["16300:Add"],
+        "20122:Constant": ["16318:Add"],
+        "20125:Constant": ["16336:Add"],
+        "20128:Constant": ["16354:Add"],
+        "20131:Constant": ["16372:Add"],
+        "20134:Constant": ["16391:Add"],
+        "20137:Constant": ["16410:Add"],
+        "20140:Constant": ["16428:Add"],
+        "20143:Constant": ["16446:Add"],
+        "20146:Constant": ["16464:Add"],
+        "20149:Constant": ["16482:Add"],
+        "20152:Constant": ["16501:Add"],
+        "20155:Constant": ["16521:Add"],
+        "20158:Constant": ["16539:Add"],
+        "20161:Constant": ["16557:Add"],
+        "20164:Constant": ["16575:Add"],
+        "20167:Constant": ["16593:Add"],
+        "20170:Constant": ["16612:Add"],
+        "20173:Constant": ["16631:Add"],
+        "20176:Constant": ["16649:Add"],
+        "20179:Constant": ["16667:Add"],
+        "20182:Constant": ["16685:Add"],
+        "20185:Constant": ["16703:Add"],
+        "20188:Constant": ["16722:Add"],
+        "20191:Constant": ["16741:Add"],
+        "20194:Constant": ["16759:Add"],
+        "20197:Constant": ["16777:Add"],
+        "20200:Constant": ["16795:Add"],
+        "20203:Constant": ["16813:Add"],
+        "20206:Constant": ["16832:Add"],
+        "20209:Constant": ["16851:Add"],
+        "20212:Constant": ["16869:Add"],
+        "20215:Constant": ["16887:Add"],
+        "20218:Constant": ["16905:Add"],
+        "20221:Constant": ["16923:Add"],
+        "20224:Constant": ["16942:Add"],
+        "20227:Constant": ["16961:Add"],
+        "20230:Constant": ["16979:Add"],
+        "20233:Constant": ["16997:Add"],
+        "20236:Constant": ["17015:Add"],
+        "20239:Constant": ["17033:Add"],
+        "20242:Constant": ["17052:Add"],
+        "20245:Constant": ["17072:Add"],
+        "20248:Constant": ["17090:Add"],
+        "20251:Constant": ["17108:Add"],
+        "20254:Constant": ["17126:Add"],
+        "20257:Constant": ["17144:Add"],
+        "20260:Constant": ["17163:Add"],
+        "20263:Constant": ["17182:Add"],
+        "20266:Constant": ["17200:Add"],
+        "20269:Constant": ["17218:Add"],
+        "20272:Constant": ["17236:Add"],
+        "20275:Constant": ["17254:Add"],
+        "20278:Constant": ["17273:Add"],
+        "20283:Constant": ["17286:MatMul"]
+    },
+    "nodes": {
+        "16225:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "conv1/7x7_s2_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "3, 3",
+                "pads_end": "3, 3",
+                "strides": "2, 2"
+            },
+            "dot_attrs": {}
+        },
+        "16240:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "conv1/7x7_s2_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16241:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "conv1/7x7_s2_2"
+            },
+            "dot_attrs": {}
+        },
+        "16246:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "conv2/3x3_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16261:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "conv2/3x3_reduce_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16262:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "conv2/3x3_reduce_2"
+            },
+            "dot_attrs": {}
+        },
+        "16264:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "conv2/3x3_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16279:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "conv2/3x3_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16280:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "conv2/3x3_2"
+            },
+            "dot_attrs": {}
+        },
+        "16283:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "pool2/3x3_s2_1",
+                "auto_pad": "explicit",
+                "axis": "0",
+                "dilations": "1, 1",
+                "index_element_type": "i64",
+                "kernel": "3, 3",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "rounding_type": "floor",
+                "strides": "2, 2"
+            },
+            "dot_attrs": {}
+        },
+        "16285:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_3a/1x1_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16300:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_3a/1x1_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16301:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_3a/1x1_2"
+            },
+            "dot_attrs": {}
+        },
+        "16303:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_3a/3x3_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16318:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_3a/3x3_reduce_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16319:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_3a/3x3_reduce_2"
+            },
+            "dot_attrs": {}
+        },
+        "16321:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_3a/3x3_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16336:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_3a/3x3_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16337:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_3a/3x3_2"
+            },
+            "dot_attrs": {}
+        },
+        "16339:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_3a/5x5_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16354:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_3a/5x5_reduce_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16355:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_3a/5x5_reduce_2"
+            },
+            "dot_attrs": {}
+        },
+        "16357:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_3a/5x5_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "2, 2",
+                "pads_end": "2, 2",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16372:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_3a/5x5_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16373:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_3a/5x5_2"
+            },
+            "dot_attrs": {}
+        },
+        "16376:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_3a/pool_proj_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16391:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_3a/pool_proj_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16392:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_3a/pool_proj_2"
+            },
+            "dot_attrs": {}
+        },
+        "16393:Concat": {
+            "attrs": {
+                "type": "Concat",
+                "name": "inception_3a/output_1",
+                "axis": "1"
+            },
+            "dot_attrs": {}
+        },
+        "16395:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_3b/1x1_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16410:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_3b/1x1_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16411:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_3b/1x1_2"
+            },
+            "dot_attrs": {}
+        },
+        "16413:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_3b/3x3_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16428:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_3b/3x3_reduce_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16429:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_3b/3x3_reduce_2"
+            },
+            "dot_attrs": {}
+        },
+        "16431:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_3b/3x3_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16446:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_3b/3x3_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16447:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_3b/3x3_2"
+            },
+            "dot_attrs": {}
+        },
+        "16449:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_3b/5x5_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16464:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_3b/5x5_reduce_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16465:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_3b/5x5_reduce_2"
+            },
+            "dot_attrs": {}
+        },
+        "16467:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_3b/5x5_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "2, 2",
+                "pads_end": "2, 2",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16482:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_3b/5x5_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16483:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_3b/5x5_2"
+            },
+            "dot_attrs": {}
+        },
+        "16486:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_3b/pool_proj_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16501:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_3b/pool_proj_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16502:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_3b/pool_proj_2"
+            },
+            "dot_attrs": {}
+        },
+        "16504:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "pool3/3x3_s2_1",
+                "auto_pad": "explicit",
+                "axis": "0",
+                "dilations": "1, 1",
+                "index_element_type": "i64",
+                "kernel": "3, 3",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "rounding_type": "floor",
+                "strides": "2, 2"
+            },
+            "dot_attrs": {}
+        },
+        "16506:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4a/1x1_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16521:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4a/1x1_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16522:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4a/1x1_2"
+            },
+            "dot_attrs": {}
+        },
+        "16524:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4a/3x3_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16539:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4a/3x3_reduce_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16540:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4a/3x3_reduce_2"
+            },
+            "dot_attrs": {}
+        },
+        "16542:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4a/3x3_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16557:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4a/3x3_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16558:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4a/3x3_2"
+            },
+            "dot_attrs": {}
+        },
+        "16560:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4a/5x5_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16575:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4a/5x5_reduce_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16576:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4a/5x5_reduce_2"
+            },
+            "dot_attrs": {}
+        },
+        "16578:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4a/5x5_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "2, 2",
+                "pads_end": "2, 2",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16593:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4a/5x5_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16594:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4a/5x5_2"
+            },
+            "dot_attrs": {}
+        },
+        "16597:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4a/pool_proj_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16612:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4a/pool_proj_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16613:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4a/pool_proj_2"
+            },
+            "dot_attrs": {}
+        },
+        "16614:Concat": {
+            "attrs": {
+                "type": "Concat",
+                "name": "inception_4a/output_1",
+                "axis": "1"
+            },
+            "dot_attrs": {}
+        },
+        "16616:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4b/1x1_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16631:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4b/1x1_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16632:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4b/1x1_2"
+            },
+            "dot_attrs": {}
+        },
+        "16634:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4b/3x3_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16649:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4b/3x3_reduce_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16650:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4b/3x3_reduce_2"
+            },
+            "dot_attrs": {}
+        },
+        "16652:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4b/3x3_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16667:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4b/3x3_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16668:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4b/3x3_2"
+            },
+            "dot_attrs": {}
+        },
+        "16670:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4b/5x5_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16685:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4b/5x5_reduce_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16686:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4b/5x5_reduce_2"
+            },
+            "dot_attrs": {}
+        },
+        "16688:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4b/5x5_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "2, 2",
+                "pads_end": "2, 2",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16703:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4b/5x5_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16704:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4b/5x5_2"
+            },
+            "dot_attrs": {}
+        },
+        "16707:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4b/pool_proj_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16722:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4b/pool_proj_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16723:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4b/pool_proj_2"
+            },
+            "dot_attrs": {}
+        },
+        "16724:Concat": {
+            "attrs": {
+                "type": "Concat",
+                "name": "inception_4b/output_1",
+                "axis": "1"
+            },
+            "dot_attrs": {}
+        },
+        "16726:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4c/1x1_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16741:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4c/1x1_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16742:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4c/1x1_2"
+            },
+            "dot_attrs": {}
+        },
+        "16744:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4c/3x3_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16759:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4c/3x3_reduce_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16760:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4c/3x3_reduce_2"
+            },
+            "dot_attrs": {}
+        },
+        "16762:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4c/3x3_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16777:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4c/3x3_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16778:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4c/3x3_2"
+            },
+            "dot_attrs": {}
+        },
+        "16780:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4c/5x5_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16795:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4c/5x5_reduce_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16796:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4c/5x5_reduce_2"
+            },
+            "dot_attrs": {}
+        },
+        "16798:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4c/5x5_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "2, 2",
+                "pads_end": "2, 2",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16813:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4c/5x5_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16814:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4c/5x5_2"
+            },
+            "dot_attrs": {}
+        },
+        "16817:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4c/pool_proj_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16832:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4c/pool_proj_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16833:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4c/pool_proj_2"
+            },
+            "dot_attrs": {}
+        },
+        "16834:Concat": {
+            "attrs": {
+                "type": "Concat",
+                "name": "inception_4c/output_1",
+                "axis": "1"
+            },
+            "dot_attrs": {}
+        },
+        "16836:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4d/1x1_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16851:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4d/1x1_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16852:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4d/1x1_2"
+            },
+            "dot_attrs": {}
+        },
+        "16854:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4d/3x3_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16869:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4d/3x3_reduce_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16870:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4d/3x3_reduce_2"
+            },
+            "dot_attrs": {}
+        },
+        "16872:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4d/3x3_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16887:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4d/3x3_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16888:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4d/3x3_2"
+            },
+            "dot_attrs": {}
+        },
+        "16890:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4d/5x5_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16905:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4d/5x5_reduce_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16906:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4d/5x5_reduce_2"
+            },
+            "dot_attrs": {}
+        },
+        "16908:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4d/5x5_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "2, 2",
+                "pads_end": "2, 2",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16923:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4d/5x5_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16924:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4d/5x5_2"
+            },
+            "dot_attrs": {}
+        },
+        "16927:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4d/pool_proj_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16942:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4d/pool_proj_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16943:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4d/pool_proj_2"
+            },
+            "dot_attrs": {}
+        },
+        "16944:Concat": {
+            "attrs": {
+                "type": "Concat",
+                "name": "inception_4d/output_1",
+                "axis": "1"
+            },
+            "dot_attrs": {}
+        },
+        "16946:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4e/1x1_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16961:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4e/1x1_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16962:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4e/1x1_2"
+            },
+            "dot_attrs": {}
+        },
+        "16964:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4e/3x3_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16979:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4e/3x3_reduce_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16980:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4e/3x3_reduce_2"
+            },
+            "dot_attrs": {}
+        },
+        "16982:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4e/3x3_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16997:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4e/3x3_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "16998:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4e/3x3_2"
+            },
+            "dot_attrs": {}
+        },
+        "17000:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4e/5x5_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "17015:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4e/5x5_reduce_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "17016:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4e/5x5_reduce_2"
+            },
+            "dot_attrs": {}
+        },
+        "17018:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4e/5x5_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "2, 2",
+                "pads_end": "2, 2",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "17033:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4e/5x5_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "17034:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4e/5x5_2"
+            },
+            "dot_attrs": {}
+        },
+        "17037:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4e/pool_proj_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "17052:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4e/pool_proj_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "17053:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4e/pool_proj_2"
+            },
+            "dot_attrs": {}
+        },
+        "17055:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "pool4/3x3_s2_1",
+                "auto_pad": "explicit",
+                "axis": "0",
+                "dilations": "1, 1",
+                "index_element_type": "i64",
+                "kernel": "3, 3",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "rounding_type": "floor",
+                "strides": "2, 2"
+            },
+            "dot_attrs": {}
+        },
+        "17057:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_5a/1x1_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "17072:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_5a/1x1_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "17073:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_5a/1x1_2"
+            },
+            "dot_attrs": {}
+        },
+        "17075:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_5a/3x3_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "17090:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_5a/3x3_reduce_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "17091:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_5a/3x3_reduce_2"
+            },
+            "dot_attrs": {}
+        },
+        "17093:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_5a/3x3_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "17108:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_5a/3x3_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "17109:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_5a/3x3_2"
+            },
+            "dot_attrs": {}
+        },
+        "17111:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_5a/5x5_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "17126:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_5a/5x5_reduce_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "17127:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_5a/5x5_reduce_2"
+            },
+            "dot_attrs": {}
+        },
+        "17129:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_5a/5x5_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "2, 2",
+                "pads_end": "2, 2",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "17144:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_5a/5x5_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "17145:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_5a/5x5_2"
+            },
+            "dot_attrs": {}
+        },
+        "17148:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_5a/pool_proj_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "17163:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_5a/pool_proj_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "17164:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_5a/pool_proj_2"
+            },
+            "dot_attrs": {}
+        },
+        "17165:Concat": {
+            "attrs": {
+                "type": "Concat",
+                "name": "inception_5a/output_1",
+                "axis": "1"
+            },
+            "dot_attrs": {}
+        },
+        "17167:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_5b/1x1_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "17182:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_5b/1x1_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "17183:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_5b/1x1_2"
+            },
+            "dot_attrs": {}
+        },
+        "17185:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_5b/3x3_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "17200:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_5b/3x3_reduce_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "17201:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_5b/3x3_reduce_2"
+            },
+            "dot_attrs": {}
+        },
+        "17203:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_5b/3x3_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "17218:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_5b/3x3_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "17219:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_5b/3x3_2"
+            },
+            "dot_attrs": {}
+        },
+        "17221:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_5b/5x5_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "17236:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_5b/5x5_reduce_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "17237:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_5b/5x5_reduce_2"
+            },
+            "dot_attrs": {}
+        },
+        "17239:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_5b/5x5_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "2, 2",
+                "pads_end": "2, 2",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "17254:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_5b/5x5_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "17255:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_5b/5x5_2"
+            },
+            "dot_attrs": {}
+        },
+        "17258:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_5b/pool_proj_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "17273:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_5b/pool_proj_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "17274:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_5b/pool_proj_2"
+            },
+            "dot_attrs": {}
+        },
+        "17278:Reshape": {
+            "attrs": {
+                "type": "Reshape",
+                "name": "OC2_DUMMY_0",
+                "special_zero": "1"
+            },
+            "dot_attrs": {}
+        },
+        "17286:MatMul": {
+            "attrs": {
+                "type": "MatMul",
+                "name": "loss3/classifier_1/WithoutBiases",
+                "transpose_a": "0",
+                "transpose_b": "1"
+            },
+            "dot_attrs": {}
+        },
+        "17288:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_14517",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "17297:Softmax": {
+            "attrs": {
+                "type": "Softmax",
+                "name": "Softmax_14524",
+                "axis": "1"
+            },
+            "dot_attrs": {}
+        },
+        "17299:Reshape": {
+            "attrs": {
+                "type": "Reshape",
+                "name": "prob_1",
+                "special_zero": "0"
+            },
+            "dot_attrs": {}
+        },
+        "17302:Result": {
+            "attrs": {
+                "type": "Result",
+                "name": "prob_1/sink_port_0"
+            },
+            "dot_attrs": {}
+        },
+        "20047:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "ShapeOf_14525",
+                "element_type": "i64",
+                "shape": "2"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20110:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_13575",
+                "element_type": "f32",
+                "shape": "1, 64, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20113:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_13594",
+                "element_type": "f32",
+                "shape": "1, 64, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20116:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_13610",
+                "element_type": "f32",
+                "shape": "1, 192, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20119:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_13629",
+                "element_type": "f32",
+                "shape": "1, 64, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20122:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_13645",
+                "element_type": "f32",
+                "shape": "1, 96, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20125:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_13661",
+                "element_type": "f32",
+                "shape": "1, 128, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20128:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_13677",
+                "element_type": "f32",
+                "shape": "1, 16, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20131:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_13693",
+                "element_type": "f32",
+                "shape": "1, 32, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20134:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_13710",
+                "element_type": "f32",
+                "shape": "1, 32, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20137:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_13727",
+                "element_type": "f32",
+                "shape": "1, 128, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20140:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_13743",
+                "element_type": "f32",
+                "shape": "1, 128, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20143:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_13759",
+                "element_type": "f32",
+                "shape": "1, 192, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20146:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_13775",
+                "element_type": "f32",
+                "shape": "1, 32, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20149:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_13791",
+                "element_type": "f32",
+                "shape": "1, 96, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20152:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_13808",
+                "element_type": "f32",
+                "shape": "1, 64, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20155:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_13826",
+                "element_type": "f32",
+                "shape": "1, 192, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20158:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_13842",
+                "element_type": "f32",
+                "shape": "1, 96, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20161:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_13858",
+                "element_type": "f32",
+                "shape": "1, 208, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20164:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_13874",
+                "element_type": "f32",
+                "shape": "1, 16, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20167:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_13890",
+                "element_type": "f32",
+                "shape": "1, 48, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20170:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_13907",
+                "element_type": "f32",
+                "shape": "1, 64, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20173:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_13924",
+                "element_type": "f32",
+                "shape": "1, 160, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20176:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_13940",
+                "element_type": "f32",
+                "shape": "1, 112, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20179:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_13956",
+                "element_type": "f32",
+                "shape": "1, 224, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20182:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_13972",
+                "element_type": "f32",
+                "shape": "1, 24, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20185:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_13988",
+                "element_type": "f32",
+                "shape": "1, 64, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20188:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14005",
+                "element_type": "f32",
+                "shape": "1, 64, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20191:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14022",
+                "element_type": "f32",
+                "shape": "1, 128, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20194:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14038",
+                "element_type": "f32",
+                "shape": "1, 128, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20197:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14054",
+                "element_type": "f32",
+                "shape": "1, 256, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20200:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14070",
+                "element_type": "f32",
+                "shape": "1, 24, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20203:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14086",
+                "element_type": "f32",
+                "shape": "1, 64, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20206:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14103",
+                "element_type": "f32",
+                "shape": "1, 64, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20209:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14120",
+                "element_type": "f32",
+                "shape": "1, 112, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20212:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14136",
+                "element_type": "f32",
+                "shape": "1, 144, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20215:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14152",
+                "element_type": "f32",
+                "shape": "1, 288, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20218:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14168",
+                "element_type": "f32",
+                "shape": "1, 32, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20221:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14184",
+                "element_type": "f32",
+                "shape": "1, 64, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20224:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14201",
+                "element_type": "f32",
+                "shape": "1, 64, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20227:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14218",
+                "element_type": "f32",
+                "shape": "1, 256, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20230:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14234",
+                "element_type": "f32",
+                "shape": "1, 160, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20233:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14250",
+                "element_type": "f32",
+                "shape": "1, 320, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20236:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14266",
+                "element_type": "f32",
+                "shape": "1, 32, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20239:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14282",
+                "element_type": "f32",
+                "shape": "1, 128, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20242:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14299",
+                "element_type": "f32",
+                "shape": "1, 128, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20245:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14317",
+                "element_type": "f32",
+                "shape": "1, 256, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20248:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14333",
+                "element_type": "f32",
+                "shape": "1, 160, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20251:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14349",
+                "element_type": "f32",
+                "shape": "1, 320, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20254:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14365",
+                "element_type": "f32",
+                "shape": "1, 32, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20257:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14381",
+                "element_type": "f32",
+                "shape": "1, 128, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20260:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14398",
+                "element_type": "f32",
+                "shape": "1, 128, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20263:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14415",
+                "element_type": "f32",
+                "shape": "1, 384, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20266:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14431",
+                "element_type": "f32",
+                "shape": "1, 192, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20269:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14447",
+                "element_type": "f32",
+                "shape": "1, 384, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20272:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14463",
+                "element_type": "f32",
+                "shape": "1, 48, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20275:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14479",
+                "element_type": "f32",
+                "shape": "1, 128, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20278:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_14496",
+                "element_type": "f32",
+                "shape": "1, 128, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20283:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "OC2_DUMMY_2",
+                "element_type": "f32",
+                "shape": "1000, 1024"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "20284:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Multiply_14518",
+                "element_type": "f32",
+                "shape": "1000"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

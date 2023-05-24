@@ -1,0 +1,49 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "AlignEltwiseInputRanks",
+    "index": "139027",
+    "type": "eliminated",
+    "edges": {
+        "41515:Multiply": ["44997:Multiply"],
+        "44996:Constant": ["44997:Multiply"],
+        "44997:Multiply": ["41518:Subtract"]
+    },
+    "nodes": {
+        "41515:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "TFNodes/yolo_evaluation_layer_1/mul_10",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "41518:Subtract": {
+            "attrs": {
+                "type": "Subtract",
+                "name": "TFNodes/yolo_evaluation_layer_1/sub_5",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "44996:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_44996",
+                "element_type": "f32",
+                "shape": {}
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "44997:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_44997",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        }
+    }
+}

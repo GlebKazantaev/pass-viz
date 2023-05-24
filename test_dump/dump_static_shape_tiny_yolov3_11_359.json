@@ -1,0 +1,123 @@
+{
+    "run_name": "static_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "EliminateUnsqueeze",
+    "index": "85099",
+    "type": "eliminated",
+    "edges": {
+        "27553:Reshape": ["27847:Concat"],
+        "27844:Reshape": ["27847:Concat"],
+        "27847:Concat": ["27849:Unsqueeze"],
+        "27848:Constant": ["27849:Unsqueeze"],
+        "27849:Unsqueeze": ["27894:NonMaxSuppression", "27900:Result"],
+        "27890:Unsqueeze": ["27894:NonMaxSuppression"],
+        "27891:Constant": ["27894:NonMaxSuppression"],
+        "27892:Constant": ["27894:NonMaxSuppression"],
+        "27893:Constant": ["27894:NonMaxSuppression"],
+        "27894:NonMaxSuppression": ["27896:Unsqueeze"]
+    },
+    "nodes": {
+        "27553:Reshape": {
+            "attrs": {
+                "type": "Reshape",
+                "name": "TFNodes/yolo_evaluation_layer_1/Reshape_4",
+                "special_zero": "1"
+            },
+            "dot_attrs": {}
+        },
+        "27844:Reshape": {
+            "attrs": {
+                "type": "Reshape",
+                "name": "TFNodes/yolo_evaluation_layer_1/Reshape_10",
+                "special_zero": "1"
+            },
+            "dot_attrs": {}
+        },
+        "27847:Concat": {
+            "attrs": {
+                "type": "Concat",
+                "name": "TFNodes/yolo_evaluation_layer_1/concat_6",
+                "axis": "0"
+            },
+            "dot_attrs": {}
+        },
+        "27848:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_24076",
+                "element_type": "i64",
+                "shape": "1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "27849:Unsqueeze": {
+            "attrs": {
+                "type": "Unsqueeze",
+                "name": "yolonms_layer_1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "27890:Unsqueeze": {
+            "attrs": {
+                "type": "Unsqueeze",
+                "name": "yolonms_layer_1:1"
+            },
+            "dot_attrs": {}
+        },
+        "27891:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "max_output_size",
+                "element_type": "i64",
+                "shape": {}
+            },
+            "dot_attrs": {}
+        },
+        "27892:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "iou_threshold",
+                "element_type": "f32",
+                "shape": {}
+            },
+            "dot_attrs": {}
+        },
+        "27893:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "layer.score_threshold",
+                "element_type": "f32",
+                "shape": {}
+            },
+            "dot_attrs": {}
+        },
+        "27894:NonMaxSuppression": {
+            "attrs": {
+                "type": "NonMaxSuppression",
+                "name": "yolonms_layer_1/non_max_suppression/NonMaxSuppressionV3",
+                "box_encoding": "corner",
+                "output_type": "i64",
+                "sort_result_descending": "0"
+            },
+            "dot_attrs": {}
+        },
+        "27896:Unsqueeze": {
+            "attrs": {
+                "type": "Unsqueeze",
+                "name": "yolonms_layer_1/ExpandDims_5:01_btc"
+            },
+            "dot_attrs": {}
+        },
+        "27900:Result": {
+            "attrs": {
+                "type": "Result",
+                "name": "yolonms_layer_1/sink_port_0"
+            },
+            "dot_attrs": {}
+        }
+    }
+}

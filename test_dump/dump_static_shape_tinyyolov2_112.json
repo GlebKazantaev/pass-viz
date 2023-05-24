@@ -1,0 +1,104 @@
+{
+    "run_name": "static_shape",
+    "model_name": "tinyyolov2",
+    "pass_name": "ConvertMaxPool8ToMaxPool1",
+    "index": "8097",
+    "type": "combined",
+    "edges": {
+        "326:Constant": ["327:PRelu"],
+        "327:PRelu": ["3025:MaxPool", "328:MaxPool"],
+        "328:MaxPool": ["2902:Convolution"],
+        "2793:Add": ["327:PRelu"],
+        "2902:Convolution": ["2805:Add"],
+        "2986:Constant": ["2902:Convolution"],
+        "3025:MaxPool": ["2902:Convolution"]
+    },
+    "nodes": {
+        "326:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_57",
+                "element_type": "f32",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "327:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "activation1"
+            },
+            "dot_attrs": {}
+        },
+        "328:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "pooling1",
+                "auto_pad": "same_upper",
+                "axis": "0",
+                "dilations": "1, 1",
+                "index_element_type": "i64",
+                "kernel": "2, 2",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "rounding_type": "floor",
+                "strides": "2, 2"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "2793:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_2793",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "2805:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_2805",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "2902:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_2902",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "2986:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_2986",
+                "element_type": "f32",
+                "shape": "64, 32, 3, 3"
+            },
+            "dot_attrs": {}
+        },
+        "3025:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "pooling1",
+                "auto_pad": "same_upper",
+                "kernel": "2, 2",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "rounding_type": "floor",
+                "strides": "2, 2"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

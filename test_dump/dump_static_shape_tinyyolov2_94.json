@@ -1,0 +1,157 @@
+{
+    "run_name": "static_shape",
+    "model_name": "tinyyolov2",
+    "pass_name": "ConvolutionMultiplyFusion",
+    "index": "6733",
+    "type": "combined",
+    "edges": {
+        "347:PRelu": ["348:MaxPool"],
+        "348:MaxPool": ["2926:Convolution", "350:Convolution"],
+        "349:Constant": ["2925:Multiply", "350:Convolution"],
+        "350:Convolution": ["2820:Multiply"],
+        "2546:Constant": ["2820:Multiply", "2922:Reshape"],
+        "2820:Multiply": ["2829:Add"],
+        "2828:Constant": ["2829:Add"],
+        "2829:Add": ["357:PRelu"],
+        "2921:Constant": ["2922:Reshape"],
+        "2922:Reshape": ["2925:Multiply"],
+        "2925:Multiply": ["2926:Convolution"],
+        "2926:Convolution": ["2829:Add"]
+    },
+    "nodes": {
+        "347:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "activation3"
+            },
+            "dot_attrs": {}
+        },
+        "348:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "pooling3",
+                "auto_pad": "same_upper",
+                "axis": "0",
+                "dilations": "1, 1",
+                "index_element_type": "i64",
+                "kernel": "2, 2",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "rounding_type": "floor",
+                "strides": "2, 2"
+            },
+            "dot_attrs": {}
+        },
+        "349:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "convolution4_W",
+                "element_type": "f32",
+                "shape": "256, 128, 3, 3"
+            },
+            "dot_attrs": {}
+        },
+        "350:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "convolution4",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "357:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "activation4"
+            },
+            "dot_attrs": {}
+        },
+        "2546:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_2546",
+                "element_type": "f32",
+                "shape": "1, 256, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "2820:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_2820",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "2828:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_2828",
+                "element_type": "f32",
+                "shape": "1, 256, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "2829:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_2829",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "2921:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_2921",
+                "element_type": "i64",
+                "shape": "4"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "2922:Reshape": {
+            "attrs": {
+                "type": "Reshape",
+                "name": "Reshape_2922",
+                "special_zero": "1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "2925:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_2925",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "2926:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Multiply_2820",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

@@ -1,0 +1,171 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "ConvolutionMultiplyFusion",
+    "index": "138887",
+    "type": "combined",
+    "edges": {
+        "40961:Constant": ["40962:PRelu"],
+        "40962:PRelu": ["41260:Convolution", "45253:Convolution", "45265:Convolution"],
+        "41259:Constant": ["41260:Convolution", "45264:Multiply"],
+        "41260:Convolution": ["45121:Multiply"],
+        "44900:Constant": ["45121:Multiply", "45261:Reshape"],
+        "45099:Add": ["40962:PRelu"],
+        "45121:Multiply": ["45130:Add"],
+        "45129:Constant": ["45130:Add"],
+        "45130:Add": ["41267:PRelu"],
+        "45260:Constant": ["45261:Reshape"],
+        "45261:Reshape": ["45264:Multiply"],
+        "45264:Multiply": ["45265:Convolution"],
+        "45265:Convolution": ["45130:Add"]
+    },
+    "nodes": {
+        "40961:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_34738",
+                "element_type": "f32",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "40962:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "leaky_re_lu_8"
+            },
+            "dot_attrs": {}
+        },
+        "41259:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "conv2d_11/kernel:0",
+                "element_type": "f32",
+                "shape": "128, 256, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "41260:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "conv2d_11",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "41267:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "leaky_re_lu_10"
+            },
+            "dot_attrs": {}
+        },
+        "44900:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_44900",
+                "element_type": "f32",
+                "shape": "1, 128, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "45099:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_45099",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "45121:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_45121",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "45129:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_45129",
+                "element_type": "f32",
+                "shape": "1, 128, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "45130:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_45130",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "45253:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_45253",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "45260:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_45260",
+                "element_type": "i64",
+                "shape": "4"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "45261:Reshape": {
+            "attrs": {
+                "type": "Reshape",
+                "name": "Reshape_45261",
+                "special_zero": "1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "45264:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_45264",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "45265:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Multiply_45121",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

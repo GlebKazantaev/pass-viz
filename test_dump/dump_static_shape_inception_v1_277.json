@@ -1,0 +1,193 @@
+{
+    "run_name": "static_shape",
+    "model_name": "inception_v1",
+    "pass_name": "ConvertMaxPool8ToMaxPool1",
+    "index": "48353",
+    "type": "eliminated",
+    "edges": {
+        "9090:Relu": ["9182:Concat"],
+        "9126:Relu": ["9182:Concat"],
+        "9162:Relu": ["9182:Concat"],
+        "9181:Relu": ["9182:Concat"],
+        "9182:Concat": ["9183:MaxPool"],
+        "9183:MaxPool": ["9185:Convolution", "9203:Convolution", "9239:Convolution", "9274:MaxPool"],
+        "9184:Constant": ["9185:Convolution"],
+        "9185:Convolution": ["9200:Add"],
+        "9202:Constant": ["9203:Convolution"],
+        "9203:Convolution": ["9218:Add"],
+        "9238:Constant": ["9239:Convolution"],
+        "9239:Convolution": ["9254:Add"],
+        "9274:MaxPool": ["9276:Convolution"]
+    },
+    "nodes": {
+        "9090:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_3b/1x1_2"
+            },
+            "dot_attrs": {}
+        },
+        "9126:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_3b/3x3_2"
+            },
+            "dot_attrs": {}
+        },
+        "9162:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_3b/5x5_2"
+            },
+            "dot_attrs": {}
+        },
+        "9181:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_3b/pool_proj_2"
+            },
+            "dot_attrs": {}
+        },
+        "9182:Concat": {
+            "attrs": {
+                "type": "Concat",
+                "name": "inception_3b/output_1",
+                "axis": "1"
+            },
+            "dot_attrs": {}
+        },
+        "9183:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "pool3/3x3_s2_1",
+                "auto_pad": "explicit",
+                "axis": "0",
+                "dilations": "1, 1",
+                "index_element_type": "i64",
+                "kernel": "3, 3",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "rounding_type": "floor",
+                "strides": "2, 2"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "9184:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "inception_4a/1x1_w_0",
+                "element_type": "f32",
+                "shape": "192, 480, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "9185:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4a/1x1_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "9200:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4a/1x1_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "9202:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "inception_4a/3x3_reduce_w_0",
+                "element_type": "f32",
+                "shape": "96, 480, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "9203:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4a/3x3_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "9218:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4a/3x3_reduce_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "9238:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "inception_4a/5x5_reduce_w_0",
+                "element_type": "f32",
+                "shape": "16, 480, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "9239:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4a/5x5_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "9254:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4a/5x5_reduce_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "9274:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "inception_4a/pool_1",
+                "auto_pad": "explicit",
+                "axis": "0",
+                "dilations": "1, 1",
+                "index_element_type": "i64",
+                "kernel": "3, 3",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "rounding_type": "floor",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "9276:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4a/pool_proj_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        }
+    }
+}

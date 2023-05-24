@@ -1,0 +1,205 @@
+{
+    "run_name": "static_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "BatchNormDecomposition",
+    "index": "104129",
+    "type": "combined",
+    "edges": {
+        "27181:Parameter": ["27183:Convolution"],
+        "27182:Constant": ["27183:Convolution"],
+        "27183:Convolution": ["27188:BatchNormInference", "30538:Add"],
+        "27184:Constant": ["27188:BatchNormInference"],
+        "27185:Constant": ["27188:BatchNormInference"],
+        "27186:Constant": ["27188:BatchNormInference"],
+        "27187:Constant": ["27188:BatchNormInference"],
+        "27188:BatchNormInference": ["27190:PRelu"],
+        "27189:Constant": ["27190:PRelu"],
+        "27190:PRelu": ["27191:MaxPool"],
+        "30497:Constant": ["30540:Add"],
+        "30498:Constant": ["30538:Add"],
+        "30537:Constant": ["30539:Multiply"],
+        "30538:Add": ["30539:Multiply"],
+        "30539:Multiply": ["30540:Add"],
+        "30540:Add": ["27190:PRelu"]
+    },
+    "nodes": {
+        "27181:Parameter": {
+            "attrs": {
+                "type": "Parameter",
+                "name": "input_1",
+                "element_type": "f32"
+            },
+            "dot_attrs": {}
+        },
+        "27182:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "conv2d_1/kernel:0",
+                "element_type": "f32",
+                "shape": "16, 3, 3, 3"
+            },
+            "dot_attrs": {}
+        },
+        "27183:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "conv2d_1",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "27184:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "scale10",
+                "element_type": "f32",
+                "shape": "16"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "27185:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "bias10",
+                "element_type": "f32",
+                "shape": "16"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "27186:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "mean10",
+                "element_type": "f32",
+                "shape": "16"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "27187:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "var10",
+                "element_type": "f32",
+                "shape": "16"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "27188:BatchNormInference": {
+            "attrs": {
+                "type": "BatchNormInference",
+                "name": "batch_normalization_1",
+                "epsilon": "0.000001"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "27189:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_21034",
+                "element_type": "f32",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "27190:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "leaky_re_lu_1"
+            },
+            "dot_attrs": {}
+        },
+        "27191:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "model_1/leaky_re_lu_1/LeakyRelu:0_pooling",
+                "auto_pad": "same_upper",
+                "axis": "0",
+                "dilations": "1, 1",
+                "index_element_type": "i64",
+                "kernel": "2, 2",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "rounding_type": "floor",
+                "strides": "2, 2"
+            },
+            "dot_attrs": {}
+        },
+        "30497:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_30497",
+                "element_type": "f32",
+                "shape": "1, 16, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "30498:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_30498",
+                "element_type": "f32",
+                "shape": "1, 16, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "30537:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_30537",
+                "element_type": "f32",
+                "shape": "1, 16, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "30538:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_30538",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "30539:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_30539",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "30540:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "batch_normalization_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

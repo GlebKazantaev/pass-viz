@@ -1,0 +1,100 @@
+{
+    "run_name": "static_shape",
+    "model_name": "tinyyolov2",
+    "pass_name": "AddAddFusion",
+    "index": "6686",
+    "type": "created",
+    "edges": {
+        "330:Convolution": ["2796:Multiply"],
+        "336:Constant": ["337:PRelu"],
+        "337:PRelu": ["338:MaxPool"],
+        "2402:Constant": ["2796:Multiply"],
+        "2796:Multiply": ["2805:Add"],
+        "2804:Constant": ["2805:Add"],
+        "2805:Add": ["337:PRelu"]
+    },
+    "nodes": {
+        "330:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "convolution2",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "336:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_63",
+                "element_type": "f32",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "337:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "activation2"
+            },
+            "dot_attrs": {}
+        },
+        "338:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "pooling2",
+                "auto_pad": "same_upper",
+                "axis": "0",
+                "dilations": "1, 1",
+                "index_element_type": "i64",
+                "kernel": "2, 2",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "rounding_type": "floor",
+                "strides": "2, 2"
+            },
+            "dot_attrs": {}
+        },
+        "2402:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_2402",
+                "element_type": "f32",
+                "shape": "1, 64, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "2796:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_2796",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "2804:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_2804",
+                "element_type": "f32",
+                "shape": "1, 64, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "2805:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "batchnorm2",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

@@ -1,0 +1,467 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "ov::pass::ConstantFolding",
+    "index": "112317",
+    "type": "created",
+    "edges": {
+        "40973:Convolution": ["40988:Add"],
+        "40988:Add": ["40990:Transpose"],
+        "41041:Sigmoid": ["41156:Add"],
+        "41156:Add": ["41163:Divide"],
+        "41169:ShapeOf": ["41170:Convert"],
+        "41170:Convert": ["41177:Slice"],
+        "41175:Constant": ["41177:Slice"],
+        "41176:Constant": ["41177:Slice"],
+        "41177:Slice": ["41183:Multiply"],
+        "41204:Exp": ["41211:Multiply"],
+        "41211:Multiply": ["41218:Divide"],
+        "41253:Multiply": ["41256:Reshape"],
+        "41256:Reshape": ["41550:Concat"],
+        "41281:Convolution": ["41296:Add"],
+        "41296:Add": ["41298:Transpose"],
+        "41349:Sigmoid": ["41464:Add"],
+        "41464:Add": ["41471:Divide"],
+        "41495:Exp": ["41502:Multiply"],
+        "41502:Multiply": ["41509:Divide"],
+        "41565:Multiply": ["41568:Reshape"],
+        "41568:Reshape": ["41589:Concat"],
+        "43990:Constant": ["41177:Slice"],
+        "43991:Constant": ["41177:Slice"],
+        "44005:Constant": ["41256:Reshape"],
+        "44018:Constant": ["41568:Reshape"],
+        "44021:Constant": ["40988:Add"],
+        "44037:Constant": ["41156:Add"],
+        "44039:Constant": ["41163:Divide"],
+        "44042:Constant": ["41211:Multiply"],
+        "44047:Constant": ["41296:Add"],
+        "44063:Constant": ["41464:Add"],
+        "44065:Constant": ["41471:Divide"],
+        "44068:Constant": ["41502:Multiply"]
+    },
+    "nodes": {
+        "40973:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "conv2d_10/WithoutBiases",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "40988:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "conv2d_10",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "40990:Transpose": {
+            "attrs": {
+                "type": "Transpose",
+                "name": "TFNodes/model_1/conv2d_10/BiasAdd:0"
+            },
+            "dot_attrs": {}
+        },
+        "41041:Sigmoid": {
+            "attrs": {
+                "type": "Sigmoid",
+                "name": "TFNodes/yolo_evaluation_layer_1/Sigmoid"
+            },
+            "dot_attrs": {}
+        },
+        "41156:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "TFNodes/yolo_evaluation_layer_1/add",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "41163:Divide": {
+            "attrs": {
+                "type": "Divide",
+                "name": "TFNodes/yolo_evaluation_layer_1/truediv",
+                "auto_broadcast": "numpy",
+                "m_pythondiv": "1"
+            },
+            "dot_attrs": {}
+        },
+        "41169:ShapeOf": {
+            "attrs": {
+                "type": "ShapeOf",
+                "name": "TFNodes/yolo_evaluation_layer_1/Shape",
+                "output_type": "i64"
+            },
+            "dot_attrs": {}
+        },
+        "41170:Convert": {
+            "attrs": {
+                "type": "Convert",
+                "name": "TFNodes/yolo_evaluation_layer_1/Shape__183",
+                "destination_type": "i32"
+            },
+            "dot_attrs": {}
+        },
+        "41175:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "TFNodes/yolo_evaluation_layer_1/strided_slice__187",
+                "element_type": "i64",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "41176:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "TFNodes/yolo_evaluation_layer_1/strided_slice__186",
+                "element_type": "i64",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "41177:Slice": {
+            "attrs": {
+                "type": "Slice",
+                "name": "TFNodes/yolo_evaluation_layer_1/strided_slice"
+            },
+            "dot_attrs": {}
+        },
+        "41183:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "TFNodes/yolo_evaluation_layer_1/mul",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "41204:Exp": {
+            "attrs": {
+                "type": "Exp",
+                "name": "TFNodes/yolo_evaluation_layer_1/Exp"
+            },
+            "dot_attrs": {}
+        },
+        "41211:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "TFNodes/yolo_evaluation_layer_1/mul_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "41218:Divide": {
+            "attrs": {
+                "type": "Divide",
+                "name": "TFNodes/yolo_evaluation_layer_1/truediv_1",
+                "auto_broadcast": "numpy",
+                "m_pythondiv": "1"
+            },
+            "dot_attrs": {}
+        },
+        "41253:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "TFNodes/yolo_evaluation_layer_1/mul_5",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "41256:Reshape": {
+            "attrs": {
+                "type": "Reshape",
+                "name": "TFNodes/yolo_evaluation_layer_1/Reshape_4",
+                "special_zero": "1"
+            },
+            "dot_attrs": {}
+        },
+        "41281:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "conv2d_13/WithoutBiases",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "41296:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "conv2d_13",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "41298:Transpose": {
+            "attrs": {
+                "type": "Transpose",
+                "name": "TFNodes/model_1/conv2d_13/BiasAdd:0"
+            },
+            "dot_attrs": {}
+        },
+        "41349:Sigmoid": {
+            "attrs": {
+                "type": "Sigmoid",
+                "name": "TFNodes/yolo_evaluation_layer_1/Sigmoid_3"
+            },
+            "dot_attrs": {}
+        },
+        "41464:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "TFNodes/yolo_evaluation_layer_1/add_2",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "41471:Divide": {
+            "attrs": {
+                "type": "Divide",
+                "name": "TFNodes/yolo_evaluation_layer_1/truediv_8",
+                "auto_broadcast": "numpy",
+                "m_pythondiv": "1"
+            },
+            "dot_attrs": {}
+        },
+        "41495:Exp": {
+            "attrs": {
+                "type": "Exp",
+                "name": "TFNodes/yolo_evaluation_layer_1/Exp_1"
+            },
+            "dot_attrs": {}
+        },
+        "41502:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "TFNodes/yolo_evaluation_layer_1/mul_7",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "41509:Divide": {
+            "attrs": {
+                "type": "Divide",
+                "name": "TFNodes/yolo_evaluation_layer_1/truediv_9",
+                "auto_broadcast": "numpy",
+                "m_pythondiv": "1"
+            },
+            "dot_attrs": {}
+        },
+        "41550:Concat": {
+            "attrs": {
+                "type": "Concat",
+                "name": "TFNodes/yolo_evaluation_layer_1/concat_6",
+                "axis": "0"
+            },
+            "dot_attrs": {}
+        },
+        "41565:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "TFNodes/yolo_evaluation_layer_1/mul_6",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "41568:Reshape": {
+            "attrs": {
+                "type": "Reshape",
+                "name": "TFNodes/yolo_evaluation_layer_1/Reshape_5",
+                "special_zero": "1"
+            },
+            "dot_attrs": {}
+        },
+        "41589:Concat": {
+            "attrs": {
+                "type": "Concat",
+                "name": "TFNodes/yolo_evaluation_layer_1/concat_7",
+                "axis": "0"
+            },
+            "dot_attrs": {}
+        },
+        "43989:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "TFNodes/yolo_evaluation_layer_1/Reshape_10__258",
+                "element_type": "i64",
+                "shape": "2"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "43990:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "TFNodes/yolo_evaluation_layer_1/strided_slice__184",
+                "element_type": "i64",
+                "shape": "1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "43991:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "TFNodes/yolo_evaluation_layer_1/strided_slice__185",
+                "element_type": "i64",
+                "shape": "1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "43994:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "TFNodes/yolo_evaluation_layer_1/Reshape_9__86",
+                "element_type": "i64",
+                "shape": "5"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "44005:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "TFNodes/yolo_evaluation_layer_1/Reshape_4__259",
+                "element_type": "i64",
+                "shape": "2"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "44007:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "TFNodes/yolo_evaluation_layer_1/Reshape_3__200",
+                "element_type": "i64",
+                "shape": "5"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "44017:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "TFNodes/yolo_evaluation_layer_1/Reshape_11__95",
+                "element_type": "i64",
+                "shape": "2"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "44018:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "TFNodes/yolo_evaluation_layer_1/Reshape_5__217",
+                "element_type": "i64",
+                "shape": "2"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "44021:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_34768",
+                "element_type": "f32",
+                "shape": "1, 255, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "44037:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "TFNodes/yolo_evaluation_layer_1/Cast",
+                "element_type": "f32",
+                "shape": "7, 7, 1, 2"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "44039:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "TFNodes/yolo_evaluation_layer_1/Cast_1",
+                "element_type": "f32",
+                "shape": "2"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "44042:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "TFNodes/yolo_evaluation_layer_1/Reshape",
+                "element_type": "f32",
+                "shape": "1, 1, 1, 3, 2"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "44047:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_34785",
+                "element_type": "f32",
+                "shape": "1, 255, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "44063:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "TFNodes/yolo_evaluation_layer_1/Cast_4",
+                "element_type": "f32",
+                "shape": "14, 14, 1, 2"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "44065:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "TFNodes/yolo_evaluation_layer_1/Cast_5",
+                "element_type": "f32",
+                "shape": "2"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "44068:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "TFNodes/yolo_evaluation_layer_1/Reshape_6",
+                "element_type": "f32",
+                "shape": "1, 1, 1, 3, 2"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

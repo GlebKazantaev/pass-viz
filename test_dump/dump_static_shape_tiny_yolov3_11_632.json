@@ -1,0 +1,87 @@
+{
+    "run_name": "static_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "MultiplyMultiplyFusion",
+    "index": "112085",
+    "type": "created",
+    "edges": {
+        "27778:Multiply": ["27779:Round"],
+        "27779:Round": ["31826:Power", "31903:Multiply"],
+        "31896:Constant": ["31897:Add"],
+        "31897:Add": ["31821:Add"],
+        "31902:Constant": ["31903:Multiply"],
+        "31903:Multiply": ["31897:Add"]
+    },
+    "nodes": {
+        "27778:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "TFNodes/yolo_evaluation_layer_1/mul_8",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "27779:Round": {
+            "attrs": {
+                "type": "Round",
+                "name": "TFNodes/yolo_evaluation_layer_1/Round_1",
+                "mode": "half_to_even"
+            },
+            "dot_attrs": {}
+        },
+        "31821:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "TFNodes/yolo_evaluation_layer_1/sub_4",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "31826:Power": {
+            "attrs": {
+                "type": "Power",
+                "name": "Power_31826",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "31896:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_31896",
+                "element_type": "f32",
+                "shape": "2"
+            },
+            "dot_attrs": {}
+        },
+        "31897:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Multiply_31820",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "31902:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_31902",
+                "element_type": "f32",
+                "shape": "2"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "31903:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_31894",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

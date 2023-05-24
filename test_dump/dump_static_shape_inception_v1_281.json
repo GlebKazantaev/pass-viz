@@ -1,0 +1,135 @@
+{
+    "run_name": "static_shape",
+    "model_name": "inception_v1",
+    "pass_name": "ConvertMaxPool8ToMaxPool1",
+    "index": "48355",
+    "type": "created",
+    "edges": {
+        "9201:Relu": ["9293:Concat"],
+        "9237:Relu": ["9293:Concat"],
+        "9273:Relu": ["9293:Concat"],
+        "9292:Relu": ["9293:Concat"],
+        "9293:Concat": ["13084:MaxPool", "9295:Convolution", "9313:Convolution", "9349:Convolution"],
+        "9385:Constant": ["9386:Convolution"],
+        "9386:Convolution": ["9401:Add"],
+        "13084:MaxPool": ["9386:Convolution"]
+    },
+    "nodes": {
+        "9201:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4a/1x1_2"
+            },
+            "dot_attrs": {}
+        },
+        "9237:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4a/3x3_2"
+            },
+            "dot_attrs": {}
+        },
+        "9273:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4a/5x5_2"
+            },
+            "dot_attrs": {}
+        },
+        "9292:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_4a/pool_proj_2"
+            },
+            "dot_attrs": {}
+        },
+        "9293:Concat": {
+            "attrs": {
+                "type": "Concat",
+                "name": "inception_4a/output_1",
+                "axis": "1"
+            },
+            "dot_attrs": {}
+        },
+        "9295:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4b/1x1_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "9313:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4b/3x3_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "9349:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4b/5x5_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "9385:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "inception_4b/pool_proj_w_0",
+                "element_type": "f32",
+                "shape": "64, 512, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "9386:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_4b/pool_proj_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "9401:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_4b/pool_proj_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "13084:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "inception_4b/pool_1",
+                "auto_pad": "explicit",
+                "kernel": "3, 3",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "rounding_type": "floor",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

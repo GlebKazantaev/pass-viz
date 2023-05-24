@@ -1,0 +1,142 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "tinyyolov2",
+    "pass_name": "AddAddFusion",
+    "index": "14819",
+    "type": "combined",
+    "edges": {
+        "3744:Convolution": ["6221:Multiply"],
+        "3750:Constant": ["3751:PRelu"],
+        "3751:PRelu": ["3753:Convolution"],
+        "6087:Constant": ["6130:Add"],
+        "6127:Constant": ["6221:Multiply"],
+        "6130:Add": ["3751:PRelu"],
+        "6221:Multiply": ["6224:Add", "6230:Add"],
+        "6223:Constant": ["6224:Add"],
+        "6224:Add": ["6130:Add"],
+        "6229:Constant": ["6230:Add"],
+        "6230:Add": ["3751:PRelu"]
+    },
+    "nodes": {
+        "3744:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "convolution7",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "3750:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_3457",
+                "element_type": "f32",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "3751:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "activation7"
+            },
+            "dot_attrs": {}
+        },
+        "3753:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "convolution8/WithoutBiases",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "6087:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_6087",
+                "element_type": "f32",
+                "shape": "1, 1024, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "6127:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_6127",
+                "element_type": "f32",
+                "shape": "1, 1024, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "6130:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_6130",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "6221:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_6221",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "6223:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_6223",
+                "element_type": "f32",
+                "shape": "1, 1024, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "6224:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_6224",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "6229:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_6229",
+                "element_type": "f32",
+                "shape": "1, 1024, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "6230:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "batchnorm7",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

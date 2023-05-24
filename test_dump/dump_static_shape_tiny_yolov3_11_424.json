@@ -1,0 +1,87 @@
+{
+    "run_name": "static_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "ConvertDivideWithConstant",
+    "index": "105089",
+    "type": "created",
+    "edges": {
+        "27773:Slice": ["27784:Subtract"],
+        "27780:Subtract": ["31312:Multiply"],
+        "27784:Subtract": ["27786:Multiply"],
+        "31311:Constant": ["31312:Multiply"],
+        "31312:Multiply": ["31318:Multiply"],
+        "31317:Constant": ["31318:Multiply"],
+        "31318:Multiply": ["27784:Subtract"]
+    },
+    "nodes": {
+        "27773:Slice": {
+            "attrs": {
+                "type": "Slice",
+                "name": "TFNodes/yolo_evaluation_layer_1/strided_slice_33"
+            },
+            "dot_attrs": {}
+        },
+        "27780:Subtract": {
+            "attrs": {
+                "type": "Subtract",
+                "name": "TFNodes/yolo_evaluation_layer_1/sub_3",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "27784:Subtract": {
+            "attrs": {
+                "type": "Subtract",
+                "name": "TFNodes/yolo_evaluation_layer_1/sub_4",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "27786:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "TFNodes/yolo_evaluation_layer_1/mul_9",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "31311:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_31311",
+                "element_type": "f32",
+                "shape": {}
+            },
+            "dot_attrs": {}
+        },
+        "31312:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "TFNodes/yolo_evaluation_layer_1/truediv_11",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "31317:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_31317",
+                "element_type": "f32",
+                "shape": "2"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "31318:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "TFNodes/yolo_evaluation_layer_1/truediv_12",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

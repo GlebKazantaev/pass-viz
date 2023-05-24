@@ -1,0 +1,117 @@
+{
+    "run_name": "static_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "ConvertDivideWithConstant",
+    "index": "105139",
+    "type": "created",
+    "edges": {
+        "27792:Exp": ["27799:Multiply"],
+        "27799:Multiply": ["31324:Multiply"],
+        "27807:Constant": ["27811:Slice"],
+        "27808:Constant": ["27811:Slice"],
+        "27809:Constant": ["27811:Slice"],
+        "27810:Constant": ["27811:Slice"],
+        "27811:Slice": ["27812:Multiply"],
+        "30373:Constant": ["27799:Multiply"],
+        "31323:Constant": ["31324:Multiply"],
+        "31324:Multiply": ["27811:Slice"]
+    },
+    "nodes": {
+        "27792:Exp": {
+            "attrs": {
+                "type": "Exp",
+                "name": "TFNodes/yolo_evaluation_layer_1/Exp_1"
+            },
+            "dot_attrs": {}
+        },
+        "27799:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "TFNodes/yolo_evaluation_layer_1/mul_7",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "27807:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "TFNodes/yolo_evaluation_layer_1/strided_slice_34__192",
+                "element_type": "i64",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "27808:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "TFNodes/yolo_evaluation_layer_1/strided_slice_34__193",
+                "element_type": "i64",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "27809:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "TFNodes/yolo_evaluation_layer_1/strided_slice_34__195",
+                "element_type": "i64",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "27810:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "TFNodes/yolo_evaluation_layer_1/strided_slice_34__194",
+                "element_type": "i64",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "27811:Slice": {
+            "attrs": {
+                "type": "Slice",
+                "name": "TFNodes/yolo_evaluation_layer_1/strided_slice_34"
+            },
+            "dot_attrs": {}
+        },
+        "27812:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "TFNodes/yolo_evaluation_layer_1/mul_10",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "30373:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "TFNodes/yolo_evaluation_layer_1/Reshape_6",
+                "element_type": "f32",
+                "shape": "1, 1, 1, 3, 2"
+            },
+            "dot_attrs": {}
+        },
+        "31323:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_31323",
+                "element_type": "f32",
+                "shape": "2"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "31324:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "TFNodes/yolo_evaluation_layer_1/truediv_9",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

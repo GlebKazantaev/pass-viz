@@ -1,0 +1,78 @@
+{
+    "run_name": "static_shape",
+    "model_name": "inception_v1",
+    "pass_name": "ConvertMaxPool8ToMaxPool1",
+    "index": "48349",
+    "type": "created",
+    "edges": {
+        "8919:Add": ["8920:Relu"],
+        "8920:Relu": ["13072:MaxPool"],
+        "8922:Constant": ["8923:LRN"],
+        "8923:LRN": ["8925:Convolution"],
+        "13072:MaxPool": ["8923:LRN"]
+    },
+    "nodes": {
+        "8919:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "conv1/7x7_s2_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "8920:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "conv1/7x7_s2_2"
+            },
+            "dot_attrs": {}
+        },
+        "8922:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_6867",
+                "element_type": "i64",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "8923:LRN": {
+            "attrs": {
+                "type": "LRN",
+                "name": "pool1/norm1_1",
+                "alpha": "0.000100",
+                "beta": "0.750000",
+                "bias": "1.000000",
+                "size": "5"
+            },
+            "dot_attrs": {}
+        },
+        "8925:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "conv2/3x3_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "13072:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "pool1/3x3_s2_1",
+                "auto_pad": "explicit",
+                "kernel": "3, 3",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "rounding_type": "floor",
+                "strides": "2, 2"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

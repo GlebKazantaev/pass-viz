@@ -1,0 +1,158 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "ConvertInterpolate11ToInterpolate4",
+    "index": "146025",
+    "type": "combined",
+    "edges": {
+        "40933:PRelu": ["41270:Concat"],
+        "41266:Constant": ["41267:PRelu"],
+        "41267:PRelu": ["41269:Interpolate", "45544:ShapeOf", "45550:Interpolate"],
+        "41268:Constant": ["41269:Interpolate", "45550:Interpolate"],
+        "41269:Interpolate": ["41270:Concat"],
+        "41270:Concat": ["45277:Convolution"],
+        "45130:Add": ["41267:PRelu"],
+        "45544:ShapeOf": ["45545:ShapeOf"],
+        "45545:ShapeOf": ["45547:Broadcast"],
+        "45546:Constant": ["45547:Broadcast"],
+        "45547:Broadcast": ["45550:Interpolate"],
+        "45550:Interpolate": ["41270:Concat"]
+    },
+    "nodes": {
+        "40933:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "leaky_re_lu_5"
+            },
+            "dot_attrs": {}
+        },
+        "41266:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_34743",
+                "element_type": "f32",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "41267:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "leaky_re_lu_10"
+            },
+            "dot_attrs": {}
+        },
+        "41268:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Resize_scales",
+                "element_type": "f32",
+                "shape": "4"
+            },
+            "dot_attrs": {}
+        },
+        "41269:Interpolate": {
+            "attrs": {
+                "type": "Interpolate",
+                "name": "Resize",
+                "antialias": "0",
+                "coordinate_transformation_mode": "asymmetric",
+                "cube_coeff": "-0.750000",
+                "mode": "nearest",
+                "nearest_mode": "floor",
+                "pads_begin": "0, 0, 0, 0",
+                "pads_end": "0, 0, 0, 0",
+                "shape_calculation_mode": "scales"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "41270:Concat": {
+            "attrs": {
+                "type": "Concat",
+                "name": "concatenate_1",
+                "axis": "1"
+            },
+            "dot_attrs": {}
+        },
+        "45130:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_45130",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "45277:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_45277",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "45544:ShapeOf": {
+            "attrs": {
+                "type": "ShapeOf",
+                "name": "ShapeOf_45544",
+                "output_type": "i64"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "45545:ShapeOf": {
+            "attrs": {
+                "type": "ShapeOf",
+                "name": "ShapeOf_45545",
+                "output_type": "i64"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "45546:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_45546",
+                "element_type": "i32",
+                "shape": {}
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "45547:Broadcast": {
+            "attrs": {
+                "type": "Broadcast",
+                "name": "Broadcast_45547",
+                "mode": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "45550:Interpolate": {
+            "attrs": {
+                "type": "Interpolate",
+                "name": "Resize",
+                "antialias": "0",
+                "coordinate_transformation_mode": "asymmetric",
+                "cube_coeff": "-0.750000",
+                "mode": "nearest",
+                "nearest_mode": "floor",
+                "pads_begin": "0, 0, 0, 0",
+                "pads_end": "0, 0, 0, 0",
+                "shape_calculation_mode": "scales"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

@@ -1,0 +1,62 @@
+{
+    "run_name": "static_shape",
+    "model_name": "inception_v1",
+    "pass_name": "AlignEltwiseInputRanks",
+    "index": "41164",
+    "type": "combined",
+    "edges": {
+        "9965:MatMul": ["9971:Add"],
+        "9971:Add": ["9976:Softmax"],
+        "12963:Constant": ["9971:Add"],
+        "13065:Constant": ["9971:Add"]
+    },
+    "nodes": {
+        "9965:MatMul": {
+            "attrs": {
+                "type": "MatMul",
+                "name": "loss3/classifier_1/WithoutBiases",
+                "transpose_a": "0",
+                "transpose_b": "1"
+            },
+            "dot_attrs": {}
+        },
+        "9971:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "loss3/classifier_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "9976:Softmax": {
+            "attrs": {
+                "type": "Softmax",
+                "name": "Softmax_7810",
+                "axis": "1"
+            },
+            "dot_attrs": {}
+        },
+        "12963:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_12963",
+                "element_type": "f32",
+                "shape": "1000"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "13065:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_13065",
+                "element_type": "f32",
+                "shape": "1, 1000"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

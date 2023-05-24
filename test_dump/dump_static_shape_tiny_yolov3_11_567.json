@@ -1,0 +1,48 @@
+{
+    "run_name": "static_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "AlignEltwiseInputRanks",
+    "index": "105794",
+    "type": "created",
+    "edges": {
+        "27646:Sigmoid": ["31488:Multiply"],
+        "31488:Multiply": ["31491:Add"],
+        "31753:Constant": ["31488:Multiply"]
+    },
+    "nodes": {
+        "27646:Sigmoid": {
+            "attrs": {
+                "type": "Sigmoid",
+                "name": "TFNodes/yolo_evaluation_layer_1/Sigmoid_3"
+            },
+            "dot_attrs": {}
+        },
+        "31488:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_31488",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "31491:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "TFNodes/yolo_evaluation_layer_1/truediv_8",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "31753:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_31753",
+                "element_type": "f32",
+                "shape": "1, 1, 1, 1, 2"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

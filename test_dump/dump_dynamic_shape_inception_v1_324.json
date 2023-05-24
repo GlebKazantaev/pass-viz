@@ -1,0 +1,135 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "inception_v1",
+    "pass_name": "ConvertMaxPool8ToMaxPool1",
+    "index": "80510",
+    "type": "created",
+    "edges": {
+        "16301:Relu": ["16393:Concat"],
+        "16337:Relu": ["16393:Concat"],
+        "16373:Relu": ["16393:Concat"],
+        "16392:Relu": ["16393:Concat"],
+        "16393:Concat": ["16395:Convolution", "16413:Convolution", "16449:Convolution", "20399:MaxPool"],
+        "16485:Constant": ["16486:Convolution"],
+        "16486:Convolution": ["16501:Add"],
+        "20399:MaxPool": ["16486:Convolution"]
+    },
+    "nodes": {
+        "16301:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_3a/1x1_2"
+            },
+            "dot_attrs": {}
+        },
+        "16337:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_3a/3x3_2"
+            },
+            "dot_attrs": {}
+        },
+        "16373:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_3a/5x5_2"
+            },
+            "dot_attrs": {}
+        },
+        "16392:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_3a/pool_proj_2"
+            },
+            "dot_attrs": {}
+        },
+        "16393:Concat": {
+            "attrs": {
+                "type": "Concat",
+                "name": "inception_3a/output_1",
+                "axis": "1"
+            },
+            "dot_attrs": {}
+        },
+        "16395:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_3b/1x1_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16413:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_3b/3x3_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16449:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_3b/5x5_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16485:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "inception_3b/pool_proj_w_0",
+                "element_type": "f32",
+                "shape": "64, 256, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16486:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_3b/pool_proj_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "16501:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_3b/pool_proj_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "20399:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "inception_3b/pool_1",
+                "auto_pad": "explicit",
+                "kernel": "3, 3",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "rounding_type": "floor",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

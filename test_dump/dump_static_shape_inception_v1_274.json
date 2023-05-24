@@ -1,0 +1,138 @@
+{
+    "run_name": "static_shape",
+    "model_name": "inception_v1",
+    "pass_name": "ConvertMaxPool8ToMaxPool1",
+    "index": "48352",
+    "type": "eliminated",
+    "edges": {
+        "8980:Relu": ["9072:Concat"],
+        "9016:Relu": ["9072:Concat"],
+        "9052:Relu": ["9072:Concat"],
+        "9071:Relu": ["9072:Concat"],
+        "9072:Concat": ["9074:Convolution", "9092:Convolution", "9128:Convolution", "9163:MaxPool"],
+        "9163:MaxPool": ["9165:Convolution"],
+        "9164:Constant": ["9165:Convolution"],
+        "9165:Convolution": ["9180:Add"]
+    },
+    "nodes": {
+        "8980:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_3a/1x1_2"
+            },
+            "dot_attrs": {}
+        },
+        "9016:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_3a/3x3_2"
+            },
+            "dot_attrs": {}
+        },
+        "9052:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_3a/5x5_2"
+            },
+            "dot_attrs": {}
+        },
+        "9071:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "inception_3a/pool_proj_2"
+            },
+            "dot_attrs": {}
+        },
+        "9072:Concat": {
+            "attrs": {
+                "type": "Concat",
+                "name": "inception_3a/output_1",
+                "axis": "1"
+            },
+            "dot_attrs": {}
+        },
+        "9074:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_3b/1x1_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "9092:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_3b/3x3_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "9128:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_3b/5x5_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "9163:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "inception_3b/pool_1",
+                "auto_pad": "explicit",
+                "axis": "0",
+                "dilations": "1, 1",
+                "index_element_type": "i64",
+                "kernel": "3, 3",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "rounding_type": "floor",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "9164:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "inception_3b/pool_proj_w_0",
+                "element_type": "f32",
+                "shape": "64, 256, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "9165:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_3b/pool_proj_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "9180:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_3b/pool_proj_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        }
+    }
+}

@@ -1,0 +1,131 @@
+{
+    "run_name": "static_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "EliminateUnsqueeze",
+    "index": "85749",
+    "type": "combined",
+    "edges": {
+        "27891:Constant": ["27894:NonMaxSuppression"],
+        "27892:Constant": ["27894:NonMaxSuppression"],
+        "27893:Constant": ["27894:NonMaxSuppression"],
+        "27894:NonMaxSuppression": ["27896:Unsqueeze", "30458:Reshape"],
+        "27895:Constant": ["27896:Unsqueeze"],
+        "27896:Unsqueeze": ["27897:Convert"],
+        "27897:Convert": ["27898:Result"],
+        "30442:Reshape": ["27894:NonMaxSuppression"],
+        "30450:Reshape": ["27894:NonMaxSuppression"],
+        "30457:Constant": ["30458:Reshape"],
+        "30458:Reshape": ["27897:Convert"]
+    },
+    "nodes": {
+        "27891:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "max_output_size",
+                "element_type": "i64",
+                "shape": {}
+            },
+            "dot_attrs": {}
+        },
+        "27892:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "iou_threshold",
+                "element_type": "f32",
+                "shape": {}
+            },
+            "dot_attrs": {}
+        },
+        "27893:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "layer.score_threshold",
+                "element_type": "f32",
+                "shape": {}
+            },
+            "dot_attrs": {}
+        },
+        "27894:NonMaxSuppression": {
+            "attrs": {
+                "type": "NonMaxSuppression",
+                "name": "yolonms_layer_1/non_max_suppression/NonMaxSuppressionV3",
+                "box_encoding": "corner",
+                "output_type": "i64",
+                "sort_result_descending": "0"
+            },
+            "dot_attrs": {}
+        },
+        "27895:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_24083",
+                "element_type": "i64",
+                "shape": "1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "27896:Unsqueeze": {
+            "attrs": {
+                "type": "Unsqueeze",
+                "name": "yolonms_layer_1/ExpandDims_5:01_btc"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "27897:Convert": {
+            "attrs": {
+                "type": "Convert",
+                "name": "yolonms_layer_1:2",
+                "destination_type": "i32"
+            },
+            "dot_attrs": {}
+        },
+        "27898:Result": {
+            "attrs": {
+                "type": "Result",
+                "name": "yolonms_layer_1:2/sink_port_0"
+            },
+            "dot_attrs": {}
+        },
+        "30442:Reshape": {
+            "attrs": {
+                "type": "Reshape",
+                "name": "Reshape_30442",
+                "special_zero": "0"
+            },
+            "dot_attrs": {}
+        },
+        "30450:Reshape": {
+            "attrs": {
+                "type": "Reshape",
+                "name": "Reshape_30450",
+                "special_zero": "0"
+            },
+            "dot_attrs": {}
+        },
+        "30457:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_30457",
+                "element_type": "i64",
+                "shape": "3"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "30458:Reshape": {
+            "attrs": {
+                "type": "Reshape",
+                "name": "yolonms_layer_1/ExpandDims_5:01_btc",
+                "special_zero": "0"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

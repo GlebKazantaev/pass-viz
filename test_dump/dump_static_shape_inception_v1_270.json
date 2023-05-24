@@ -1,0 +1,198 @@
+{
+    "run_name": "static_shape",
+    "model_name": "inception_v1",
+    "pass_name": "ConvertMaxPool8ToMaxPool1",
+    "index": "48350",
+    "type": "combined",
+    "edges": {
+        "8959:Relu": ["8961:LRN"],
+        "8960:Constant": ["8961:LRN"],
+        "8961:LRN": ["13074:MaxPool", "8962:MaxPool"],
+        "8962:MaxPool": ["8964:Convolution", "8982:Convolution", "9018:Convolution", "9053:MaxPool"],
+        "8963:Constant": ["8964:Convolution"],
+        "8964:Convolution": ["8979:Add"],
+        "8981:Constant": ["8982:Convolution"],
+        "8982:Convolution": ["8997:Add"],
+        "9017:Constant": ["9018:Convolution"],
+        "9018:Convolution": ["9033:Add"],
+        "9053:MaxPool": ["9055:Convolution"],
+        "13074:MaxPool": ["8964:Convolution", "8982:Convolution", "9018:Convolution", "9053:MaxPool"]
+    },
+    "nodes": {
+        "8959:Relu": {
+            "attrs": {
+                "type": "Relu",
+                "name": "conv2/3x3_2"
+            },
+            "dot_attrs": {}
+        },
+        "8960:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_6901",
+                "element_type": "i64",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "8961:LRN": {
+            "attrs": {
+                "type": "LRN",
+                "name": "conv2/norm2_1",
+                "alpha": "0.000100",
+                "beta": "0.750000",
+                "bias": "1.000000",
+                "size": "5"
+            },
+            "dot_attrs": {}
+        },
+        "8962:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "pool2/3x3_s2_1",
+                "auto_pad": "explicit",
+                "axis": "0",
+                "dilations": "1, 1",
+                "index_element_type": "i64",
+                "kernel": "3, 3",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "rounding_type": "floor",
+                "strides": "2, 2"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "8963:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "inception_3a/1x1_w_0",
+                "element_type": "f32",
+                "shape": "64, 192, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "8964:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_3a/1x1_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "8979:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_3a/1x1_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "8981:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "inception_3a/3x3_reduce_w_0",
+                "element_type": "f32",
+                "shape": "96, 192, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "8982:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_3a/3x3_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "8997:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_3a/3x3_reduce_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "9017:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "inception_3a/5x5_reduce_w_0",
+                "element_type": "f32",
+                "shape": "16, 192, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "9018:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_3a/5x5_reduce_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "9033:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "inception_3a/5x5_reduce_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "9053:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "inception_3a/pool_1",
+                "auto_pad": "explicit",
+                "axis": "0",
+                "dilations": "1, 1",
+                "index_element_type": "i64",
+                "kernel": "3, 3",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "rounding_type": "floor",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "9055:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "inception_3a/pool_proj_1/WithoutBiases",
+                "auto_pad": "explicit",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "13074:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "pool2/3x3_s2_1",
+                "auto_pad": "explicit",
+                "kernel": "3, 3",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "rounding_type": "floor",
+                "strides": "2, 2"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

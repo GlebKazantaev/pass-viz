@@ -1,0 +1,213 @@
+{
+    "run_name": "static_shape",
+    "model_name": "tinyyolov2",
+    "pass_name": "BatchNormDecomposition",
+    "index": "6484",
+    "type": "combined",
+    "edges": {
+        "348:MaxPool": ["350:Convolution"],
+        "349:Constant": ["350:Convolution"],
+        "350:Convolution": ["2547:Add", "355:BatchNormInference"],
+        "351:Constant": ["355:BatchNormInference"],
+        "352:Constant": ["355:BatchNormInference"],
+        "353:Constant": ["355:BatchNormInference"],
+        "354:Constant": ["355:BatchNormInference"],
+        "355:BatchNormInference": ["357:PRelu"],
+        "356:Constant": ["357:PRelu"],
+        "357:PRelu": ["358:MaxPool"],
+        "2506:Constant": ["2549:Add"],
+        "2507:Constant": ["2547:Add"],
+        "2546:Constant": ["2548:Multiply"],
+        "2547:Add": ["2548:Multiply"],
+        "2548:Multiply": ["2549:Add"],
+        "2549:Add": ["357:PRelu"]
+    },
+    "nodes": {
+        "348:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "pooling3",
+                "auto_pad": "same_upper",
+                "axis": "0",
+                "dilations": "1, 1",
+                "index_element_type": "i64",
+                "kernel": "2, 2",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "rounding_type": "floor",
+                "strides": "2, 2"
+            },
+            "dot_attrs": {}
+        },
+        "349:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "convolution4_W",
+                "element_type": "f32",
+                "shape": "256, 128, 3, 3"
+            },
+            "dot_attrs": {}
+        },
+        "350:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "convolution4",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "351:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "BatchNormalization_scale4",
+                "element_type": "f32",
+                "shape": "256"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "352:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "BatchNormalization_B4",
+                "element_type": "f32",
+                "shape": "256"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "353:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "BatchNormalization_mean4",
+                "element_type": "f32",
+                "shape": "256"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "354:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "BatchNormalization_variance4",
+                "element_type": "f32",
+                "shape": "256"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "355:BatchNormInference": {
+            "attrs": {
+                "type": "BatchNormInference",
+                "name": "batchnorm4",
+                "epsilon": "0.000010"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "356:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_75",
+                "element_type": "f32",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "357:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "activation4"
+            },
+            "dot_attrs": {}
+        },
+        "358:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "pooling4",
+                "auto_pad": "same_upper",
+                "axis": "0",
+                "dilations": "1, 1",
+                "index_element_type": "i64",
+                "kernel": "2, 2",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "rounding_type": "floor",
+                "strides": "2, 2"
+            },
+            "dot_attrs": {}
+        },
+        "2506:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_2506",
+                "element_type": "f32",
+                "shape": "1, 256, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "2507:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_2507",
+                "element_type": "f32",
+                "shape": "1, 256, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "2546:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_2546",
+                "element_type": "f32",
+                "shape": "1, 256, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "2547:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_2547",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "2548:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_2548",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "2549:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "batchnorm4",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

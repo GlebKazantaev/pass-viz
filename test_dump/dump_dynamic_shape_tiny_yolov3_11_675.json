@@ -1,0 +1,136 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "BatchNormDecomposition",
+    "index": "137270",
+    "type": "eliminated",
+    "edges": {
+        "40884:Parameter": ["40886:Convolution"],
+        "40885:Constant": ["40886:Convolution"],
+        "40886:Convolution": ["40891:BatchNormInference"],
+        "40887:Constant": ["40891:BatchNormInference"],
+        "40888:Constant": ["40891:BatchNormInference"],
+        "40889:Constant": ["40891:BatchNormInference"],
+        "40890:Constant": ["40891:BatchNormInference"],
+        "40891:BatchNormInference": ["40893:PRelu"],
+        "40892:Constant": ["40893:PRelu"],
+        "40893:PRelu": ["40894:MaxPool"]
+    },
+    "nodes": {
+        "40884:Parameter": {
+            "attrs": {
+                "type": "Parameter",
+                "name": "input_1",
+                "element_type": "f32"
+            },
+            "dot_attrs": {}
+        },
+        "40885:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "conv2d_1/kernel:0",
+                "element_type": "f32",
+                "shape": "16, 3, 3, 3"
+            },
+            "dot_attrs": {}
+        },
+        "40886:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "conv2d_1",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "40887:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "scale10",
+                "element_type": "f32",
+                "shape": "16"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "40888:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "bias10",
+                "element_type": "f32",
+                "shape": "16"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "40889:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "mean10",
+                "element_type": "f32",
+                "shape": "16"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "40890:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "var10",
+                "element_type": "f32",
+                "shape": "16"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "40891:BatchNormInference": {
+            "attrs": {
+                "type": "BatchNormInference",
+                "name": "batch_normalization_1",
+                "epsilon": "0.000001"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "40892:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_34697",
+                "element_type": "f32",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "40893:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "leaky_re_lu_1"
+            },
+            "dot_attrs": {}
+        },
+        "40894:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "model_1/leaky_re_lu_1/LeakyRelu:0_pooling",
+                "auto_pad": "same_upper",
+                "axis": "0",
+                "dilations": "1, 1",
+                "index_element_type": "i64",
+                "kernel": "2, 2",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "rounding_type": "floor",
+                "strides": "2, 2"
+            },
+            "dot_attrs": {}
+        }
+    }
+}

@@ -1,0 +1,108 @@
+{
+    "run_name": "static_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "AddMultiplyFusion",
+    "index": "112039",
+    "type": "created",
+    "edges": {
+        "27465:Slice": ["31791:Add"],
+        "27488:Round": ["31862:Multiply"],
+        "31789:Constant": ["31865:Multiply"],
+        "31791:Add": ["27495:Multiply"],
+        "31861:Constant": ["31862:Multiply"],
+        "31862:Multiply": ["31865:Multiply"],
+        "31865:Multiply": ["31868:Add"],
+        "31867:Constant": ["31868:Add"],
+        "31868:Add": ["31791:Add"]
+    },
+    "nodes": {
+        "27465:Slice": {
+            "attrs": {
+                "type": "Slice",
+                "name": "TFNodes/yolo_evaluation_layer_1/strided_slice_14"
+            },
+            "dot_attrs": {}
+        },
+        "27488:Round": {
+            "attrs": {
+                "type": "Round",
+                "name": "TFNodes/yolo_evaluation_layer_1/Round",
+                "mode": "half_to_even"
+            },
+            "dot_attrs": {}
+        },
+        "27495:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "TFNodes/yolo_evaluation_layer_1/mul_3",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "31789:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_31789",
+                "element_type": "f32",
+                "shape": {}
+            },
+            "dot_attrs": {}
+        },
+        "31791:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "TFNodes/yolo_evaluation_layer_1/sub_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "31861:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_31861",
+                "element_type": "f32",
+                "shape": "2"
+            },
+            "dot_attrs": {}
+        },
+        "31862:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_31853",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "31865:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_31865",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "31867:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_31867",
+                "element_type": "f32",
+                "shape": "2"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "31868:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Multiply_31790",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

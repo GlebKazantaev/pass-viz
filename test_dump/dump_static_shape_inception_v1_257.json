@@ -1,0 +1,59 @@
+{
+    "run_name": "static_shape",
+    "model_name": "inception_v1",
+    "pass_name": "EliminateReshape",
+    "index": "21597",
+    "type": "eliminated",
+    "edges": {
+        "9971:Add": ["9976:Softmax"],
+        "9976:Softmax": ["9978:Reshape"],
+        "9978:Reshape": ["9981:Result"],
+        "12726:Constant": ["9978:Reshape"]
+    },
+    "nodes": {
+        "9971:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "loss3/classifier_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "9976:Softmax": {
+            "attrs": {
+                "type": "Softmax",
+                "name": "Softmax_7810",
+                "axis": "1"
+            },
+            "dot_attrs": {}
+        },
+        "9978:Reshape": {
+            "attrs": {
+                "type": "Reshape",
+                "name": "prob_1",
+                "special_zero": "0"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "9981:Result": {
+            "attrs": {
+                "type": "Result",
+                "name": "prob_1/sink_port_0"
+            },
+            "dot_attrs": {}
+        },
+        "12726:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_12726",
+                "element_type": "i64",
+                "shape": "2"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        }
+    }
+}

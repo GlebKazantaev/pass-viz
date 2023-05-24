@@ -1,0 +1,90 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "inception_v1",
+    "pass_name": "EliminateEltwise",
+    "index": "53653",
+    "type": "eliminated",
+    "edges": {
+        "17278:Reshape": ["17286:MatMul"],
+        "17286:MatMul": ["17288:Multiply"],
+        "17287:Constant": ["17288:Multiply"],
+        "17288:Multiply": ["17292:Add"],
+        "17292:Add": ["17294:Reshape"],
+        "20283:Constant": ["17286:MatMul"],
+        "20284:Constant": ["17292:Add"]
+    },
+    "nodes": {
+        "17278:Reshape": {
+            "attrs": {
+                "type": "Reshape",
+                "name": "OC2_DUMMY_0",
+                "special_zero": "1"
+            },
+            "dot_attrs": {}
+        },
+        "17286:MatMul": {
+            "attrs": {
+                "type": "MatMul",
+                "name": "loss3/classifier_1/WithoutBiases",
+                "transpose_a": "0",
+                "transpose_b": "1"
+            },
+            "dot_attrs": {}
+        },
+        "17287:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_14514",
+                "element_type": "f32",
+                "shape": {}
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "17288:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_14517",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "17292:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "loss3/classifier_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "17294:Reshape": {
+            "attrs": {
+                "type": "Reshape",
+                "name": "Reshape_14521",
+                "special_zero": "1"
+            },
+            "dot_attrs": {}
+        },
+        "20283:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_20283",
+                "element_type": "f32",
+                "shape": "1000, 1024"
+            },
+            "dot_attrs": {}
+        },
+        "20284:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_20284",
+                "element_type": "f32",
+                "shape": "1000"
+            },
+            "dot_attrs": {}
+        }
+    }
+}

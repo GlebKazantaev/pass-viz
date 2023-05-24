@@ -1,0 +1,131 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "tinyyolov2",
+    "pass_name": "BatchNormDecomposition",
+    "index": "14730",
+    "type": "eliminated",
+    "edges": {
+        "3742:PRelu": ["3744:Convolution"],
+        "3743:Constant": ["3744:Convolution"],
+        "3744:Convolution": ["3749:BatchNormInference"],
+        "3745:Constant": ["3749:BatchNormInference"],
+        "3746:Constant": ["3749:BatchNormInference"],
+        "3747:Constant": ["3749:BatchNormInference"],
+        "3748:Constant": ["3749:BatchNormInference"],
+        "3749:BatchNormInference": ["3751:PRelu"],
+        "3750:Constant": ["3751:PRelu"],
+        "3751:PRelu": ["3753:Convolution"]
+    },
+    "nodes": {
+        "3742:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "activation6"
+            },
+            "dot_attrs": {}
+        },
+        "3743:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "convolution7_W",
+                "element_type": "f32",
+                "shape": "1024, 1024, 3, 3"
+            },
+            "dot_attrs": {}
+        },
+        "3744:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "convolution7",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "3745:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "BatchNormalization_scale7",
+                "element_type": "f32",
+                "shape": "1024"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "3746:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "BatchNormalization_B7",
+                "element_type": "f32",
+                "shape": "1024"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "3747:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "BatchNormalization_mean7",
+                "element_type": "f32",
+                "shape": "1024"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "3748:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "BatchNormalization_variance7",
+                "element_type": "f32",
+                "shape": "1024"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "3749:BatchNormInference": {
+            "attrs": {
+                "type": "BatchNormInference",
+                "name": "batchnorm7",
+                "epsilon": "0.000010"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "3750:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_3457",
+                "element_type": "f32",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "3751:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "activation7"
+            },
+            "dot_attrs": {}
+        },
+        "3753:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "convolution8/WithoutBiases",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        }
+    }
+}

@@ -1,0 +1,154 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "tinyyolov2",
+    "pass_name": "ov::pass::ConstantFolding",
+    "index": "8107",
+    "type": "eliminated",
+    "edges": {
+        "3753:Convolution": ["3757:ShapeOf", "3768:Add"],
+        "3754:Constant": ["3765:Reshape"],
+        "3755:Constant": ["3761:Broadcast", "3764:Concat"],
+        "3756:Constant": ["3764:Concat"],
+        "3757:ShapeOf": ["3758:ShapeOf"],
+        "3758:ShapeOf": ["3760:Subtract"],
+        "3759:Constant": ["3760:Subtract"],
+        "3760:Subtract": ["3761:Broadcast"],
+        "3761:Broadcast": ["3764:Concat"],
+        "3764:Concat": ["3765:Reshape"],
+        "3765:Reshape": ["3768:Add"],
+        "3768:Add": ["3769:Result"]
+    },
+    "nodes": {
+        "3753:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "convolution8/WithoutBiases",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "3754:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "convolution8_B",
+                "element_type": "f32",
+                "shape": "125"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "3755:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_3462",
+                "element_type": "i64",
+                "shape": "1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "3756:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "ShapeOf_3468",
+                "element_type": "i64",
+                "shape": "1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "3757:ShapeOf": {
+            "attrs": {
+                "type": "ShapeOf",
+                "name": "ShapeOf_3460",
+                "output_type": "i64"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "3758:ShapeOf": {
+            "attrs": {
+                "type": "ShapeOf",
+                "name": "ShapeOf_3461",
+                "output_type": "i64"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "3759:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_3463",
+                "element_type": "i64",
+                "shape": "1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "3760:Subtract": {
+            "attrs": {
+                "type": "Subtract",
+                "name": "Subtract_3464",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "3761:Broadcast": {
+            "attrs": {
+                "type": "Broadcast",
+                "name": "Broadcast_3465",
+                "mode": "numpy"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "3764:Concat": {
+            "attrs": {
+                "type": "Concat",
+                "name": "Concat_3469",
+                "axis": "0"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "3765:Reshape": {
+            "attrs": {
+                "type": "Reshape",
+                "name": "Reshape_3470",
+                "special_zero": "0"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "3768:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "grid",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "3769:Result": {
+            "attrs": {
+                "type": "Result",
+                "name": "grid/sink_port_0"
+            },
+            "dot_attrs": {}
+        }
+    }
+}

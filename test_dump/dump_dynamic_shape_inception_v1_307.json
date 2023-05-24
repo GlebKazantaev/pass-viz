@@ -1,0 +1,80 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "inception_v1",
+    "pass_name": "EliminateReshape",
+    "index": "53712",
+    "type": "combined",
+    "edges": {
+        "17286:MatMul": ["17292:Add"],
+        "17292:Add": ["17294:Reshape"],
+        "17293:Constant": ["17294:Reshape"],
+        "17294:Reshape": ["17297:Softmax"],
+        "17297:Softmax": ["17299:Reshape"],
+        "20284:Constant": ["17292:Add"]
+    },
+    "nodes": {
+        "17286:MatMul": {
+            "attrs": {
+                "type": "MatMul",
+                "name": "loss3/classifier_1/WithoutBiases",
+                "transpose_a": "0",
+                "transpose_b": "1"
+            },
+            "dot_attrs": {}
+        },
+        "17292:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "loss3/classifier_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "17293:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_14520",
+                "element_type": "i64",
+                "shape": "2"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "17294:Reshape": {
+            "attrs": {
+                "type": "Reshape",
+                "name": "Reshape_14521",
+                "special_zero": "1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "17297:Softmax": {
+            "attrs": {
+                "type": "Softmax",
+                "name": "Softmax_14524",
+                "axis": "1"
+            },
+            "dot_attrs": {}
+        },
+        "17299:Reshape": {
+            "attrs": {
+                "type": "Reshape",
+                "name": "prob_1",
+                "special_zero": "0"
+            },
+            "dot_attrs": {}
+        },
+        "20284:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_20284",
+                "element_type": "f32",
+                "shape": "1000"
+            },
+            "dot_attrs": {}
+        }
+    }
+}

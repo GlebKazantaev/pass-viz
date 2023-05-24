@@ -1,0 +1,155 @@
+{
+    "run_name": "static_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "AddMultiplyFusion",
+    "index": "105495",
+    "type": "combined",
+    "edges": {
+        "27211:MaxPool": ["27213:Convolution"],
+        "27212:Constant": ["27213:Convolution"],
+        "27213:Convolution": ["30754:Add", "31375:Multiply"],
+        "30713:Constant": ["30756:Add"],
+        "30714:Constant": ["30754:Add"],
+        "30753:Constant": ["30755:Multiply", "31375:Multiply"],
+        "30754:Add": ["30755:Multiply"],
+        "30755:Multiply": ["30756:Add"],
+        "30756:Add": ["27220:PRelu"],
+        "31375:Multiply": ["31378:Add"],
+        "31377:Constant": ["31378:Add"],
+        "31378:Add": ["30756:Add"]
+    },
+    "nodes": {
+        "27211:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "model_1/leaky_re_lu_3/LeakyRelu:0_pooling",
+                "auto_pad": "same_upper",
+                "axis": "0",
+                "dilations": "1, 1",
+                "index_element_type": "i64",
+                "kernel": "2, 2",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "rounding_type": "floor",
+                "strides": "2, 2"
+            },
+            "dot_attrs": {}
+        },
+        "27212:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "conv2d_4/kernel:0",
+                "element_type": "f32",
+                "shape": "128, 64, 3, 3"
+            },
+            "dot_attrs": {}
+        },
+        "27213:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "conv2d_4",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "27220:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "leaky_re_lu_4"
+            },
+            "dot_attrs": {}
+        },
+        "30713:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_30713",
+                "element_type": "f32",
+                "shape": "1, 128, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "30714:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_30714",
+                "element_type": "f32",
+                "shape": "1, 128, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "30753:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_30753",
+                "element_type": "f32",
+                "shape": "1, 128, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "30754:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_30754",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "30755:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_30755",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "30756:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_30756",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "31375:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_31375",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "31377:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_31377",
+                "element_type": "f32",
+                "shape": "1, 128, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "31378:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Multiply_30755",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

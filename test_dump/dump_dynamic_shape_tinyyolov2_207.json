@@ -1,0 +1,141 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "tinyyolov2",
+    "pass_name": "ConvolutionMultiplyFusion",
+    "index": "14828",
+    "type": "combined",
+    "edges": {
+        "3669:Parameter": ["6235:Convolution", "6243:Convolution"],
+        "5623:Constant": ["6137:Multiply", "6239:Reshape"],
+        "6137:Multiply": ["6146:Add"],
+        "6145:Constant": ["6146:Add"],
+        "6146:Add": ["3682:PRelu"],
+        "6234:Constant": ["6235:Convolution", "6242:Multiply"],
+        "6235:Convolution": ["6137:Multiply"],
+        "6238:Constant": ["6239:Reshape"],
+        "6239:Reshape": ["6242:Multiply"],
+        "6242:Multiply": ["6243:Convolution"],
+        "6243:Convolution": ["6146:Add"]
+    },
+    "nodes": {
+        "3669:Parameter": {
+            "attrs": {
+                "type": "Parameter",
+                "name": "image",
+                "element_type": "f32"
+            },
+            "dot_attrs": {}
+        },
+        "3682:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "activation"
+            },
+            "dot_attrs": {}
+        },
+        "5623:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_5623",
+                "element_type": "f32",
+                "shape": "1, 16, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "6137:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_6137",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "6145:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_6145",
+                "element_type": "f32",
+                "shape": "1, 16, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "6146:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_6146",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "6234:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_6234",
+                "element_type": "f32",
+                "shape": "16, 3, 3, 3"
+            },
+            "dot_attrs": {}
+        },
+        "6235:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_6235",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "6238:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_6238",
+                "element_type": "i64",
+                "shape": "4"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "6239:Reshape": {
+            "attrs": {
+                "type": "Reshape",
+                "name": "Reshape_6239",
+                "special_zero": "1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "6242:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_6242",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "6243:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Multiply_6137",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

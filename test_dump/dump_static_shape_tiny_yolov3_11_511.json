@@ -1,0 +1,127 @@
+{
+    "run_name": "static_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "AddMultiplyFusion",
+    "index": "105574",
+    "type": "created",
+    "edges": {
+        "27645:Slice": ["27646:Sigmoid"],
+        "27646:Sigmoid": ["31488:Multiply"],
+        "27769:Constant": ["27773:Slice"],
+        "27770:Constant": ["27773:Slice"],
+        "27771:Constant": ["27773:Slice"],
+        "27772:Constant": ["27773:Slice"],
+        "27773:Slice": ["27784:Subtract"],
+        "31305:Constant": ["31488:Multiply"],
+        "31488:Multiply": ["31491:Add"],
+        "31490:Constant": ["31491:Add"],
+        "31491:Add": ["27773:Slice"]
+    },
+    "nodes": {
+        "27645:Slice": {
+            "attrs": {
+                "type": "Slice",
+                "name": "TFNodes/yolo_evaluation_layer_1/strided_slice_27"
+            },
+            "dot_attrs": {}
+        },
+        "27646:Sigmoid": {
+            "attrs": {
+                "type": "Sigmoid",
+                "name": "TFNodes/yolo_evaluation_layer_1/Sigmoid_3"
+            },
+            "dot_attrs": {}
+        },
+        "27769:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "TFNodes/yolo_evaluation_layer_1/strided_slice_33__104",
+                "element_type": "i64",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "27770:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "TFNodes/yolo_evaluation_layer_1/strided_slice_33__105",
+                "element_type": "i64",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "27771:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "TFNodes/yolo_evaluation_layer_1/strided_slice_33__107",
+                "element_type": "i64",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "27772:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "TFNodes/yolo_evaluation_layer_1/strided_slice_33__106",
+                "element_type": "i64",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "27773:Slice": {
+            "attrs": {
+                "type": "Slice",
+                "name": "TFNodes/yolo_evaluation_layer_1/strided_slice_33"
+            },
+            "dot_attrs": {}
+        },
+        "27784:Subtract": {
+            "attrs": {
+                "type": "Subtract",
+                "name": "TFNodes/yolo_evaluation_layer_1/sub_4",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "31305:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_31305",
+                "element_type": "f32",
+                "shape": "2"
+            },
+            "dot_attrs": {}
+        },
+        "31488:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_31488",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "31490:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_31490",
+                "element_type": "f32",
+                "shape": "14, 14, 1, 2"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "31491:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "TFNodes/yolo_evaluation_layer_1/truediv_8",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

@@ -1,0 +1,134 @@
+{
+    "run_name": "static_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "BatchNormDecomposition",
+    "index": "104886",
+    "type": "eliminated",
+    "edges": {
+        "27259:PRelu": ["27557:Convolution"],
+        "27556:Constant": ["27557:Convolution"],
+        "27557:Convolution": ["27562:BatchNormInference"],
+        "27558:Constant": ["27562:BatchNormInference"],
+        "27559:Constant": ["27562:BatchNormInference"],
+        "27560:Constant": ["27562:BatchNormInference"],
+        "27561:Constant": ["27562:BatchNormInference"],
+        "27562:BatchNormInference": ["27564:PRelu"],
+        "27563:Constant": ["27564:PRelu"],
+        "27564:PRelu": ["27566:Interpolate"]
+    },
+    "nodes": {
+        "27259:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "leaky_re_lu_8"
+            },
+            "dot_attrs": {}
+        },
+        "27556:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "conv2d_11/kernel:0",
+                "element_type": "f32",
+                "shape": "128, 256, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "27557:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "conv2d_11",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "27558:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "scale2",
+                "element_type": "f32",
+                "shape": "128"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "27559:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "bias2",
+                "element_type": "f32",
+                "shape": "128"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "27560:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "mean2",
+                "element_type": "f32",
+                "shape": "128"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "27561:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "var2",
+                "element_type": "f32",
+                "shape": "128"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "27562:BatchNormInference": {
+            "attrs": {
+                "type": "BatchNormInference",
+                "name": "batch_normalization_10",
+                "epsilon": "0.000001"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "27563:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_21080",
+                "element_type": "f32",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "27564:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "leaky_re_lu_10"
+            },
+            "dot_attrs": {}
+        },
+        "27566:Interpolate": {
+            "attrs": {
+                "type": "Interpolate",
+                "name": "Resize",
+                "antialias": "0",
+                "coordinate_transformation_mode": "asymmetric",
+                "cube_coeff": "-0.750000",
+                "mode": "nearest",
+                "nearest_mode": "floor",
+                "pads_begin": "0, 0, 0, 0",
+                "pads_end": "0, 0, 0, 0",
+                "shape_calculation_mode": "scales"
+            },
+            "dot_attrs": {}
+        }
+    }
+}

@@ -1,0 +1,146 @@
+{
+    "run_name": "static_shape",
+    "model_name": "tinyyolov2",
+    "pass_name": "AddAddFusion",
+    "index": "6704",
+    "type": "combined",
+    "edges": {
+        "360:Convolution": ["2832:Multiply"],
+        "366:Constant": ["367:PRelu"],
+        "367:PRelu": ["368:MaxPool"],
+        "2578:Constant": ["2621:Add"],
+        "2618:Constant": ["2832:Multiply"],
+        "2621:Add": ["367:PRelu"],
+        "2832:Multiply": ["2835:Add", "2841:Add"],
+        "2834:Constant": ["2835:Add"],
+        "2835:Add": ["2621:Add"],
+        "2840:Constant": ["2841:Add"],
+        "2841:Add": ["367:PRelu"]
+    },
+    "nodes": {
+        "360:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "convolution5",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "366:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_81",
+                "element_type": "f32",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "367:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "activation5"
+            },
+            "dot_attrs": {}
+        },
+        "368:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "pooling5",
+                "auto_pad": "same_upper",
+                "axis": "0",
+                "dilations": "1, 1",
+                "index_element_type": "i64",
+                "kernel": "2, 2",
+                "pads_begin": "0, 0",
+                "pads_end": "1, 1",
+                "rounding_type": "floor",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "2578:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_2578",
+                "element_type": "f32",
+                "shape": "1, 512, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "2618:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_2618",
+                "element_type": "f32",
+                "shape": "1, 512, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "2621:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_2621",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "2832:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_2832",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "2834:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_2834",
+                "element_type": "f32",
+                "shape": "1, 512, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "2835:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_2835",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "2840:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_2840",
+                "element_type": "f32",
+                "shape": "1, 512, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "2841:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "batchnorm5",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

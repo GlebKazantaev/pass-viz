@@ -1,0 +1,141 @@
+{
+    "run_name": "static_shape",
+    "model_name": "tinyyolov2",
+    "pass_name": "ConvolutionMultiplyFusion",
+    "index": "6725",
+    "type": "combined",
+    "edges": {
+        "304:Parameter": ["2870:Convolution", "2878:Convolution"],
+        "2258:Constant": ["2772:Multiply", "2874:Reshape"],
+        "2772:Multiply": ["2781:Add"],
+        "2780:Constant": ["2781:Add"],
+        "2781:Add": ["317:PRelu"],
+        "2869:Constant": ["2870:Convolution", "2877:Multiply"],
+        "2870:Convolution": ["2772:Multiply"],
+        "2873:Constant": ["2874:Reshape"],
+        "2874:Reshape": ["2877:Multiply"],
+        "2877:Multiply": ["2878:Convolution"],
+        "2878:Convolution": ["2781:Add"]
+    },
+    "nodes": {
+        "304:Parameter": {
+            "attrs": {
+                "type": "Parameter",
+                "name": "image",
+                "element_type": "f32"
+            },
+            "dot_attrs": {}
+        },
+        "317:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "activation"
+            },
+            "dot_attrs": {}
+        },
+        "2258:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_2258",
+                "element_type": "f32",
+                "shape": "1, 16, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "2772:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_2772",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "2780:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_2780",
+                "element_type": "f32",
+                "shape": "1, 16, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "2781:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_2781",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "2869:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_2869",
+                "element_type": "f32",
+                "shape": "16, 3, 3, 3"
+            },
+            "dot_attrs": {}
+        },
+        "2870:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_2870",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "2873:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_2873",
+                "element_type": "i64",
+                "shape": "4"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "2874:Reshape": {
+            "attrs": {
+                "type": "Reshape",
+                "name": "Reshape_2874",
+                "special_zero": "1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "2877:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_2877",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "2878:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Multiply_2772",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

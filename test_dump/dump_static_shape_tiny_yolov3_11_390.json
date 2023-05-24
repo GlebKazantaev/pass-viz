@@ -1,0 +1,212 @@
+{
+    "run_name": "static_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "BatchNormDecomposition",
+    "index": "104468",
+    "type": "combined",
+    "edges": {
+        "27250:PRelu": ["27252:Convolution"],
+        "27251:Constant": ["27252:Convolution"],
+        "27252:Convolution": ["27257:BatchNormInference", "31042:Add"],
+        "27253:Constant": ["27257:BatchNormInference"],
+        "27254:Constant": ["27257:BatchNormInference"],
+        "27255:Constant": ["27257:BatchNormInference"],
+        "27256:Constant": ["27257:BatchNormInference"],
+        "27257:BatchNormInference": ["27259:PRelu"],
+        "27258:Constant": ["27259:PRelu"],
+        "27259:PRelu": ["27261:Convolution", "27557:Convolution"],
+        "31001:Constant": ["31044:Add"],
+        "31002:Constant": ["31042:Add"],
+        "31041:Constant": ["31043:Multiply"],
+        "31042:Add": ["31043:Multiply"],
+        "31043:Multiply": ["31044:Add"],
+        "31044:Add": ["27259:PRelu"]
+    },
+    "nodes": {
+        "27250:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "leaky_re_lu_7"
+            },
+            "dot_attrs": {}
+        },
+        "27251:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "conv2d_8/kernel:0",
+                "element_type": "f32",
+                "shape": "256, 1024, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "27252:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "conv2d_8",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "27253:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "scale3",
+                "element_type": "f32",
+                "shape": "256"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "27254:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "bias3",
+                "element_type": "f32",
+                "shape": "256"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "27255:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "mean3",
+                "element_type": "f32",
+                "shape": "256"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "27256:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "var3",
+                "element_type": "f32",
+                "shape": "256"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "27257:BatchNormInference": {
+            "attrs": {
+                "type": "BatchNormInference",
+                "name": "batch_normalization_8",
+                "epsilon": "0.000001"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "27258:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_21075",
+                "element_type": "f32",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "27259:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "leaky_re_lu_8"
+            },
+            "dot_attrs": {}
+        },
+        "27261:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "conv2d_9",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "27557:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "conv2d_11",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "31001:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_31001",
+                "element_type": "f32",
+                "shape": "1, 256, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "31002:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_31002",
+                "element_type": "f32",
+                "shape": "1, 256, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "31041:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_31041",
+                "element_type": "f32",
+                "shape": "1, 256, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "31042:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_31042",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "31043:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_31043",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "31044:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "batch_normalization_8",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

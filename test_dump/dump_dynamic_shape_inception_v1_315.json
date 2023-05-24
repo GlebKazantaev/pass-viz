@@ -1,0 +1,69 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "inception_v1",
+    "pass_name": "ConvertSoftMax8ToSoftMax1",
+    "index": "80506",
+    "type": "combined",
+    "edges": {
+        "17286:MatMul": ["17292:Add"],
+        "17292:Add": ["17297:Softmax", "20391:Softmax"],
+        "17297:Softmax": ["17302:Result"],
+        "20386:Constant": ["17292:Add"],
+        "20391:Softmax": ["17302:Result"]
+    },
+    "nodes": {
+        "17286:MatMul": {
+            "attrs": {
+                "type": "MatMul",
+                "name": "loss3/classifier_1/WithoutBiases",
+                "transpose_a": "0",
+                "transpose_b": "1"
+            },
+            "dot_attrs": {}
+        },
+        "17292:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "loss3/classifier_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "17297:Softmax": {
+            "attrs": {
+                "type": "Softmax",
+                "name": "Softmax_14524",
+                "axis": "1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "17302:Result": {
+            "attrs": {
+                "type": "Result",
+                "name": "prob_1/sink_port_0"
+            },
+            "dot_attrs": {}
+        },
+        "20386:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_20386",
+                "element_type": "f32",
+                "shape": "1, 1000"
+            },
+            "dot_attrs": {}
+        },
+        "20391:Softmax": {
+            "attrs": {
+                "type": "Softmax",
+                "name": "prob_1",
+                "axis": "1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

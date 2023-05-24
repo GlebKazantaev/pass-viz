@@ -1,0 +1,123 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "MultiplyMultiplyFusion",
+    "index": "145826",
+    "type": "eliminated",
+    "edges": {
+        "41489:Multiply": ["45498:Add"],
+        "41514:Slice": ["41515:Multiply"],
+        "41515:Multiply": ["44997:Multiply", "45003:Multiply"],
+        "44997:Multiply": ["45497:Multiply"],
+        "45404:Constant": ["44997:Multiply"],
+        "45486:Multiply": ["41515:Multiply"],
+        "45496:Constant": ["45497:Multiply"],
+        "45497:Multiply": ["45498:Add"],
+        "45498:Add": ["41523:Slice", "41528:Slice"]
+    },
+    "nodes": {
+        "41489:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "TFNodes/yolo_evaluation_layer_1/mul_9",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "41514:Slice": {
+            "attrs": {
+                "type": "Slice",
+                "name": "TFNodes/yolo_evaluation_layer_1/strided_slice_34"
+            },
+            "dot_attrs": {}
+        },
+        "41515:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "TFNodes/yolo_evaluation_layer_1/mul_10",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "41523:Slice": {
+            "attrs": {
+                "type": "Slice",
+                "name": "TFNodes/yolo_evaluation_layer_1/strided_slice_35"
+            },
+            "dot_attrs": {}
+        },
+        "41528:Slice": {
+            "attrs": {
+                "type": "Slice",
+                "name": "TFNodes/yolo_evaluation_layer_1/strided_slice_36"
+            },
+            "dot_attrs": {}
+        },
+        "44997:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_44997",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "45003:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_45003",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "45404:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_45404",
+                "element_type": "f32",
+                "shape": "1, 1, 1, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "45486:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_45486",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "45496:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_45496",
+                "element_type": "f32",
+                "shape": {}
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "45497:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_45497",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "45498:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_45498",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        }
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "inception_v1",
+    "pass_name": "AlignEltwiseInputRanks",
+    "index": "73322",
+    "type": "created",
+    "edges": {
+        "17286:MatMul": ["17292:Add"],
+        "17292:Add": ["17297:Softmax"],
+        "20386:Constant": ["17292:Add"]
+    },
+    "nodes": {
+        "17286:MatMul": {
+            "attrs": {
+                "type": "MatMul",
+                "name": "loss3/classifier_1/WithoutBiases",
+                "transpose_a": "0",
+                "transpose_b": "1"
+            },
+            "dot_attrs": {}
+        },
+        "17292:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "loss3/classifier_1",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "17297:Softmax": {
+            "attrs": {
+                "type": "Softmax",
+                "name": "prob_1",
+                "axis": "1"
+            },
+            "dot_attrs": {}
+        },
+        "20386:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_20386",
+                "element_type": "f32",
+                "shape": "1, 1000"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

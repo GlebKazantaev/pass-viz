@@ -1,0 +1,70 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "AlignEltwiseInputRanks",
+    "index": "138994",
+    "type": "created",
+    "edges": {
+        "41177:Slice": ["41183:Multiply"],
+        "41183:Multiply": ["41184:Convert", "41216:Slice", "41477:Convert", "41507:Slice"],
+        "45390:Constant": ["41183:Multiply"]
+    },
+    "nodes": {
+        "41177:Slice": {
+            "attrs": {
+                "type": "Slice",
+                "name": "TFNodes/yolo_evaluation_layer_1/strided_slice"
+            },
+            "dot_attrs": {}
+        },
+        "41183:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "TFNodes/yolo_evaluation_layer_1/mul",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "41184:Convert": {
+            "attrs": {
+                "type": "Convert",
+                "name": "TFNodes/yolo_evaluation_layer_1/Cast_3",
+                "destination_type": "f32"
+            },
+            "dot_attrs": {}
+        },
+        "41216:Slice": {
+            "attrs": {
+                "type": "Slice",
+                "name": "TFNodes/yolo_evaluation_layer_1/strided_slice_11"
+            },
+            "dot_attrs": {}
+        },
+        "41477:Convert": {
+            "attrs": {
+                "type": "Convert",
+                "name": "TFNodes/yolo_evaluation_layer_1/Cast_7",
+                "destination_type": "f32"
+            },
+            "dot_attrs": {}
+        },
+        "41507:Slice": {
+            "attrs": {
+                "type": "Slice",
+                "name": "TFNodes/yolo_evaluation_layer_1/strided_slice_30"
+            },
+            "dot_attrs": {}
+        },
+        "45390:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_45390",
+                "element_type": "i32",
+                "shape": "1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

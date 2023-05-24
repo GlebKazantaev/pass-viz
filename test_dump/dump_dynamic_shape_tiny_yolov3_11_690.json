@@ -1,0 +1,144 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "BatchNormDecomposition",
+    "index": "137515",
+    "type": "eliminated",
+    "edges": {
+        "40934:MaxPool": ["40936:Convolution"],
+        "40935:Constant": ["40936:Convolution"],
+        "40936:Convolution": ["40941:BatchNormInference"],
+        "40937:Constant": ["40941:BatchNormInference"],
+        "40938:Constant": ["40941:BatchNormInference"],
+        "40939:Constant": ["40941:BatchNormInference"],
+        "40940:Constant": ["40941:BatchNormInference"],
+        "40941:BatchNormInference": ["40943:PRelu"],
+        "40942:Constant": ["40943:PRelu"],
+        "40943:PRelu": ["40944:MaxPool"]
+    },
+    "nodes": {
+        "40934:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "model_1/leaky_re_lu_5/LeakyRelu:0_pooling",
+                "auto_pad": "same_upper",
+                "axis": "0",
+                "dilations": "1, 1",
+                "index_element_type": "i64",
+                "kernel": "2, 2",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "rounding_type": "floor",
+                "strides": "2, 2"
+            },
+            "dot_attrs": {}
+        },
+        "40935:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "conv2d_6/kernel:0",
+                "element_type": "f32",
+                "shape": "512, 256, 3, 3"
+            },
+            "dot_attrs": {}
+        },
+        "40936:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "conv2d_6",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "40937:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "scale5",
+                "element_type": "f32",
+                "shape": "512"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "40938:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "bias5",
+                "element_type": "f32",
+                "shape": "512"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "40939:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "mean5",
+                "element_type": "f32",
+                "shape": "512"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "40940:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "var5",
+                "element_type": "f32",
+                "shape": "512"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "40941:BatchNormInference": {
+            "attrs": {
+                "type": "BatchNormInference",
+                "name": "batch_normalization_6",
+                "epsilon": "0.000001"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "40942:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_34727",
+                "element_type": "f32",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "40943:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "leaky_re_lu_6"
+            },
+            "dot_attrs": {}
+        },
+        "40944:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "model_1/leaky_re_lu_6/LeakyRelu:0_pooling",
+                "auto_pad": "same_upper",
+                "axis": "0",
+                "dilations": "1, 1",
+                "index_element_type": "i64",
+                "kernel": "2, 2",
+                "pads_begin": "0, 0",
+                "pads_end": "1, 1",
+                "rounding_type": "floor",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        }
+    }
+}

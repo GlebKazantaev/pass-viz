@@ -1,0 +1,48 @@
+{
+    "run_name": "static_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "AlignEltwiseInputRanks",
+    "index": "105775",
+    "type": "eliminated",
+    "edges": {
+        "27338:Sigmoid": ["31447:Multiply"],
+        "31125:Constant": ["31447:Multiply"],
+        "31447:Multiply": ["31450:Add"]
+    },
+    "nodes": {
+        "27338:Sigmoid": {
+            "attrs": {
+                "type": "Sigmoid",
+                "name": "TFNodes/yolo_evaluation_layer_1/Sigmoid"
+            },
+            "dot_attrs": {}
+        },
+        "31125:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_31125",
+                "element_type": "f32",
+                "shape": "2"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "31447:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_31447",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "31450:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_31450",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        }
+    }
+}

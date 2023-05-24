@@ -1,0 +1,85 @@
+{
+    "run_name": "static_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "ConvertMaxPool8ToMaxPool1",
+    "index": "112250",
+    "type": "created",
+    "edges": {
+        "27209:Constant": ["27210:PRelu"],
+        "27210:PRelu": ["31929:MaxPool"],
+        "31372:Add": ["27210:PRelu"],
+        "31546:Convolution": ["31384:Add"],
+        "31677:Constant": ["31546:Convolution"],
+        "31929:MaxPool": ["31546:Convolution"]
+    },
+    "nodes": {
+        "27209:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_21046",
+                "element_type": "f32",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "27210:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "leaky_re_lu_3"
+            },
+            "dot_attrs": {}
+        },
+        "31372:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "batch_normalization_3",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "31384:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "batch_normalization_4",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "31546:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Multiply_31375",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "31677:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Multiply_31545",
+                "element_type": "f32",
+                "shape": "128, 64, 3, 3"
+            },
+            "dot_attrs": {}
+        },
+        "31929:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "model_1/leaky_re_lu_3/LeakyRelu:0_pooling",
+                "auto_pad": "same_upper",
+                "kernel": "2, 2",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "rounding_type": "floor",
+                "strides": "2, 2"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

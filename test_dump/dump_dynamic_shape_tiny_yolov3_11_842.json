@@ -1,0 +1,48 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "AlignEltwiseInputRanks",
+    "index": "138993",
+    "type": "eliminated",
+    "edges": {
+        "45114:Multiply": ["45117:Add"],
+        "45116:Constant": ["45117:Add"],
+        "45117:Add": ["41168:Slice"]
+    },
+    "nodes": {
+        "41168:Slice": {
+            "attrs": {
+                "type": "Slice",
+                "name": "TFNodes/yolo_evaluation_layer_1/strided_slice_14"
+            },
+            "dot_attrs": {}
+        },
+        "45114:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_45114",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "45116:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_45116",
+                "element_type": "f32",
+                "shape": "7, 7, 1, 2"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "45117:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_45117",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        }
+    }
+}

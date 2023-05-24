@@ -1,0 +1,143 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "BatchNormDecomposition",
+    "index": "137609",
+    "type": "eliminated",
+    "edges": {
+        "40953:PRelu": ["40955:Convolution"],
+        "40954:Constant": ["40955:Convolution"],
+        "40955:Convolution": ["40960:BatchNormInference"],
+        "40956:Constant": ["40960:BatchNormInference"],
+        "40957:Constant": ["40960:BatchNormInference"],
+        "40958:Constant": ["40960:BatchNormInference"],
+        "40959:Constant": ["40960:BatchNormInference"],
+        "40960:BatchNormInference": ["40962:PRelu"],
+        "40961:Constant": ["40962:PRelu"],
+        "40962:PRelu": ["40964:Convolution", "41260:Convolution"]
+    },
+    "nodes": {
+        "40953:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "leaky_re_lu_7"
+            },
+            "dot_attrs": {}
+        },
+        "40954:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "conv2d_8/kernel:0",
+                "element_type": "f32",
+                "shape": "256, 1024, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "40955:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "conv2d_8",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "40956:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "scale3",
+                "element_type": "f32",
+                "shape": "256"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "40957:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "bias3",
+                "element_type": "f32",
+                "shape": "256"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "40958:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "mean3",
+                "element_type": "f32",
+                "shape": "256"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "40959:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "var3",
+                "element_type": "f32",
+                "shape": "256"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "40960:BatchNormInference": {
+            "attrs": {
+                "type": "BatchNormInference",
+                "name": "batch_normalization_8",
+                "epsilon": "0.000001"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "40961:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_34738",
+                "element_type": "f32",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "40962:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "leaky_re_lu_8"
+            },
+            "dot_attrs": {}
+        },
+        "40964:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "conv2d_9",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "41260:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "conv2d_11",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        }
+    }
+}

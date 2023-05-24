@@ -1,0 +1,93 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "tinyyolov2",
+    "pass_name": "EliminateEltwise",
+    "index": "8191",
+    "type": "eliminated",
+    "edges": {
+        "3669:Parameter": ["3672:Multiply"],
+        "3670:Constant": ["3673:Add"],
+        "3671:Constant": ["3672:Multiply"],
+        "3672:Multiply": ["3673:Add"],
+        "3673:Add": ["3675:Convolution"],
+        "3674:Constant": ["3675:Convolution"],
+        "3675:Convolution": ["3680:BatchNormInference"]
+    },
+    "nodes": {
+        "3669:Parameter": {
+            "attrs": {
+                "type": "Parameter",
+                "name": "image",
+                "element_type": "f32"
+            },
+            "dot_attrs": {}
+        },
+        "3670:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "scalerPreprocessor_bias",
+                "element_type": "f32",
+                "shape": "3, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "3671:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "scalerPreprocessor_scale",
+                "element_type": "f32",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "3672:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Mul",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "3673:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "3674:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "convolution_W",
+                "element_type": "f32",
+                "shape": "16, 3, 3, 3"
+            },
+            "dot_attrs": {}
+        },
+        "3675:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "convolution",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "3680:BatchNormInference": {
+            "attrs": {
+                "type": "BatchNormInference",
+                "name": "batchnorm",
+                "epsilon": "0.000010"
+            },
+            "dot_attrs": {}
+        }
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "run_name": "static_shape",
+    "model_name": "tinyyolov2",
+    "pass_name": "ov::pass::ConstantFolding",
+    "index": "4",
+    "type": "created",
+    "edges": {
+        "388:Convolution": ["403:Add"],
+        "403:Add": ["404:Result"],
+        "2173:Constant": ["403:Add"]
+    },
+    "nodes": {
+        "388:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "convolution8/WithoutBiases",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "403:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "grid",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "404:Result": {
+            "attrs": {
+                "type": "Result",
+                "name": "grid/sink_port_0"
+            },
+            "dot_attrs": {}
+        },
+        "2173:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Reshape_105",
+                "element_type": "f32",
+                "shape": "1, 125, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

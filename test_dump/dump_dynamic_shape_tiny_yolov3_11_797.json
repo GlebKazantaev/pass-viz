@@ -1,0 +1,96 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "AddAddFusion",
+    "index": "138789",
+    "type": "created",
+    "edges": {
+        "41272:Convolution": ["45133:Multiply"],
+        "41278:Constant": ["41279:PRelu"],
+        "41279:PRelu": ["41281:Convolution"],
+        "44972:Constant": ["45133:Multiply"],
+        "45133:Multiply": ["45142:Add"],
+        "45141:Constant": ["45142:Add"],
+        "45142:Add": ["41279:PRelu"]
+    },
+    "nodes": {
+        "41272:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "conv2d_12",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "41278:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_34755",
+                "element_type": "f32",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "41279:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "leaky_re_lu_11"
+            },
+            "dot_attrs": {}
+        },
+        "41281:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "conv2d_13/WithoutBiases",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "44972:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_44972",
+                "element_type": "f32",
+                "shape": "1, 256, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "45133:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_45133",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "45141:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_45141",
+                "element_type": "f32",
+                "shape": "1, 256, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "45142:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "batch_normalization_11",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

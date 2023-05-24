@@ -1,0 +1,88 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "tinyyolov2",
+    "pass_name": "ConvertMaxPool8ToMaxPool1",
+    "index": "16203",
+    "type": "eliminated",
+    "edges": {
+        "3721:Constant": ["3722:PRelu"],
+        "3722:PRelu": ["3723:MaxPool"],
+        "3723:MaxPool": ["6303:Convolution"],
+        "6194:Add": ["3722:PRelu"],
+        "6303:Convolution": ["6206:Add"],
+        "6363:Constant": ["6303:Convolution"]
+    },
+    "nodes": {
+        "3721:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_3440",
+                "element_type": "f32",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "3722:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "activation4"
+            },
+            "dot_attrs": {}
+        },
+        "3723:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "pooling4",
+                "auto_pad": "same_upper",
+                "axis": "0",
+                "dilations": "1, 1",
+                "index_element_type": "i64",
+                "kernel": "2, 2",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "rounding_type": "floor",
+                "strides": "2, 2"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "6194:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_6194",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "6206:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_6206",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "6303:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_6303",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "6363:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_6363",
+                "element_type": "f32",
+                "shape": "512, 256, 3, 3"
+            },
+            "dot_attrs": {}
+        }
+    }
+}

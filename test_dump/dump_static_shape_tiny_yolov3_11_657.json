@@ -1,0 +1,95 @@
+{
+    "run_name": "static_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "ConvertInterpolate11ToInterpolate4",
+    "index": "112254",
+    "type": "eliminated",
+    "edges": {
+        "27230:PRelu": ["27567:Concat"],
+        "27563:Constant": ["27564:PRelu"],
+        "27564:PRelu": ["27566:Interpolate"],
+        "27565:Constant": ["27566:Interpolate"],
+        "27566:Interpolate": ["27567:Concat"],
+        "27567:Concat": ["31630:Convolution"],
+        "31473:Add": ["27564:PRelu"]
+    },
+    "nodes": {
+        "27230:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "leaky_re_lu_5"
+            },
+            "dot_attrs": {}
+        },
+        "27563:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_21080",
+                "element_type": "f32",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "27564:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "leaky_re_lu_10"
+            },
+            "dot_attrs": {}
+        },
+        "27565:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Resize_scales",
+                "element_type": "f32",
+                "shape": "4"
+            },
+            "dot_attrs": {}
+        },
+        "27566:Interpolate": {
+            "attrs": {
+                "type": "Interpolate",
+                "name": "Resize",
+                "antialias": "0",
+                "coordinate_transformation_mode": "asymmetric",
+                "cube_coeff": "-0.750000",
+                "mode": "nearest",
+                "nearest_mode": "floor",
+                "pads_begin": "0, 0, 0, 0",
+                "pads_end": "0, 0, 0, 0",
+                "shape_calculation_mode": "scales"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "27567:Concat": {
+            "attrs": {
+                "type": "Concat",
+                "name": "concatenate_1",
+                "axis": "1"
+            },
+            "dot_attrs": {}
+        },
+        "31473:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_31473",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "31630:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_31630",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        }
+    }
+}

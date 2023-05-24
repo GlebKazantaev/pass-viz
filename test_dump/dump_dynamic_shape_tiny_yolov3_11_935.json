@@ -1,0 +1,104 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "tiny_yolov3_11",
+    "pass_name": "ConvertMaxPool8ToMaxPool1",
+    "index": "146024",
+    "type": "combined",
+    "edges": {
+        "40942:Constant": ["40943:PRelu"],
+        "40943:PRelu": ["40944:MaxPool", "45542:MaxPool"],
+        "40944:MaxPool": ["45229:Convolution"],
+        "45075:Add": ["40943:PRelu"],
+        "45229:Convolution": ["45087:Add"],
+        "45330:Constant": ["45229:Convolution"],
+        "45542:MaxPool": ["45229:Convolution"]
+    },
+    "nodes": {
+        "40942:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_34727",
+                "element_type": "f32",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "40943:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "leaky_re_lu_6"
+            },
+            "dot_attrs": {}
+        },
+        "40944:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "model_1/leaky_re_lu_6/LeakyRelu:0_pooling",
+                "auto_pad": "same_upper",
+                "axis": "0",
+                "dilations": "1, 1",
+                "index_element_type": "i64",
+                "kernel": "2, 2",
+                "pads_begin": "0, 0",
+                "pads_end": "1, 1",
+                "rounding_type": "floor",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "45075:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_45075",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "45087:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_45087",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "45229:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Convolution_45229",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "45330:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_45330",
+                "element_type": "f32",
+                "shape": "1024, 512, 3, 3"
+            },
+            "dot_attrs": {}
+        },
+        "45542:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "model_1/leaky_re_lu_6/LeakyRelu:0_pooling",
+                "auto_pad": "same_upper",
+                "kernel": "2, 2",
+                "pads_begin": "0, 0",
+                "pads_end": "1, 1",
+                "rounding_type": "floor",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

@@ -1,0 +1,85 @@
+{
+    "run_name": "static_shape",
+    "model_name": "tinyyolov2",
+    "pass_name": "ConvertMaxPool8ToMaxPool1",
+    "index": "8098",
+    "type": "created",
+    "edges": {
+        "336:Constant": ["337:PRelu"],
+        "337:PRelu": ["3027:MaxPool"],
+        "2805:Add": ["337:PRelu"],
+        "2914:Convolution": ["2817:Add"],
+        "2990:Constant": ["2914:Convolution"],
+        "3027:MaxPool": ["2914:Convolution"]
+    },
+    "nodes": {
+        "336:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_63",
+                "element_type": "f32",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "337:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "activation2"
+            },
+            "dot_attrs": {}
+        },
+        "2805:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "batchnorm2",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "2817:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "batchnorm3",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "2914:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "Multiply_2808",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "2990:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Multiply_2913",
+                "element_type": "f32",
+                "shape": "128, 64, 3, 3"
+            },
+            "dot_attrs": {}
+        },
+        "3027:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "pooling2",
+                "auto_pad": "same_upper",
+                "kernel": "2, 2",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "rounding_type": "floor",
+                "strides": "2, 2"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

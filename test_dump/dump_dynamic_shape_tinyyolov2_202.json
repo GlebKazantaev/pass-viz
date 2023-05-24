@@ -1,0 +1,74 @@
+{
+    "run_name": "dynamic_shape",
+    "model_name": "tinyyolov2",
+    "pass_name": "MultiplyConvolutionFusion",
+    "index": "14827",
+    "type": "created",
+    "edges": {
+        "3669:Parameter": ["6235:Convolution"],
+        "5623:Constant": ["6137:Multiply"],
+        "6137:Multiply": ["6146:Add"],
+        "6234:Constant": ["6235:Convolution"],
+        "6235:Convolution": ["6137:Multiply"]
+    },
+    "nodes": {
+        "3669:Parameter": {
+            "attrs": {
+                "type": "Parameter",
+                "name": "image",
+                "element_type": "f32"
+            },
+            "dot_attrs": {}
+        },
+        "5623:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_5623",
+                "element_type": "f32",
+                "shape": "1, 16, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "6137:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_6137",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "6146:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "batchnorm",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "6234:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_6234",
+                "element_type": "f32",
+                "shape": "16, 3, 3, 3"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        },
+        "6235:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "convolution",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {
+                "color": "green"
+            }
+        }
+    }
+}

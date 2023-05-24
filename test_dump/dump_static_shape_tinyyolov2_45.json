@@ -1,0 +1,123 @@
+{
+    "run_name": "static_shape",
+    "model_name": "tinyyolov2",
+    "pass_name": "AddAddFusion",
+    "index": "6686",
+    "type": "eliminated",
+    "edges": {
+        "330:Convolution": ["2796:Multiply"],
+        "336:Constant": ["337:PRelu"],
+        "337:PRelu": ["338:MaxPool"],
+        "2362:Constant": ["2405:Add"],
+        "2402:Constant": ["2796:Multiply"],
+        "2405:Add": ["337:PRelu"],
+        "2796:Multiply": ["2799:Add"],
+        "2798:Constant": ["2799:Add"],
+        "2799:Add": ["2405:Add"]
+    },
+    "nodes": {
+        "330:Convolution": {
+            "attrs": {
+                "type": "Convolution",
+                "name": "convolution2",
+                "auto_pad": "same_upper",
+                "dilations": "1, 1",
+                "pads_begin": "1, 1",
+                "pads_end": "1, 1",
+                "strides": "1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "336:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_63",
+                "element_type": "f32",
+                "shape": "1"
+            },
+            "dot_attrs": {}
+        },
+        "337:PRelu": {
+            "attrs": {
+                "type": "PRelu",
+                "name": "activation2"
+            },
+            "dot_attrs": {}
+        },
+        "338:MaxPool": {
+            "attrs": {
+                "type": "MaxPool",
+                "name": "pooling2",
+                "auto_pad": "same_upper",
+                "axis": "0",
+                "dilations": "1, 1",
+                "index_element_type": "i64",
+                "kernel": "2, 2",
+                "pads_begin": "0, 0",
+                "pads_end": "0, 0",
+                "rounding_type": "floor",
+                "strides": "2, 2"
+            },
+            "dot_attrs": {}
+        },
+        "2362:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_2362",
+                "element_type": "f32",
+                "shape": "1, 64, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "2402:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_2402",
+                "element_type": "f32",
+                "shape": "1, 64, 1, 1"
+            },
+            "dot_attrs": {}
+        },
+        "2405:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_2405",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "2796:Multiply": {
+            "attrs": {
+                "type": "Multiply",
+                "name": "Multiply_2796",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {}
+        },
+        "2798:Constant": {
+            "attrs": {
+                "type": "Constant",
+                "name": "Constant_2798",
+                "element_type": "f32",
+                "shape": "1, 64, 1, 1"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        },
+        "2799:Add": {
+            "attrs": {
+                "type": "Add",
+                "name": "Add_2799",
+                "auto_broadcast": "numpy"
+            },
+            "dot_attrs": {
+                "color": "orange"
+            }
+        }
+    }
+}
