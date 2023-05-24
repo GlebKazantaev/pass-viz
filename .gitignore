@@ -1,4 +1,10 @@
-react-app/node_modules
+pass_viz/react-app/node_modules
+pass_viz/.pytest_cache
+pass_viz/backend/__pycache__/
+pass_viz/backend/test/__pycache__/
 .idea
 .DS_Store
-backend/__pycache__/
+build
+dist
+pass_viz.egg-info
+venv

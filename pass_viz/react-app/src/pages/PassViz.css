@@ -1,0 +1,26 @@
+.PassViz {
+    background-color:rgb(129, 129, 129);
+    /* background-color:rgb(203, 201, 199); */
+    display: grid;
+    grid-template-columns: 200px auto;
+}
+
+.NavigationBar {
+    display: grid;
+    height: 84.5vh;
+    grid-template-rows: 40px 40px auto;
+}
+
+.MenuBar {
+    height: calc(84.5vh - 90px);
+}
+
+.MenuItems {
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
+    height: inherit;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
