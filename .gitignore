@@ -1,7 +1,9 @@
 pass_viz/react-app/node_modules
 pass_viz/.pytest_cache
-pass_viz/backend/__pycache__/
-pass_viz/backend/test/__pycache__/
+
+__pycache__/
+*.pyc
+
 .idea
 .DS_Store
 build
