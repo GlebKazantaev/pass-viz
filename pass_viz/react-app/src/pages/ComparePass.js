@@ -38,7 +38,7 @@ class ComparePass extends Component {
     };
 
     componentDidMount() {
-        fetch('http://localhost:5000/availableRuns')
+        fetch('http://127.0.0.1:5000/availableRuns')
         .then(responce => responce.json())
         .then(data=> {
             this.setState({availableRuns: data.runs});
@@ -61,7 +61,7 @@ class ComparePass extends Component {
         if (!this.state.selectedRunRef || !this.state.selectedRunTarget) {
             return;
         }
-        fetch(`http://localhost:5000/compareRuns?selectedRunRef=${this.state.selectedRunRef}&selectedRunTarget=${this.state.selectedRunTarget}`)
+        fetch(`http://127.0.0.1:5000/compareRuns?selectedRunRef=${this.state.selectedRunRef}&selectedRunTarget=${this.state.selectedRunTarget}`)
         .then(responce => responce.json())
         .then(data=> {
             this.setState({
@@ -86,7 +86,7 @@ class ComparePass extends Component {
     }
 
     selectModel = args => {
-        fetch(`http://localhost:5000/compareModels?selectedRunRef=${this.state.selectedRunRef}&selectedRunTarget=${this.state.selectedRunTarget}&selectedModel=${args.name}`)
+        fetch(`http://127.0.0.1:5000/compareModels?selectedRunRef=${this.state.selectedRunRef}&selectedRunTarget=${this.state.selectedRunTarget}&selectedModel=${args.name}`)
         .then(responce => responce.json())
         .then(data=> {
             console.log(data.passes)
@@ -113,7 +113,7 @@ class ComparePass extends Component {
     }
 
     selectPass = args => {
-        fetch(`http://localhost:5000/comparePasses?selectedRunRef=${this.state.selectedRunRef}&selectedRunTarget=${this.state.selectedRunTarget}&selectedModel=${this.state.selectedModel}&selectedPass=${args.name}`)
+        fetch(`http://127.0.0.1:5000/comparePasses?selectedRunRef=${this.state.selectedRunRef}&selectedRunTarget=${this.state.selectedRunTarget}&selectedModel=${this.state.selectedModel}&selectedPass=${args.name}`)
         .then(responce => responce.json())
         .then(data => {
             console.log(data);
@@ -137,7 +137,7 @@ class ComparePass extends Component {
     };
 
     selectGraph = args => {
-        fetch(`http://localhost:5000/compareGraphs?selectedRunRef=${this.state.selectedRunRef}&selectedRunTarget=${this.state.selectedRunTarget}&selectedModel=${this.state.selectedModel}&selectedPass=${this.state.selectedPass}&selectedGraph=${args.name}`)
+        fetch(`http://127.0.0.1:5000/compareGraphs?selectedRunRef=${this.state.selectedRunRef}&selectedRunTarget=${this.state.selectedRunTarget}&selectedModel=${this.state.selectedModel}&selectedPass=${this.state.selectedPass}&selectedGraph=${args.name}`)
         .then(responce => responce.json())
         .then(data => {
             this.setState({

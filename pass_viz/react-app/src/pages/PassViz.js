@@ -33,7 +33,7 @@ class PassViz extends Component {
     };
 
     componentDidMount() {
-        fetch('http://localhost:5000/availableRuns')
+        fetch('http://127.0.0.1:5000/availableRuns')
         .then(responce => responce.json())
         .then(data=> {
             this.setState({availableRuns: data.runs});
@@ -41,7 +41,7 @@ class PassViz extends Component {
     }
 
     selectRun = (selectedOption) => {
-        fetch(`http://localhost:5000/models?selectedRun=${selectedOption.value}`)
+        fetch(`http://127.0.0.1:5000/models?selectedRun=${selectedOption.value}`)
         .then(responce => responce.json())
         .then(data=> {
             this.setState({
@@ -67,7 +67,7 @@ class PassViz extends Component {
     }
 
     selectModel = args => {
-        fetch(`http://localhost:5000/passes?selectedRun=${this.state.selectedRun}&selectedModel=${args.name}`)
+        fetch(`http://127.0.0.1:5000/passes?selectedRun=${this.state.selectedRun}&selectedModel=${args.name}`)
         .then(responce => responce.json())
         .then(data=> {
             this.setState({
@@ -91,7 +91,7 @@ class PassViz extends Component {
     }
 
     selectPass = args => {
-        fetch(`http://localhost:5000/graphs?selectedRun=${this.state.selectedRun}&selectedModel=${this.state.selectedModel}&selectedPass=${args.name}`)
+        fetch(`http://127.0.0.1:5000/graphs?selectedRun=${this.state.selectedRun}&selectedModel=${this.state.selectedModel}&selectedPass=${args.name}`)
         .then(responce => responce.json())
         .then(data => {
             this.setState({
@@ -113,7 +113,7 @@ class PassViz extends Component {
     };
 
     selectGraph = args => {
-        fetch(`http://localhost:5000/graphTypes?selectedRun=${this.state.selectedRun}&selectedModel=${this.state.selectedModel}&selectedPass=${this.state.selectedPass}&selectedGraph=${args.name}`)
+        fetch(`http://127.0.0.1:5000/graphTypes?selectedRun=${this.state.selectedRun}&selectedModel=${this.state.selectedModel}&selectedPass=${this.state.selectedPass}&selectedGraph=${args.name}`)
         .then(responce => responce.json())
         .then(data => {
             console.log(data.types);

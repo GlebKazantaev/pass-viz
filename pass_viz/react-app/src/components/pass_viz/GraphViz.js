@@ -25,17 +25,17 @@ class MyRequest {
 
     requestGraph() {
         // don't need to skip, getting empty graph.
-        return `http://localhost:5000/graph?selectedRun=${this.run}&selectedModel=${this.model}&selectedPass=${this.pass}&selectedGraph=${this.graph}&graphType=${this.gtype}`
+        return `http://127.0.0.1:5000/graph?selectedRun=${this.run}&selectedModel=${this.model}&selectedPass=${this.pass}&selectedGraph=${this.graph}&graphType=${this.gtype}`
     }
 
     requestNodes() {
         if (!this.isCompleted()) return;
-        return `http://localhost:5000/nodes?selectedRun=${this.run}&selectedModel=${this.model}&selectedPass=${this.pass}&selectedGraph=${this.graph}&graphType=${this.gtype}`
+        return `http://127.0.0.1:5000/nodes?selectedRun=${this.run}&selectedModel=${this.model}&selectedPass=${this.pass}&selectedGraph=${this.graph}&graphType=${this.gtype}`
     }
 
     requestAttrs(nodeName) {
         if (!this.isCompleted()) return;
-        return `http://localhost:5000/attrs?selectedRun=${this.run}&selectedModel=${this.model}&selectedPass=${this.pass}&selectedGraph=${this.graph}&graphType=${this.gtype}&nodeName=${nodeName}`
+        return `http://127.0.0.1:5000/attrs?selectedRun=${this.run}&selectedModel=${this.model}&selectedPass=${this.pass}&selectedGraph=${this.graph}&graphType=${this.gtype}&nodeName=${nodeName}`
     }
 
     equal(other) {

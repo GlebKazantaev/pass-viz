@@ -63,7 +63,7 @@ class PassViz extends Component {
     };
 
     updateAvailableRuns = () => {
-        fetch('http://localhost:5000/availableRuns')
+        fetch('http://127.0.0.1:5000/availableRuns')
         .then(responce => responce.json())
         .then(data=> {
             this.setState({availableRuns: data.runs});
@@ -76,7 +76,7 @@ class PassViz extends Component {
 
     removeRun = () => {
         console.log(this.state.runToRemove);
-        fetch(`http://localhost:5000/remove?selectedRun=${this.state.runToRemove}`)
+        fetch(`http://127.0.0.1:5000/remove?selectedRun=${this.state.runToRemove}`)
         this.updateAvailableRuns();
     }
 
