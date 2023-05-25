@@ -21,7 +21,7 @@ and much more.
 ### Pass Tracking & Hierarchy
 PassViz is designed to consume graph files (dumps) provided by some backend (compiler pipeline) in specific JSON format.
 These files should contain sub-graphs that describe particular graph change/transformation. For example:
-<img width="464" alt="image" src="https://github.com/GlebKazantaev/pass-viz/assets/18436845/05bd5a11-db56-48e8-9761-6b00a9ace4be">
+<img width="580" alt="image" src="https://github.com/GlebKazantaev/pass-viz/assets/18436845/a9fa5ad9-bbdf-4a04-95aa-1cc669beab1d">
 
 <!-- toc -->
 
@@ -29,7 +29,7 @@ this sub-graph produced by runtime shows how BatchNorm operation was decomposed 
 removed (yellow nodes). The granularity of produced sub-graphs and its content will be discussed later. Just another example of 
 constant folding transformation which produces more complex sub-graph with multiple connected components:
 
-<img width="742" alt="image" src="https://github.com/GlebKazantaev/pass-viz/assets/18436845/a8e598ad-88de-4704-a0ab-24b3639d6660">
+<img width="818" alt="image" src="https://github.com/GlebKazantaev/pass-viz/assets/18436845/c05495df-febc-40e5-a6fd-53b77e125733">
 
 <!-- toc -->
 
