@@ -93,6 +93,8 @@ docker pull gkazanta/pass-viz:1.0.0
 ```
 7. Open **Chrome** (other browsers are not tested) and go to `http://localhost:3000/`
 
+To run OpenVINO with pass tracking please use branch from https://github.com/openvinotoolkit/openvino/pull/17714 and see https://github.com/GlebKazantaev/pass-viz/blob/master/pass_viz/backend/tests/test_ov_backend.py#L85-L93 test.
+
 ## Run From Sources
 To run PassViz from source, follow these steps:
 1. Clone PassViz repository:
