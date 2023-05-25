@@ -36,7 +36,7 @@ constant folding transformation which produces more complex sub-graph with multi
 So, as you might guessed, the main purpose of PassViz is to visualize these graph files produced by some backend, so developers can easily
 check wich passes were applied to the graph and how graph was changed by transformations. Unfortunately all burden for producing these dump files
 remains on compiler infrastructure (not PassViz). As a POC I've implemented pass tracker based on OpenVINO infrastructure that shows that tracing is
-possible and can be efficient. See [getting started guide](#Getting_Started)
+possible and can be efficient. See [getting started guide](#getting-started)
 
 Each dimp file contains not only sub-graphs but also the transformation name, model name and run name which are used by PassViz to construct an hierarchy
 of these files. This hierarchy includes several levels:
